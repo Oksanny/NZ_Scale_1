@@ -28,6 +28,7 @@ namespace States
                 CommonData.prefabs.gameobjectLookup["SpawnPathFeedCrocodile"].transform.rotation);
             feedHolder.gameObject.transform.parent = CommonData.prefabs.gameobjectLookup["ARCamera"].transform;
             feedHolder.GetComponent<ControllerCrocodileFeed>().ShowCrocodile = this;
+           
         }
         public void ChangeAnimation()
         {
@@ -50,6 +51,7 @@ namespace States
         {
 
             DestroyUI();
+            
             Object.Destroy(feedHolder);
             return null;
         }

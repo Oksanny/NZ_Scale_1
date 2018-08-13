@@ -28,15 +28,15 @@ public class MainManager : MonoBehaviour {
         CommonData.prefabs = FindObjectOfType<PrefabList>();
         CommonData.canvasHolder = GameObject.Find("CanvasHolder");
         CommonData.mainManager = this;
-       
+        CommonData.StateAnimal = false;
 
-      //  Screen.orientation = ScreenOrientation.Landscape;
+        //  Screen.orientation = ScreenOrientation.Landscape;
 
-       
 
-        
+
+
 
         //stateManager.PushState(new States.Startup());
-       // stateManager.PushState(new States.Startup());
+        // stateManager.PushState(new States.Startup());
     }
 }

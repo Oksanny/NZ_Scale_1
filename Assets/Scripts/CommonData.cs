@@ -6,8 +6,8 @@ public class CommonData
 {
 
 	 public static PrefabList prefabs;
-   
-    
+
+     public static bool StateAnimal;
     public static MainManager mainManager;
     public static GameObject canvasHolder;
     public static DBStruct<UserData> currentUser;

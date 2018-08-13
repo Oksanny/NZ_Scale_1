@@ -21,7 +21,7 @@ namespace States
                 menuComponent = SpawnUI<Menus.CheckLionGUI>(StringConstants.PrefabCheckLion);
             }
             ShowUI();
-
+            CommonData.StateAnimal = true;
         }
         public override void Suspend()
         {
@@ -31,7 +31,7 @@ namespace States
 
         public override StateExitValue Cleanup()
         {
-
+            CommonData.StateAnimal = false;
             DestroyUI();
             return null;
         }

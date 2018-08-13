@@ -27,6 +27,7 @@ namespace States
             SetFightAnimation();
             Elephant.GetComponent<ControllerElephant>().ShowElephant = this;
             Elephant.GetComponent<CapsuleCollider>().enabled = true;
+            
         }
         public override void Suspend()
         {
@@ -60,6 +61,7 @@ namespace States
         {
             SetIdleAnimation();
             Elephant.GetComponent<ControllerElephant>().ShowElephant = null;
+            
             DestroyUI();
             return null;
         }

@@ -28,7 +28,7 @@ namespace States
                 CommonData.prefabs.gameobjectLookup["SpawnPathFeedShark"].transform.rotation);
             feedHolder.gameObject.transform.parent = CommonData.prefabs.gameobjectLookup["ARCamera"].transform;
             feedHolder.GetComponent<ControllerSharkFeed>().ShowShark = this;
-
+            
         }
 
         public void ChangeAnimation()
@@ -55,6 +55,7 @@ namespace States
 
             DestroyUI();
             Object.Destroy(feedHolder);
+            
             return null;
         }
 

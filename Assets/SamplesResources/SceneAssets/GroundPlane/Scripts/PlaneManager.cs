@@ -58,6 +58,8 @@ public class PlaneManager : MonoBehaviour
     int m_AnchorCounter;
     bool uiHasBeenInitialized;
     static bool anchorExists; // backs public AnchorExists property
+
+    private bool setOblect;
     #endregion // PRIVATE_MEMBERS
 
 
@@ -72,7 +74,7 @@ public class PlaneManager : MonoBehaviour
         allowInterActive = true;
         m_PlaneFinder.HitTestMode = HitTestMode.AUTOMATIC;
 
-       
+        setOblect = false;
        
         m_GroundPlaneUI = FindObjectOfType<GroundPlaneUI>();
 
@@ -92,7 +94,7 @@ public class PlaneManager : MonoBehaviour
 
         GroundPlaneHitReceived = (AutomaticHitTestFrameCount == Time.frameCount);
 
-        SetSurfaceIndicatorVisible(
+        SetSurfaceIndicatorVisible(!setOblect&&
             GroundPlaneHitReceived &&
             (planeMode == PlaneMode.GROUND ));
     }
@@ -158,7 +160,8 @@ public class PlaneManager : MonoBehaviour
 
                     CityIsPlaced = true;
                     allowInterActive = false;
-                    
+                    CommonData.StateAnimal = true;
+                    setOblect = true;
                     break;
 
                 
@@ -199,7 +202,7 @@ public class PlaneManager : MonoBehaviour
         m_PlaneAugmentation.transform.position = Vector3.zero;
         m_PlaneAugmentation.transform.localEulerAngles = Vector3.zero;
         UtilityHelper.EnableRendererColliderCanvas(m_PlaneAugmentation, false);
-
+        setOblect = false;
         allowInterActive = true;
 
         DeleteAnchors();
