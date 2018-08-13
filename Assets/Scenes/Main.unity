@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44584846, g: 0.4955775, b: 0.5743449, a: 1}
+  m_IndirectSpecularColor: {r: 0.45130926, g: 0.5009521, b: 0.57314813, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -358,8 +358,8 @@ GameObject:
   - component: {fileID: 67680234}
   - component: {fileID: 67680238}
   - component: {fileID: 67680237}
-  - component: {fileID: 67680236}
   - component: {fileID: 67680235}
+  - component: {fileID: 67680236}
   m_Layer: 0
   m_Name: Point_Elephant
   m_TagString: Untagged
@@ -397,20 +397,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!136 &67680236
-CapsuleCollider:
+--- !u!65 &67680236
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 136661256198235094, guid: b2fcc1a9a6d994d488615032bdac7352,
-    type: 2}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 67680233}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 7.81
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  serializedVersion: 2
+  m_Size: {x: 1.43, y: 11.59, z: 1.15}
+  m_Center: {x: 0.000000059604645, y: 3.52, z: 0.00000086426735}
 --- !u!23 &67680237
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -861,8 +859,8 @@ GameObject:
   - component: {fileID: 118106306}
   - component: {fileID: 118106310}
   - component: {fileID: 118106309}
-  - component: {fileID: 118106308}
   - component: {fileID: 118106307}
+  - component: {fileID: 118106308}
   m_Layer: 0
   m_Name: Point_Shark
   m_TagString: Untagged
@@ -900,20 +898,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!136 &118106308
-CapsuleCollider:
+--- !u!65 &118106308
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 136116049616354322, guid: b2fcc1a9a6d994d488615032bdac7352,
-    type: 2}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 118106305}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 7.81
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  serializedVersion: 2
+  m_Size: {x: 1.21, y: 7.63, z: 1.26}
+  m_Center: {x: 0.000000059604638, y: 2.6, z: -0.00000020861624}
 --- !u!23 &118106309
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3035,8 +3031,8 @@ GameObject:
   - component: {fileID: 399708163}
   - component: {fileID: 399708167}
   - component: {fileID: 399708166}
-  - component: {fileID: 399708165}
   - component: {fileID: 399708164}
+  - component: {fileID: 399708165}
   m_Layer: 0
   m_Name: Point_Crocodile
   m_TagString: Untagged
@@ -3074,20 +3070,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!136 &399708165
-CapsuleCollider:
+--- !u!65 &399708165
+BoxCollider:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 136949803098003978, guid: b2fcc1a9a6d994d488615032bdac7352,
-    type: 2}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 399708162}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 7.81
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  serializedVersion: 2
+  m_Size: {x: 1.43, y: 11.59, z: 1.15}
+  m_Center: {x: 0.000000059604645, y: 3.52, z: 0.00000086426735}
 --- !u!23 &399708166
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8896,7 +8890,7 @@ Light:
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
