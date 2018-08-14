@@ -28,7 +28,7 @@ public class ControllerSharkFeed : MonoBehaviour
 
             Touch touch = Input.touches[0];
 
-            ray = Camera.main.ScreenPointToRay(Input.touches[0].position);
+            ray = CommonData.prefabs.gameobjectLookup["ARCamera"].GetComponent<Camera>().ScreenPointToRay(Input.touches[0].position);
             if (touch.phase == TouchPhase.Stationary && Physics.Raycast(ray.origin, ray.direction, out hit))
             {
 
@@ -57,7 +57,7 @@ public class ControllerSharkFeed : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
              Debug.Log("Mouse is down");
-            ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+             ray = CommonData.prefabs.gameobjectLookup["ARCamera"].GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
 
             if (Physics.Raycast(ray, out hit))
             {

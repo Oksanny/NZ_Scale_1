@@ -16,18 +16,26 @@ namespace States
 
         public void PushState(BaseState newState)
         {
+            Debug.Log("Count1=" + stateStack.Count);
             newState.manager = this;
             CurrentState().Suspend();
             stateStack.Push(newState);
             newState.Initialize();
+            Debug.Log("Count2=" + stateStack.Count);
         }
         // Ends the currently-running state, and resumes whatever is next
         // down the line.
         public void PopState()
         {
-            StateExitValue result = CurrentState().Cleanup();
-            stateStack.Pop();
-            CurrentState().Resume(result);
+            if (stateStack.Count>1)
+            {
+                Debug.Log("Count3=" + stateStack.Count);
+                StateExitValue result = CurrentState().Cleanup();
+                stateStack.Pop();
+                CurrentState().Resume(result);
+                Debug.Log("Count4=" + stateStack.Count);
+            }
+            
         }
         // Switches the current state for a new one, without disturbing
         // anything below.  Different from Pop + Push, in that the next

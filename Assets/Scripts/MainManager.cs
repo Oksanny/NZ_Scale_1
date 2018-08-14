@@ -29,7 +29,7 @@ public class MainManager : MonoBehaviour {
         CommonData.canvasHolder = GameObject.Find("CanvasHolder");
         CommonData.mainManager = this;
         CommonData.StateAnimal = false;
-
+        CommonData.StateLion = false;
         //  Screen.orientation = ScreenOrientation.Landscape;
 
 

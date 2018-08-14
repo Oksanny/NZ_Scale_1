@@ -97,7 +97,7 @@ MonoBehaviour:
         m_Calls: []
       m_TypeName: Jacovone.Waypoint+ReachedEvent, Assembly-CSharp, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
-  - position: {x: 0, y: 0.18, z: 0.54}
+  - position: {x: 0, y: 0.03, z: 0.54}
     rotation: {x: 364.8, y: 127.32, z: 185.62}
     lookAt: {fileID: 0}
     inTangent: {x: 0.0016057331, y: 0, z: -0.20999998}
@@ -111,7 +111,7 @@ MonoBehaviour:
         m_Calls: []
       m_TypeName: Jacovone.Waypoint+ReachedEvent, Assembly-CSharp, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
-  - position: {x: 0, y: -0.45, z: 1.43}
+  - position: {x: 0, y: -0.66, z: 1.43}
     rotation: {x: 0, y: 162.7, z: -90.01}
     lookAt: {fileID: 0}
     inTangent: {x: 0, y: 0, z: 0}
@@ -145,7 +145,7 @@ MonoBehaviour:
   loop: 0
   autoStart: 0
   velocityBias: 1.49
-  currentPos: 0
+  currentPos: 1
   isPlaying: 0
   waypointChanged:
     m_PersistentCalls:

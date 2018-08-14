@@ -209,6 +209,7 @@ public class PlaneManager : MonoBehaviour
        
         CityIsPlaced = false;
         m_GroundPlaneUI.Reset();
+        
         CommonData.mainManager.stateManager.PopState();
     }
 
