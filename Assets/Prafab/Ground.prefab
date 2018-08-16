@@ -1564,7 +1564,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4330099615552200}
   - component: {fileID: 33583284014023470}
-  - component: {fileID: 23068761748634404}
   - component: {fileID: 65440820537023776}
   - component: {fileID: 114838967961029058}
   m_Layer: 0
@@ -2683,7 +2682,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4767316160635716}
   - component: {fileID: 33979107049947768}
-  - component: {fileID: 23259757131679954}
   - component: {fileID: 64528938061663140}
   m_Layer: 0
   m_Name: C_cage
@@ -3517,14 +3515,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1037901762701590}
-  m_LocalRotation: {x: 0.000000030908627, y: -0.7071068, z: -0.7071068, w: -0.000000030908627}
+  m_LocalRotation: {x: -0.7071001, y: -0.0030852344, z: -0.0030852344, w: 0.7071001}
   m_LocalPosition: {x: -1.0786738, y: -0.073301435, z: -0.6755885}
   m_LocalScale: {x: 1.4999996, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 4330099615552200}
   m_Father: {fileID: 4748626246995006}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 179.5, z: -179.99998}
 --- !u!4 &4077290546526478
 Transform:
   m_ObjectHideFlags: 1
@@ -3916,8 +3914,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1653627863005426}
-  m_LocalRotation: {x: -0, y: 0.55629563, z: -0, w: 0.83098453}
-  m_LocalPosition: {x: -3.38, y: -0.006, z: -12.11}
+  m_LocalRotation: {x: 0, y: 0.9997897, z: -0, w: -0.020506194}
+  m_LocalPosition: {x: -4.25, y: -0.006, z: -6.79}
   m_LocalScale: {x: 2.4144113, y: 2.4144108, z: 2.4144113}
   m_Children:
   - {fileID: 4659141626837472}
@@ -3925,7 +3923,7 @@ Transform:
   - {fileID: 4200620895201748}
   m_Father: {fileID: 4116056914773270}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 67.6, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 182.35, z: 0}
 --- !u!4 &4172224910979786
 Transform:
   m_ObjectHideFlags: 1
@@ -5210,8 +5208,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1248293062564616}
-  m_LocalRotation: {x: -0, y: 0.93776244, z: -0, w: -0.3472775}
-  m_LocalPosition: {x: 8.812599, y: 0, z: -5.722153}
+  m_LocalRotation: {x: -0.000031465646, y: 0.95376146, z: -0.00009984782, w: -0.3005646}
+  m_LocalPosition: {x: 7.9434123, y: 0.16900876, z: -5.722153}
   m_LocalScale: {x: 1.6759876, y: 1.675987, z: 1.6759876}
   m_Children:
   - {fileID: 4749216478430934}
@@ -5378,8 +5376,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1188680596504490}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.82, y: 0.83, z: -11.11}
-  m_LocalScale: {x: 1.22809, y: 0.8470719, z: 1.22809}
+  m_LocalPosition: {x: -4.2, y: 2.22, z: -10.79}
+  m_LocalScale: {x: 2.258343, y: 1.557681, z: 2.258343}
   m_Children: []
   m_Father: {fileID: 4334993767055420}
   m_RootOrder: 1
@@ -5487,7 +5485,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1528886252012538}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.700167, y: 1.3, z: 0.54251546}
+  m_LocalPosition: {x: -5.97, y: 1.3, z: 0.54251546}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4116056914773270}
@@ -5677,7 +5675,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1090378861125016}
   m_LocalRotation: {x: -0, y: 0.3772738, z: -0, w: 0.9261018}
-  m_LocalPosition: {x: 8.554257, y: 1.2796377, z: -6.1977925}
+  m_LocalPosition: {x: 7.99, y: 1.14, z: -6.2}
   m_LocalScale: {x: 0.60179186, y: 0.60179186, z: 0.8758397}
   m_Children:
   - {fileID: 4642160117811896}
@@ -5968,7 +5966,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1322496538728190}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.84, y: 1.61, z: -8.92}
+  m_LocalPosition: {x: 5.16, y: 1.96, z: -9.45}
   m_LocalScale: {x: 2.2583432, y: 1.5576812, z: 2.2583432}
   m_Children: []
   m_Father: {fileID: 4334993767055420}
@@ -6449,41 +6447,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!23 &23068761748634404
-MeshRenderer:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1522414934349696}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 0
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
-  m_Materials:
-  - {fileID: 2100000, guid: 06222f6e39cc2cf48a9db69bd0e204cb, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
 --- !u!23 &23080659751459904
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -6789,41 +6752,6 @@ MeshRenderer:
   m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100002, guid: 32d3bf91d109245eea79a96c283fe7c3, type: 3}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!23 &23259757131679954
-MeshRenderer:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1809963947891528}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 0
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
-  m_Materials:
-  - {fileID: 2100000, guid: 06222f6e39cc2cf48a9db69bd0e204cb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8779,12 +8707,12 @@ Light:
   serializedVersion: 8
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.51
+  m_Intensity: 0.2
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -8816,12 +8744,12 @@ Light:
   serializedVersion: 8
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.68
+  m_Intensity: 0.45
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -8853,7 +8781,7 @@ Light:
   serializedVersion: 8
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.5
+  m_Intensity: 0.2
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -8890,7 +8818,7 @@ Light:
   serializedVersion: 8
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.59
+  m_Intensity: 0.2
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -8974,11 +8902,11 @@ MonoBehaviour:
         m_Calls: []
       m_TypeName: Jacovone.Waypoint+ReachedEvent, Assembly-CSharp, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
-  - position: {x: 4.2799997, y: 0, z: -3.65}
+  - position: {x: 4.01, y: 0, z: -3.65}
     rotation: {x: -0, y: 0, z: 0}
     lookAt: {fileID: 0}
-    inTangent: {x: -0.56, y: 0, z: 0.3300001}
-    outTangent: {x: 0.56, y: -0, z: -0.3300001}
+    inTangent: {x: -0.46000004, y: -0, z: -0.059999943}
+    outTangent: {x: 0.46000004, y: 0, z: 0.059999943}
     symmetricTangents: 1
     velocity: 1
     inVariation: 0
@@ -8991,8 +8919,8 @@ MonoBehaviour:
   - position: {x: 4.66, y: 0, z: -5.9}
     rotation: {x: 0, y: 359.96774, z: 0}
     lookAt: {fileID: 0}
-    inTangent: {x: -0.19999999, y: -0, z: 0.76}
-    outTangent: {x: 0.19999999, y: 0, z: -0.76}
+    inTangent: {x: -0.19999981, y: 0, z: 0.75999975}
+    outTangent: {x: 0.19999981, y: -0, z: -0.75999975}
     symmetricTangents: 1
     velocity: 1
     inVariation: 0
@@ -9002,11 +8930,11 @@ MonoBehaviour:
         m_Calls: []
       m_TypeName: Jacovone.Waypoint+ReachedEvent, Assembly-CSharp, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
-  - position: {x: 5.86, y: 0, z: -6.87}
+  - position: {x: 6.34, y: 0, z: -6.72}
     rotation: {x: -0, y: 359.94266, z: -0}
     lookAt: {fileID: 0}
-    inTangent: {x: 0.14999998, y: -0, z: 0.8799999}
-    outTangent: {x: -0.14999998, y: 0, z: -0.8799999}
+    inTangent: {x: 0.1500001, y: 0, z: 0.8800001}
+    outTangent: {x: -0.1500001, y: -0, z: -0.8800001}
     symmetricTangents: 1
     velocity: 1
     inVariation: 0
@@ -9016,11 +8944,11 @@ MonoBehaviour:
         m_Calls: []
       m_TypeName: Jacovone.Waypoint+ReachedEvent, Assembly-CSharp, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
-  - position: {x: 4.5099998, y: 0, z: -6.74}
+  - position: {x: 4.89, y: 0, z: -6.74}
     rotation: {x: -0, y: 189.47638, z: 0}
     lookAt: {fileID: 0}
-    inTangent: {x: 0.16464102, y: 0, z: -0.16000009}
-    outTangent: {x: -0.16464102, y: -0, z: 0.16000009}
+    inTangent: {x: 0.1646409, y: 0, z: -0.15999985}
+    outTangent: {x: -0.1646409, y: -0, z: 0.15999985}
     symmetricTangents: 1
     velocity: 1
     inVariation: 0
@@ -9604,11 +9532,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathColor: {r: 1, g: 1, b: 1, a: 1}
   waypoints:
-  - position: {x: 5.39, y: 0, z: -4.12}
+  - position: {x: 5.03, y: 0.07, z: -4.12}
     rotation: {x: 0, y: 0, z: 0}
     lookAt: {fileID: 0}
-    inTangent: {x: 0.19000006, y: -0, z: 0.22000027}
-    outTangent: {x: -0.19000006, y: 0, z: -0.22000027}
+    inTangent: {x: 0.19000006, y: -0, z: 0.26999903}
+    outTangent: {x: -0.19000006, y: 0, z: -0.26999903}
     symmetricTangents: 1
     velocity: 1
     inVariation: 0

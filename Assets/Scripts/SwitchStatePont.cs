@@ -40,7 +40,7 @@ public class SwitchStatePont : MonoBehaviour
 
             if (enter)
             {
-                if (Vector3.Distance(camerPosition, PointShark) <= 0.25f)
+                if (Vector3.Distance(camerPosition, PointShark) <= 0.5f)
                 {
                     Debug.Log("Shark");
                     enter = false;
@@ -53,7 +53,7 @@ public class SwitchStatePont : MonoBehaviour
                     CommonData.prefabs.gameobjectLookup["Point_Shark"].GetComponent<MeshRenderer>().enabled = false;
                     CommonData.mainManager.stateManager.PushState(new ShowShark());
                 }
-                if (Vector3.Distance(camerPosition, PointElaphant) <= 0.25f)
+                if (Vector3.Distance(camerPosition, PointElaphant) <= 0.5f)
                 {
                     enter = false;
                     exit = true;
@@ -78,7 +78,7 @@ public class SwitchStatePont : MonoBehaviour
                     CommonData.prefabs.gameobjectLookup["Point_Lion"].GetComponent<MeshRenderer>().enabled = false;
                     CommonData.mainManager.stateManager.PushState(new ShowLion());
                 }
-                if (Vector3.Distance(camerPosition, PointCrocodile) <= 0.25f)
+                if (Vector3.Distance(camerPosition, PointCrocodile) <= 0.5f)
                 {
                     enter = false;
                     exit = true;
@@ -93,7 +93,7 @@ public class SwitchStatePont : MonoBehaviour
             }
             if (exit)
             {
-                if (sharkAl && Vector3.Distance(camerPosition, PointShark) > 0.25f)
+                if (sharkAl && Vector3.Distance(camerPosition, PointShark) > 0.5f)
                 {
                     enter = true;
                     exit = false;
@@ -102,7 +102,7 @@ public class SwitchStatePont : MonoBehaviour
                     CommonData.prefabs.gameobjectLookup["Point_Shark"].GetComponent<MeshRenderer>().enabled = true;
                     CommonData.mainManager.stateManager.PopState();
                 }
-                if (elephantAl && Vector3.Distance(camerPosition, PointElaphant) > 0.25f)
+                if (elephantAl && Vector3.Distance(camerPosition, PointElaphant) > 0.5f)
                 {
                     enter = true;
                     exit = false;
@@ -111,7 +111,7 @@ public class SwitchStatePont : MonoBehaviour
                     CommonData.prefabs.gameobjectLookup["Point_Elephant"].GetComponent<MeshRenderer>().enabled = true;
                     CommonData.mainManager.stateManager.PopState();
                 }
-                if (lionAl && Vector3.Distance(camerPosition, PointLion) > 0.25f)
+                if (lionAl && Vector3.Distance(camerPosition, PointLion) > 0.5f)
                 {
                     enter = true;
                     exit = false;
@@ -120,7 +120,7 @@ public class SwitchStatePont : MonoBehaviour
                     CommonData.prefabs.gameobjectLookup["Point_Lion"].GetComponent<MeshRenderer>().enabled = true;
                     CommonData.mainManager.stateManager.PopState();
                 }
-                if (crocodileAl && Vector3.Distance(camerPosition, PointCrocodile) > 0.25f)
+                if (crocodileAl && Vector3.Distance(camerPosition, PointCrocodile) > 0.5f)
                 {
                     enter = true;
                     exit = false;
