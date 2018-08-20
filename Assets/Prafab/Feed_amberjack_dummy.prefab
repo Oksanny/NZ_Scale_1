@@ -156,11 +156,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4382638320986624}
   - component: {fileID: 114308987803447240}
-  - component: {fileID: 95559102550517394}
   - component: {fileID: 65311413913702740}
   - component: {fileID: 54011779077428090}
   m_Layer: 0
-  m_Name: Feed_amberjack
+  m_Name: Feed_amberjack_dummy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -473,29 +472,11 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1438025132076274}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.08, y: -0.15, z: 0.47}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!95 &95559102550517394
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1438025132076274}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 53c82f2f3bfa31e48bbc4e45830207ac, type: 3}
-  m_Controller: {fileID: 9100000, guid: 68db647cc28113f48b1968a2bf20ee9e, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114308987803447240
 MonoBehaviour:
   m_ObjectHideFlags: 1

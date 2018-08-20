@@ -22,10 +22,8 @@ GameObject:
   - component: {fileID: 33369470318204810}
   - component: {fileID: 23884903033370130}
   - component: {fileID: 114430992608795524}
-  - component: {fileID: 65221384057784582}
-  - component: {fileID: 54057886097325154}
   m_Layer: 0
-  m_Name: icePop
+  m_Name: icePop_dummy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -86,33 +84,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1812457928935246}
   m_Mesh: {fileID: 4300000, guid: 7032ed4e0213bea4aa3f5b34d5f1616b, type: 3}
---- !u!54 &54057886097325154
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1812457928935246}
-  serializedVersion: 2
-  m_Mass: 5
-  m_Drag: 0
-  m_AngularDrag: 3.74
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!65 &65221384057784582
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1812457928935246}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.043076277, y: 0.12380533, z: 0.017140988}
-  m_Center: {x: 0.000007531373, y: 0.061891556, z: -0.00000002561137}
 --- !u!114 &114430992608795524
 MonoBehaviour:
   m_ObjectHideFlags: 1

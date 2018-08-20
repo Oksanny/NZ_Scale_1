@@ -8,15 +8,21 @@ public class ControllerSharkFeed : MonoBehaviour
 {
     Ray ray;
     RaycastHit hit;
+
+    public List<GameObject> MissFeeds = new List<GameObject>();
     private bool FeetHitten;
-    public PathMagic PathFlight;
+    public float Force;
+    public GameObject Feed;
+    public GameObject DirectionShoot;
+
+
     public GameObject FeedInstant;
     public GameObject SpawnFeed;
     public ShowShark ShowShark;
     // Use this for initialization
     private void Start()
     {
-        Instant();
+       
     }
 
     // Update is called once per frame
@@ -90,43 +96,103 @@ public class ControllerSharkFeed : MonoBehaviour
 #endif
     }
 
-    public void Instant()
+    public void GetNewFeed()
     {
-        GameObject feedHolder = (GameObject)Instantiate(FeedInstant, SpawnFeed.transform.position, SpawnFeed.transform.rotation);
-        feedHolder.gameObject.transform.parent = gameObject.transform;
-        feedHolder.GetComponent<FeedSharkItem>().SharkController = this;
-        PathFlight.Target = feedHolder.transform;
-        PathFlight.Stop();
+        if (Feed == null && ShowShark != null)
+        {
+            GameObject feedHolder = (GameObject)Instantiate(FeedInstant, SpawnFeed.transform.position, SpawnFeed.transform.rotation);
+            feedHolder.gameObject.transform.parent = gameObject.transform;
+            Feed = feedHolder;
+        }
+
+
     }
+    void ShootFeed()
+    {
+        if (ShowShark != null)
+        {
+            Vector3 direction = DirectionShoot.transform.position - SpawnFeed.transform.position;
+
+            Feed.GetComponent<BoxCollider>().isTrigger = false;
+            Feed.GetComponent<Rigidbody>().AddForce(new Vector3(direction.normalized.x * Force, direction.normalized.y * Force, direction.normalized.z * Force));
+            Feed.GetComponent<Rigidbody>().useGravity = true;
+            Feed.GetComponent<FeedSharkItem>().SharkController = this;
+            
+        }
+
+    }
+
 
     public void StartFlight()
     {
-        PathFlight.Play();
+        if (ShowShark != null)
+        {
+            ShowShark.SetAnimationFightEating();
+            ShootFeed();
+        }
+    }
+    public void MissShark()
+    {
+        if (ShowShark != null)
+        {
+            ShowShark.SetAnimationEndShoot();
+        }
+        if (Feed != null)
+        {
+            Feed.gameObject.transform.parent = CommonData.prefabs.gameobjectLookup["Plane"].transform;
+            MissFeeds.Add(Feed);
+            Feed = null;
+            if (MissFeeds.Count > 0)
+            {
+                GameObject tempItem = MissFeeds[0];
+                MissFeeds.RemoveAt(0);
+                Destroy(tempItem);
+            }
+        }
+
+
+        StartCoroutine(SpawnFeedAfterMiss());
+    }
+    public void HitShark()
+    {
+        if (ShowShark != null)
+        {
+            ShowShark.SetAnimationEating();
+        }
+        CommonData.prefabs.gameobjectLookup["LowerJaw"].SetActive(true);
+        if (Feed != null)
+        {
+            GameObject tempFeed = Feed;
+            Feed = null;
+            Destroy(tempFeed);
+        }
+
+        StartCoroutine(SpawnFeedAfterHiT());
     }
 
-    public void ChangeAnimation()
+    public void DeleteFeed()
     {
-        ShowShark.ChangeAnimation();
+        if (Feed != null)
+        {
+            Destroy(Feed);
+        }
+
     }
-    public void StopPath()
+    IEnumerator SpawnFeedAfterHiT()
     {
-        GameObject destroyFeed = PathFlight.Target.gameObject;
-        PathFlight.Target = null;
-        PathFlight.Pause();
-        Destroy(destroyFeed);
-        PathFlight.Stop();
-        Instant();
-    }
-    public void Point_1()
-    {
-        Debug.Log("Point_1");
         
+        yield return new WaitForSeconds(2.5f);
+        CommonData.prefabs.gameobjectLookup["LowerJaw"].SetActive(false);
+        GetNewFeed();
     }
-
-    public void Point_2()
+    IEnumerator SpawnFeedAfterMiss()
     {
-       Debug.Log("Point_2");
-        StopPath();
-
+        yield return null;
+        GetNewFeed();
+        // yield return new WaitForSeconds(5f);
+        // if (Feed != null)
+        // {
+        //     Destroy(Feed);
+        // }
     }
 }

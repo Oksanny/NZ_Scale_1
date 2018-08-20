@@ -5,6 +5,7 @@ using UnityEngine;
 public class FeedIceItem : MonoBehaviour {
 
     public ControllerCrocodileFeed CrocodileController;
+    private bool checkCollider;
     // Use this for initialization
     void Start()
     {
@@ -19,24 +20,32 @@ public class FeedIceItem : MonoBehaviour {
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log(other.gameObject.name);
-        if (other.gameObject.name.Contains("jaw"))
+        if (!checkCollider&&other.gameObject.name.Contains("jaw"))
         {
-           
-            CrocodileController.HitCrocodile();
+            if (CrocodileController!=null)
+            {
+                checkCollider = true;
+                CrocodileController.HitCrocodile();
+            }
+            
 
 
         }
-        if (other.gameObject.name.Contains("Plane"))
+        if (!checkCollider&&other.gameObject.name.Contains("Floor"))
         {
-
-           // CrocodileController.MissCrocodile();
+            if (CrocodileController != null)
+            {
+                checkCollider = true;
+                CrocodileController.MissCrocodile();
+            }
+            
 
 
         }
     }
     public void SelfDestruct()
     {
-        StartCoroutine(Destruct());
+       // StartCoroutine(Destruct());
     }
 
     IEnumerator Destruct()

@@ -8,7 +8,7 @@ namespace States
     public class ShowShark : BaseState
     {
         private Menus.ShowSharkGUI menuComponent;
-        private GameObject feedHolder;
+        
         public ShowShark() { }
         public override void Initialize()
         {
@@ -23,19 +23,25 @@ namespace States
             }
             menuComponent.Label.SetActive(false);
             ShowUI();
-            feedHolder = (GameObject)Object.Instantiate(CommonData.prefabs.gameobjectLookup["PathMagicPathShark"],
-                CommonData.prefabs.gameobjectLookup["SpawnPathFeedShark"].transform.position,
-                CommonData.prefabs.gameobjectLookup["SpawnPathFeedShark"].transform.rotation);
-            feedHolder.gameObject.transform.parent = CommonData.prefabs.gameobjectLookup["ARCamera"].transform;
-            feedHolder.GetComponent<ControllerSharkFeed>().ShowShark = this;
             
+            CommonData.prefabs.gameobjectLookup["ARCamera"].GetComponent<ControllerSharkFeed>().ShowShark = this;
+            CommonData.prefabs.gameobjectLookup["ARCamera"].GetComponent<ControllerSharkFeed>().GetNewFeed();
         }
 
-        public void ChangeAnimation()
+        public void SetAnimationFightEating()
         {
-            CommonData.prefabs.gameobjectLookup["PA_Shark"].GetComponent<Animator>().SetTrigger("Feed");
+            CommonData.prefabs.gameobjectLookup["PA_Shark"].GetComponent<Animator>().SetTrigger("Shoot");
+        }
+
+        public void SetAnimationEating()
+        {
+            CommonData.prefabs.gameobjectLookup["PA_Shark"].GetComponent<Animator>().SetTrigger("Eating");
             menuComponent.Label.SetActive(true);
             menuComponent.StartCoroutine(ShowLabel());
+        }
+        public void SetAnimationEndShoot()
+        {
+            CommonData.prefabs.gameobjectLookup["PA_Shark"].GetComponent<Animator>().SetTrigger("EndShoot");
         }
 
         
@@ -54,7 +60,8 @@ namespace States
         {
 
             DestroyUI();
-            Object.Destroy(feedHolder);
+            CommonData.prefabs.gameobjectLookup["ARCamera"].GetComponent<ControllerSharkFeed>().ShowShark = null;
+            CommonData.prefabs.gameobjectLookup["ARCamera"].GetComponent<ControllerSharkFeed>().DeleteFeed();
             
             return null;
         }

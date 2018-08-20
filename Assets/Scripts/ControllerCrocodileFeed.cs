@@ -4,22 +4,25 @@ using Jacovone;
 using States;
 using UnityEngine;
 
-public class ControllerCrocodileFeed : MonoBehaviour {
+public class ControllerCrocodileFeed : MonoBehaviour
+{
     Ray ray;
     RaycastHit hit;
+    
+    public List<GameObject> MissFeeds = new List<GameObject>();
     private bool FeetHitten;
     public float Force;
     public GameObject Feed;
     public GameObject DirectionShoot;
 
-   
+
     public GameObject FeedInstant;
     public GameObject SpawnFeed;
     public ShowCrocodile ShowCrocodile;
     // Use this for initialization
     private void Start()
     {
-       
+
     }
 
     // Update is called once per frame
@@ -59,12 +62,12 @@ public class ControllerCrocodileFeed : MonoBehaviour {
         //Mouse
         if (Input.GetMouseButtonDown(0))
         {
-           // Debug.Log("Mouse is down");
+            // Debug.Log("Mouse is down");
             ray = CommonData.prefabs.gameobjectLookup["ARCamera"].GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
 
             if (Physics.Raycast(ray, out hit))
             {
-               // Debug.Log("It's working!");
+                // Debug.Log("It's working!");
 
 
                 if (hit.collider.gameObject.name.Contains("icePop"))
@@ -92,83 +95,107 @@ public class ControllerCrocodileFeed : MonoBehaviour {
         }
 #endif
     }
-  public    void GetNewFeed()
+    public void GetNewFeed()
     {
+        if (Feed == null && ShowCrocodile!=null)
+        {
+            Debug.Log("Instant");
+            GameObject feedHolder = (GameObject)Instantiate(FeedInstant, SpawnFeed.transform.position, SpawnFeed.transform.rotation);
+            feedHolder.gameObject.transform.parent = gameObject.transform;
+            Feed = feedHolder;
+        }
         
-        GameObject feedHolder = (GameObject)Instantiate(FeedInstant, SpawnFeed.transform.position, SpawnFeed.transform.rotation);
-        feedHolder.gameObject.transform.parent = gameObject.transform;
-
-        Feed = feedHolder;
 
     }
     void ShootFeed()
     {
-        Vector3 direction = DirectionShoot.transform.position - SpawnFeed.transform.position;
+        if (ShowCrocodile!=null)
+        {
+            Vector3 direction = DirectionShoot.transform.position - SpawnFeed.transform.position;
 
-        // Feed.GetComponent<CapsuleCollider>().enabled = true;
-        Feed.GetComponent<Rigidbody>().AddForce(new Vector3(direction.normalized.x * Force, direction.normalized.y * Force, direction.normalized.z * Force));
-        Feed.GetComponent<Rigidbody>().useGravity = true;
-        Feed.GetComponent<FeedIceItem>().CrocodileController = this;
-        Feed.GetComponent<FeedIceItem>().SelfDestruct();
+            Feed.GetComponent<BoxCollider>().isTrigger = false;
+            Feed.GetComponent<Rigidbody>().AddForce(new Vector3(direction.normalized.x * Force, direction.normalized.y * Force, direction.normalized.z * Force));
+            Feed.GetComponent<Rigidbody>().useGravity = true;
+            Feed.GetComponent<FeedIceItem>().CrocodileController = this;
+            Feed.GetComponent<FeedIceItem>().SelfDestruct();
+        }
+       
     }
-    
 
-     void StartFlight()
+
+    void StartFlight()
     {
         if (ShowCrocodile != null)
         {
             ShowCrocodile.SetAnimationFightEating();
+            ShootFeed();
         }
+
         
-        ShootFeed();
         // PathFlight.Play();
     }
 
     public void MissCrocodile()
     {
-        if (ShowCrocodile!=null)
+        if (ShowCrocodile != null)
         {
             ShowCrocodile.SetAnimationEndShoot();
         }
+        if (Feed!=null)
+        {
+            Feed.gameObject.transform.parent = CommonData.prefabs.gameobjectLookup["Plane"].transform;
+            MissFeeds.Add(Feed);
+            Feed = null;
+            if (MissFeeds.Count>4)
+            {
+                GameObject tempItem = MissFeeds[0];
+                MissFeeds.RemoveAt(0);
+                Destroy(tempItem);
+            }
+        }
         
-        
+
         StartCoroutine(SpawnFeedAfterMiss());
     }
     public void HitCrocodile()
     {
+        CommonData.prefabs.gameobjectLookup["Jaw"].SetActive(true);
         if (ShowCrocodile != null)
         {
             ShowCrocodile.SetAnimationEating();
         }
-        
+
         if (Feed != null)
         {
-            Destroy(Feed);
+            GameObject tempFeed = Feed;
+            Feed = null;
+            Destroy(tempFeed);
         }
         StartCoroutine(SpawnFeedAfterHiT());
     }
 
     public void DeleteFeed()
     {
-        if (Feed!=null)
+        if (Feed != null)
         {
             Destroy(Feed);
         }
-        
+
     }
     IEnumerator SpawnFeedAfterHiT()
     {
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(3.5f);
+        CommonData.prefabs.gameobjectLookup["Jaw"].SetActive(false);
         GetNewFeed();
     }
     IEnumerator SpawnFeedAfterMiss()
     {
         yield return null;
         GetNewFeed();
-      // yield return new WaitForSeconds(5f);
-      // if (Feed != null)
-      // {
-      //     Destroy(Feed);
-      // }
+        // yield return new WaitForSeconds(5f);
+        // if (Feed != null)
+        // {
+        //     Destroy(Feed);
+        // }
     }
 }

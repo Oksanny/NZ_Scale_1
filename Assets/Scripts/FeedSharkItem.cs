@@ -5,6 +5,7 @@ using UnityEngine;
 public class FeedSharkItem : MonoBehaviour
 {
     public ControllerSharkFeed SharkController;
+    private bool checkCollider;
 	// Use this for initialization
 	void Start () {
 		
@@ -16,11 +17,27 @@ public class FeedSharkItem : MonoBehaviour
 	}
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name.Contains("PA_Shark"))
+        if (other.gameObject.name.Contains("LowerJaw"))
         {
             Debug.Log("HIT");
-            SharkController.StopPath();
-            SharkController.ChangeAnimation();
+            if (SharkController != null)
+            {
+                checkCollider = true;
+                SharkController.HitShark();
+            }
+            
+
+
+        }
+        if (other.gameObject.name.Contains("Floor"))
+        {
+            if (SharkController!=null)
+            {
+                checkCollider = true;
+                SharkController.MissShark();
+            }
+
+           
 
 
         }
