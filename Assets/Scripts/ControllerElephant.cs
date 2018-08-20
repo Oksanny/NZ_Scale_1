@@ -58,7 +58,7 @@ public class ControllerElephant : MonoBehaviour {
                        //Mouse
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log("Mouse is down");
+            
             ray = CommonData.prefabs.gameobjectLookup["ARCamera"].GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
 
             if (Physics.Raycast(ray, out hit))

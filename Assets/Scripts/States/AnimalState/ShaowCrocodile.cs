@@ -23,19 +23,28 @@ namespace States
             }
             ShowUI();
             menuComponent.Label.SetActive(false);
-            feedHolder = (GameObject)Object.Instantiate(CommonData.prefabs.gameobjectLookup["PathMagicPathCrocodile"],
-                CommonData.prefabs.gameobjectLookup["SpawnPathFeedCrocodile"].transform.position,
-                CommonData.prefabs.gameobjectLookup["SpawnPathFeedCrocodile"].transform.rotation);
-            feedHolder.gameObject.transform.parent = CommonData.prefabs.gameobjectLookup["ARCamera"].transform;
-            feedHolder.GetComponent<ControllerCrocodileFeed>().ShowCrocodile = this;
+            
+            CommonData.prefabs.gameobjectLookup["ARCamera"].GetComponent<ControllerCrocodileFeed>().ShowCrocodile = this;
+            CommonData.prefabs.gameobjectLookup["ARCamera"].GetComponent<ControllerCrocodileFeed>().GetNewFeed();
            
         }
-        public void ChangeAnimation()
+
+        public void SetAnimationFightEating()
+        {
+            CommonData.prefabs.gameobjectLookup["crocodile_01"].GetComponent<Animator>().SetTrigger("Shoot");
+        }
+
+        public void SetAnimationEating()
         {
             CommonData.prefabs.gameobjectLookup["crocodile_01"].GetComponent<Animator>().SetTrigger("Eating");
             menuComponent.Label.SetActive(true);
             menuComponent.StartCoroutine(ShowLabel());
         }
+        public void SetAnimationEndShoot()
+        {
+            CommonData.prefabs.gameobjectLookup["crocodile_01"].GetComponent<Animator>().SetTrigger("EndShoot");
+        }
+        
         IEnumerator ShowLabel()
         {
             yield return new WaitForSeconds(2f);
@@ -51,8 +60,8 @@ namespace States
         {
 
             DestroyUI();
-            
-            Object.Destroy(feedHolder);
+            CommonData.prefabs.gameobjectLookup["ARCamera"].GetComponent<ControllerCrocodileFeed>().ShowCrocodile = null;
+            CommonData.prefabs.gameobjectLookup["ARCamera"].GetComponent<ControllerCrocodileFeed>().DeleteFeed();
             return null;
         }
 

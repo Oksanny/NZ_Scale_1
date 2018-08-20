@@ -18,13 +18,33 @@ public class FeedIceItem : MonoBehaviour {
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name.Contains("spine1_loResSpine1"))
+        Debug.Log(other.gameObject.name);
+        if (other.gameObject.name.Contains("jaw"))
         {
-            Debug.Log("HIT Croc");
-            CrocodileController.StopPath();
-            CrocodileController.ChangeAnimation();
+           
+            CrocodileController.HitCrocodile();
 
 
         }
+        if (other.gameObject.name.Contains("Plane"))
+        {
+
+           // CrocodileController.MissCrocodile();
+
+
+        }
+    }
+    public void SelfDestruct()
+    {
+        StartCoroutine(Destruct());
+    }
+
+    IEnumerator Destruct()
+    {
+        yield return new WaitForSeconds(1f);
+        
+       CrocodileController.MissCrocodile();
+       yield return new WaitForSeconds(3f);
+        Destroy(gameObject);
     }
 }
