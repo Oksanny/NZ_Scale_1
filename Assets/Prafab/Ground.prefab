@@ -1744,7 +1744,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4548442787770542}
-  - component: {fileID: 114533741245586548}
   m_Layer: 0
   m_Name: Feed_amberjack_dummy
   m_TagString: Untagged
@@ -3201,7 +3200,6 @@ GameObject:
   - component: {fileID: 4880829341521686}
   - component: {fileID: 33451194308807056}
   - component: {fileID: 23537768174118512}
-  - component: {fileID: 114757327668332406}
   m_Layer: 0
   m_Name: icePop_dummy
   m_TagString: Untagged
@@ -10208,18 +10206,6 @@ MonoBehaviour:
   samplesDistances: []
   totalDistance: 0
   updateTransform: 1
---- !u!114 &114533741245586548
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1473762360211948}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16e2ed1c1816e254ebb00b0bd0d0edf9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SharkController: {fileID: 0}
 --- !u!114 &114727424237021702
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -10248,18 +10234,6 @@ MonoBehaviour:
   PathRoundLion: {fileID: 114159607361620452}
   animationCage: {fileID: 111870232462524520}
   AnimatorLion: {fileID: 95676093968905438}
---- !u!114 &114757327668332406
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1824381614061644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 465ec0b1faa915640b5b2ac7e9c2042c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CrocodileController: {fileID: 0}
 --- !u!114 &114838967961029058
 MonoBehaviour:
   m_ObjectHideFlags: 1
