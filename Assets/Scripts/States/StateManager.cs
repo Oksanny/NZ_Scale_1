@@ -27,14 +27,13 @@ namespace States
         // down the line.
         public void PopState()
         {
-            if (stateStack.Count>1)
-            {
+            
                 Debug.Log("Count3=" + stateStack.Count);
                 StateExitValue result = CurrentState().Cleanup();
                 stateStack.Pop();
                 CurrentState().Resume(result);
                 Debug.Log("Count4=" + stateStack.Count);
-            }
+            
             
         }
         // Switches the current state for a new one, without disturbing
