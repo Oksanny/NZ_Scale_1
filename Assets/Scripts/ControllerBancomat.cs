@@ -28,7 +28,7 @@ public class ControllerBancomat : MonoBehaviour
             if (touch.phase == TouchPhase.Stationary && Physics.Raycast(ray.origin, ray.direction, out hit))
             {
 
-                if (hit.collider.gameObject.name.Contains("Geldautomat_1") )
+                if (hit.collider.gameObject.name.Contains("ATM") )
                 {
                     
                     // Debug.Log("It's working!");
@@ -66,7 +66,7 @@ public class ControllerBancomat : MonoBehaviour
                 Debug.Log("It's working!");
 
 
-                if (hit.collider.gameObject.name.Contains("Geldautomat_1"))
+                if (hit.collider.gameObject.name.Contains("ATM"))
                 {
 
                     // Debug.Log("It's working!");
