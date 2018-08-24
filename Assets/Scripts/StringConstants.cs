@@ -4,10 +4,10 @@ using UnityEngine;
 
  class StringConstants
  {
-     public const float TimeGame = 36f;
-     public const float TimePoint_1 = 27f;
-     public const float TimePoint_2 = 30f;
-     public const float TimePoint_3 = 33f;
+     public const float TimeGame = 360f;
+     public const float TimePoint_1 = 270f;
+     public const float TimePoint_2 = 300f;
+     public const float TimePoint_3 = 330f;
     
      // Title screen text:
      public const string CouldNotFetchUserData = "Could not connect to user database.\n" +
