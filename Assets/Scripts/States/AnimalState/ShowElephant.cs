@@ -9,6 +9,9 @@ namespace States
     {
         private Menus.ShowElephantGUI menuComponent;
         private GameObject Elephant;
+        private Vector3 pointElephantVector3;
+        private Vector3 pointARCamerVector3;
+        private bool complete;
         public ShowElephant() { }
         public override void Initialize()
         {
@@ -17,17 +20,30 @@ namespace States
         }
         private void InitializeUI()
         {
+            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointElephant].SetActive(false);
             if (menuComponent == null)
             {
                 menuComponent = SpawnUI<Menus.ShowElephantGUI>(StringConstants.PrefabShowElephant);
             }
             ShowUI();
-            menuComponent.Label.SetActive(false);
-            Elephant = CommonData.prefabs.gameobjectLookup["Baby_Elephant"];
+            menuComponent.LabelGreat.SetActive(false);
+            menuComponent.LabelPoint.SetActive(false);
+            Elephant = CommonData.prefabs.gameobjectLookup[StringConstants.PrefabElephant];
             SetFightAnimation();
             Elephant.GetComponent<ControllerElephant>().ShowElephant = this;
             Elephant.GetComponent<CapsuleCollider>().enabled = true;
             
+        }
+        public override void Update()
+        {
+            pointElephantVector3 = new Vector3(CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointElephant].transform.position.x, 0, CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointElephant].transform.position.z);
+            pointARCamerVector3 = new Vector3(CommonData.prefabs.gameobjectLookup[StringConstants.ARCamera].transform.position.x, 0, CommonData.prefabs.gameobjectLookup[StringConstants.ARCamera].transform.position.z);
+            if (!complete&&Vector3.Distance(pointElephantVector3, pointARCamerVector3) > 0.5f)
+            {
+                Debug.Log("Shark");
+                CommonData.mainManager.stateManager.SwapState(new CheckElephant());
+
+            }
         }
         public override void Suspend()
         {
@@ -49,19 +65,28 @@ namespace States
         }
         public void ShowResult()
         {
-            menuComponent.Label.SetActive(true);
+            Elephant.GetComponent<CapsuleCollider>().enabled = false;
+            SetTickleAnimation();
+            menuComponent.LabelGreat.SetActive(true);
+            menuComponent.LabelPoint.SetActive(true);
+            CommonData.currentUser.data.Plus += 250;
+            complete = true;
+            Elephant.GetComponent<ControllerElephant>().ShowElephant = null;
+            Elephant.GetComponent<CapsuleCollider>().enabled = false;
             menuComponent.StartCoroutine(ShowLabel());
         }
         IEnumerator ShowLabel()
         {
             yield return new WaitForSeconds(2f);
-            menuComponent.Label.SetActive(false);
+            menuComponent.LabelGreat.SetActive(false);
+            menuComponent.LabelPoint.SetActive(false);
+            CommonData.mainManager.stateManager.SwapState(new CheckSmartphone());
         }
         public override StateExitValue Cleanup()
         {
             SetIdleAnimation();
             Elephant.GetComponent<ControllerElephant>().ShowElephant = null;
-            
+            Elephant.GetComponent<CapsuleCollider>().enabled = false;
             DestroyUI();
             return null;
         }

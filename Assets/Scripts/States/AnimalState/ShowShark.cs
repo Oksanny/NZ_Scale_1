@@ -8,7 +8,9 @@ namespace States
     public class ShowShark : BaseState
     {
         private Menus.ShowSharkGUI menuComponent;
-        
+        private Vector3 pointSharktVector3;
+        private Vector3 pointARCamerVector3;
+        private bool complete;
         public ShowShark() { }
         public override void Initialize()
         {
@@ -17,38 +19,64 @@ namespace States
         }
         private void InitializeUI()
         {
+            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointShark].SetActive(false);
             if (menuComponent == null)
             {
                 menuComponent = SpawnUI<Menus.ShowSharkGUI>(StringConstants.PrefabShowShark);
             }
-            menuComponent.Label.SetActive(false);
+            menuComponent.LabelGreat.SetActive(false);
+            menuComponent.LabelMiss.SetActive(false);
+            menuComponent.LabelPoint.SetActive(false);
             ShowUI();
             
-            CommonData.prefabs.gameobjectLookup["ARCamera"].GetComponent<ControllerSharkFeed>().ShowShark = this;
-            CommonData.prefabs.gameobjectLookup["ARCamera"].GetComponent<ControllerSharkFeed>().GetNewFeed();
+            CommonData.prefabs.gameobjectLookup[StringConstants.ARCamera].GetComponent<ControllerSharkFeed>().ShowShark = this;
+            CommonData.prefabs.gameobjectLookup[StringConstants.ARCamera].GetComponent<ControllerSharkFeed>().GetNewFeed();
         }
+        public override void Update()
+        {
+            pointSharktVector3 = new Vector3(CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointShark].transform.position.x, 0, CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointShark].transform.position.z);
+            pointARCamerVector3 = new Vector3(CommonData.prefabs.gameobjectLookup[StringConstants.ARCamera].transform.position.x, 0, CommonData.prefabs.gameobjectLookup[StringConstants.ARCamera].transform.position.z);
+            if (!complete&&Vector3.Distance(pointSharktVector3, pointARCamerVector3) > 0.5f)
+            {
+                Debug.Log("Shark");
+                CommonData.mainManager.stateManager.SwapState(new CheckShark());
 
+            }
+        }
         public void SetAnimationFightEating()
         {
-            CommonData.prefabs.gameobjectLookup["PA_Shark"].GetComponent<Animator>().SetTrigger("Shoot");
+            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabShark].GetComponent<Animator>().SetTrigger("Shoot");
         }
 
         public void SetAnimationEating()
         {
-            CommonData.prefabs.gameobjectLookup["PA_Shark"].GetComponent<Animator>().SetTrigger("Eating");
-            menuComponent.Label.SetActive(true);
-            menuComponent.StartCoroutine(ShowLabel());
+            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabShark].GetComponent<Animator>().SetTrigger("Eating");
+            
+            menuComponent.StartCoroutine(ShowLabelGreat());
         }
         public void SetAnimationEndShoot()
         {
-            CommonData.prefabs.gameobjectLookup["PA_Shark"].GetComponent<Animator>().SetTrigger("EndShoot");
+            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabShark].GetComponent<Animator>().SetTrigger("EndShoot");
+            menuComponent.StartCoroutine(ShowLAbelMiss());
         }
-
         
-        IEnumerator ShowLabel()
+        IEnumerator ShowLAbelMiss()
         {
+            menuComponent.LabelMiss.SetActive(true);
+            yield return new WaitForSeconds(1f);
+            menuComponent.LabelMiss.SetActive(false);
+        }
+        IEnumerator ShowLabelGreat()
+        {
+            menuComponent.LabelGreat.SetActive(true);
+            menuComponent.LabelPoint.SetActive(true);
+            CommonData.currentUser.data.Plus += 250;
+            complete = true;
+            CommonData.prefabs.gameobjectLookup[StringConstants.ARCamera].GetComponent<ControllerSharkFeed>().DeleteFeed();
+            CommonData.prefabs.gameobjectLookup[StringConstants.ARCamera].GetComponent<ControllerSharkFeed>().ShowShark = null;
             yield return new WaitForSeconds(2f);
-            menuComponent.Label.SetActive(false);
+            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabShark].GetComponent<Animator>().SetTrigger("EndShoot");
+            CommonData.mainManager.stateManager.SwapState(new CheckServiceProvider());
         }
         public override void Suspend()
         {
@@ -60,8 +88,10 @@ namespace States
         {
 
             DestroyUI();
-            CommonData.prefabs.gameobjectLookup["ARCamera"].GetComponent<ControllerSharkFeed>().ShowShark = null;
-            CommonData.prefabs.gameobjectLookup["ARCamera"].GetComponent<ControllerSharkFeed>().DeleteFeed();
+            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabShark].GetComponent<Animator>().SetTrigger("EndShoot");
+            CommonData.prefabs.gameobjectLookup[StringConstants.ARCamera].GetComponent<ControllerSharkFeed>().DeleteFeed();
+            CommonData.prefabs.gameobjectLookup[StringConstants.ARCamera].GetComponent<ControllerSharkFeed>().ShowShark = null;
+            
             
             return null;
         }

@@ -9,6 +9,8 @@ namespace States
     {
         private Menus.CheckSharkGUI menuComponent;
         public CheckShark() { }
+        private Vector3 pointSharkVector3;
+        private Vector3 pointARCamerVector3;
         public override void Initialize()
         {
 
@@ -20,8 +22,20 @@ namespace States
             {
                 menuComponent = SpawnUI<Menus.CheckSharkGUI>(StringConstants.PrefabCheckShark);
             }
+            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointShark].SetActive(true);
             ShowUI();
 
+        }
+        public override void Update()
+        {
+            pointSharkVector3 = new Vector3(CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointShark].transform.position.x, 0, CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointShark].transform.position.z);
+            pointARCamerVector3 = new Vector3(CommonData.prefabs.gameobjectLookup[StringConstants.ARCamera].transform.position.x, 0, CommonData.prefabs.gameobjectLookup[StringConstants.ARCamera].transform.position.z);
+            if (Vector3.Distance(pointSharkVector3, pointARCamerVector3) <= 0.5f)
+            {
+                Debug.Log("BAncomat");
+                CommonData.mainManager.stateManager.SwapState(new ShowShark());
+
+            }
         }
         public override void Suspend()
         {

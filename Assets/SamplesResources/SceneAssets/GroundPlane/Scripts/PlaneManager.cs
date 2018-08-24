@@ -160,7 +160,16 @@ public class PlaneManager : MonoBehaviour
 
                     CityIsPlaced = true;
                     allowInterActive = false;
-                    CommonData.StateAnimal = true;
+                    if (CommonData.currentUser == null)
+                    {
+                        CommonData.currentUser = new DBStruct<UserData>("player");
+                    }
+                   // CommonData.currentUser.data.Plus += 300;
+                   // CommonData.currentUser.data.Minus -= 200;
+                    CommonData.mainManager.stateManager.PushState(new CheckBancomat());
+                    CommonData.prefabs.gameobjectLookup[StringConstants.PrefabTimer].SetActive(true);
+                    CommonData.prefabs.gameobjectLookup[StringConstants.PrefabTimer].GetComponent<ControllerTime>().StartTime = true;
+                   // CommonData.StateAnimal = true;
                     setOblect = true;
                     break;
 

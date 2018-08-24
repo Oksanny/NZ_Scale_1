@@ -9,6 +9,8 @@ namespace States
     {
         private Menus.CheckLionGUI menuComponent;
         public CheckLion() { }
+        private Vector3 pointLionVector3;
+        private Vector3 pointARCamerVector3;
         public override void Initialize()
         {
 
@@ -21,7 +23,18 @@ namespace States
                 menuComponent = SpawnUI<Menus.CheckLionGUI>(StringConstants.PrefabCheckLion);
             }
             ShowUI();
-            CommonData.StateAnimal = true;
+            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointLion].SetActive(true);
+        }
+        public override void Update()
+        {
+            pointLionVector3 = new Vector3(CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointLion].transform.position.x, 0, CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointLion].transform.position.z);
+            pointARCamerVector3 = new Vector3(CommonData.prefabs.gameobjectLookup[StringConstants.ARCamera].transform.position.x, 0, CommonData.prefabs.gameobjectLookup[StringConstants.ARCamera].transform.position.z);
+            if (Vector3.Distance(pointLionVector3, pointARCamerVector3) <= 0.5f)
+            {
+                Debug.Log("BAncomat");
+                CommonData.mainManager.stateManager.SwapState(new ShowLion());
+
+            }
         }
         public override void Suspend()
         {
@@ -39,17 +52,7 @@ namespace States
         public override void HandleUIEvent(GameObject source, object eventData)
         {
 
-            if (source == menuComponent.Previous_Button.gameObject)
-            {
-                Debug.Log(source.name);
-                manager.SwapState(new ShowCrocodile());
-
-            }
-            else if (source == menuComponent.Next_Button.gameObject)
-            {
-                Debug.Log(source.name);
-                manager.SwapState(new ShowLion());
-            }
+            
 
         }
     }

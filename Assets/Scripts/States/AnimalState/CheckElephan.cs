@@ -9,6 +9,8 @@ namespace States
     {
         private Menus.CheckElephantGUI menuComponent;
         public CheckElephant() { }
+        private Vector3 pointElephantkVector3;
+        private Vector3 pointARCamerVector3;
         public override void Initialize()
         {
 
@@ -20,8 +22,20 @@ namespace States
             {
                 menuComponent = SpawnUI<Menus.CheckElephantGUI>(StringConstants.PrefabCheckElephant);
             }
+            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointElephant].SetActive(true);
             ShowUI();
 
+        }
+        public override void Update()
+        {
+            pointElephantkVector3 = new Vector3(CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointElephant].transform.position.x, 0, CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointElephant].transform.position.z);
+            pointARCamerVector3 = new Vector3(CommonData.prefabs.gameobjectLookup[StringConstants.ARCamera].transform.position.x, 0, CommonData.prefabs.gameobjectLookup[StringConstants.ARCamera].transform.position.z);
+            if (Vector3.Distance(pointElephantkVector3, pointARCamerVector3) <= 0.5f)
+            {
+                Debug.Log("BAncomat");
+                CommonData.mainManager.stateManager.SwapState(new ShowElephant());
+
+            }
         }
         public override void Suspend()
         {
@@ -40,17 +54,17 @@ namespace States
         {
 
 
-            if (source == menuComponent.Previous_Button.gameObject)
-            {
-                Debug.Log(source.name);
-                manager.SwapState(new ShowShark());
-
-            }
-            else if (source == menuComponent.Next_Button.gameObject)
-            {
-                Debug.Log(source.name);
-                manager.SwapState(new ShowElephant());
-            }
+          // if (source == menuComponent.Previous_Button.gameObject)
+          // {
+          //     Debug.Log(source.name);
+          //     manager.SwapState(new ShowShark());
+          //
+          // }
+          // else if (source == menuComponent.Next_Button.gameObject)
+          // {
+          //     Debug.Log(source.name);
+          //     manager.SwapState(new ShowElephant());
+          // }
         }
     }
 }

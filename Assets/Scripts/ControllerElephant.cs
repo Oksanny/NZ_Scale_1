@@ -36,7 +36,7 @@ public class ControllerElephant : MonoBehaviour {
                     }
                     // Debug.Log("It's working!");
                     FeetHitten = true;
-                    ShowElephant.SetTickleAnimation();
+                   
                    
                 }
 
@@ -73,7 +73,7 @@ public class ControllerElephant : MonoBehaviour {
                     {
                         countHit = 0;
                         ShowElephant.ShowResult();
-                        ShowElephant.SetTickleAnimation();
+                        
                     }
                     // Debug.Log("It's working!");
                     FeetHitten = true;

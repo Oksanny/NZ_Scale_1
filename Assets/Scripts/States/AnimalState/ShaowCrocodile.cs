@@ -10,6 +10,9 @@ namespace States
         private Menus.ShowCrocodileGUI menuComponent;
         private GameObject feedHolder;
         public ShowCrocodile() { }
+        private Vector3 pointCrocodileVector3;
+        private Vector3 pointARCamerVector3;
+        private bool complete;
         public override void Initialize()
         {
 
@@ -17,18 +20,31 @@ namespace States
         }
         private void InitializeUI()
         {
+            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointCrocodile].SetActive(false);
             if (menuComponent == null)
             {
                 menuComponent = SpawnUI<Menus.ShowCrocodileGUI>(StringConstants.PrefabShowCrocodile);
             }
             ShowUI();
-            menuComponent.Label.SetActive(false);
-            
-            CommonData.prefabs.gameobjectLookup["ARCamera"].GetComponent<ControllerCrocodileFeed>().ShowCrocodile = this;
-            CommonData.prefabs.gameobjectLookup["ARCamera"].GetComponent<ControllerCrocodileFeed>().GetNewFeed();
+            menuComponent.LabelGreat.SetActive(false);
+            menuComponent.LabelMiss.SetActive(false);
+            menuComponent.LabelPoint.SetActive(false);
+
+            CommonData.prefabs.gameobjectLookup[StringConstants.ARCamera].GetComponent<ControllerCrocodileFeed>().ShowCrocodile = this;
+            CommonData.prefabs.gameobjectLookup[StringConstants.ARCamera].GetComponent<ControllerCrocodileFeed>().GetNewFeed();
            
         }
+        public override void Update()
+        {
+            pointCrocodileVector3 = new Vector3(CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointCrocodile].transform.position.x, 0, CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointCrocodile].transform.position.z);
+            pointARCamerVector3 = new Vector3(CommonData.prefabs.gameobjectLookup[StringConstants.ARCamera].transform.position.x, 0, CommonData.prefabs.gameobjectLookup[StringConstants.ARCamera].transform.position.z);
+            if (!complete&&Vector3.Distance(pointCrocodileVector3, pointARCamerVector3) > 0.5f)
+            {
+                Debug.Log("Shark");
+                CommonData.mainManager.stateManager.SwapState(new CheckCrocodile());
 
+            }
+        }
         public void SetAnimationFightEating()
         {
             CommonData.prefabs.gameobjectLookup["crocodile_01"].GetComponent<Animator>().SetTrigger("Shoot");
@@ -37,18 +53,31 @@ namespace States
         public void SetAnimationEating()
         {
             CommonData.prefabs.gameobjectLookup["crocodile_01"].GetComponent<Animator>().SetTrigger("Eating");
-            menuComponent.Label.SetActive(true);
-            menuComponent.StartCoroutine(ShowLabel());
+            menuComponent.LabelGreat.SetActive(true);
+            menuComponent.LabelPoint.SetActive(true);
+            CommonData.currentUser.data.Plus += 250;
+            complete = true;
+            CommonData.prefabs.gameobjectLookup["ARCamera"].GetComponent<ControllerCrocodileFeed>().DeleteFeed();
+            CommonData.prefabs.gameobjectLookup[StringConstants.ARCamera].GetComponent<ControllerCrocodileFeed>().ShowCrocodile = null;
+            menuComponent.StartCoroutine(Exit());
         }
         public void SetAnimationEndShoot()
         {
             CommonData.prefabs.gameobjectLookup["crocodile_01"].GetComponent<Animator>().SetTrigger("EndShoot");
+            menuComponent.LabelMiss.SetActive(true);
+            menuComponent.StartCoroutine(HideLabel());
         }
-        
-        IEnumerator ShowLabel()
+        IEnumerator HideLabel()
         {
             yield return new WaitForSeconds(2f);
-            menuComponent.Label.SetActive(false);
+            menuComponent.LabelMiss.SetActive(false);
+            
+        }
+        IEnumerator Exit()
+        {
+            yield return new WaitForSeconds(2f);
+            menuComponent.LabelGreat.SetActive(false);
+            CommonData.mainManager.stateManager.SwapState(new SpecialBonus());
         }
         public override void Suspend()
         {
@@ -60,8 +89,8 @@ namespace States
         {
 
             DestroyUI();
-            CommonData.prefabs.gameobjectLookup["ARCamera"].GetComponent<ControllerCrocodileFeed>().ShowCrocodile = null;
-            CommonData.prefabs.gameobjectLookup["ARCamera"].GetComponent<ControllerCrocodileFeed>().DeleteFeed();
+            CommonData.prefabs.gameobjectLookup[StringConstants.ARCamera].GetComponent<ControllerCrocodileFeed>().ShowCrocodile = null;
+            CommonData.prefabs.gameobjectLookup[StringConstants.ARCamera].GetComponent<ControllerCrocodileFeed>().DeleteFeed();
             return null;
         }
 

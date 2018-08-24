@@ -7,6 +7,8 @@ namespace States
 {
     public class ShowLion : BaseState
     {
+        private Vector3 pointLionVector3;
+        private Vector3 pointARCamerVector3;
         private ControllerPathLion controllerPathLion;
         private WritingHandler WrHandler;
         private float timeN = 10f;
@@ -16,6 +18,7 @@ namespace States
         private Menus.ShowLionGUI menuComponent;
         public ShowLion() { }
         private GameObject letterHolder;
+        private bool complete;
         public override void Initialize()
         {
 
@@ -23,6 +26,7 @@ namespace States
         }
         private void InitializeUI()
         {
+            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointLion].SetActive(false);
             if ( !CommonData.StateLion)
             {
                 if (menuComponent == null)
@@ -45,11 +49,20 @@ namespace States
                 menuComponent.LabelInfo.SetActive(true);
                 menuComponent.LabelTimeOut.SetActive(false);
                 menuComponent.LabelGreat.SetActive(false);
+                menuComponent.LabelPoint.SetActive(false);
             }
             
         }
         public override void Update()
         {
+            pointLionVector3 = new Vector3(CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointLion].transform.position.x, 0, CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointLion].transform.position.z);
+            pointARCamerVector3 = new Vector3(CommonData.prefabs.gameobjectLookup[StringConstants.ARCamera].transform.position.x, 0, CommonData.prefabs.gameobjectLookup[StringConstants.ARCamera].transform.position.z);
+            if (!complete&&Vector3.Distance(pointLionVector3, pointARCamerVector3) > 0.5f)
+            {
+                Debug.Log("Shark");
+                CommonData.mainManager.stateManager.SwapState(new CheckLion());
+
+            }
             if (!CommonData.StateLion)
             {
                 currentTime += Time.deltaTime;
@@ -96,7 +109,10 @@ namespace States
             {
                 CommonData.StateLion = true;
                 currentTime = 0;
+                complete = true;
                 menuComponent.LabelGreat.SetActive(true);
+                menuComponent.LabelPoint.SetActive(true);
+                CommonData.currentUser.data.Plus += 250;
                 menuComponent.StartCoroutine(DeleteLetter());
             }
             
@@ -111,7 +127,8 @@ namespace States
                 WrHandler.RefreshProcess();
             }
             controllerPathLion.StartExit();
-            Object.Destroy(letterHolder);
+            
+            CommonData.mainManager.stateManager.SwapState(new CheckAcssesorShop());
         }
         public override void Suspend()
         {
@@ -121,8 +138,6 @@ namespace States
 
         public override StateExitValue Cleanup()
         {
-
-            DestroyUI();
             if (WrHandler != null)
             {
                 WrHandler.RefreshProcess();
@@ -130,6 +145,9 @@ namespace States
             
             WritingHandler.currentLetterIndex = 0;
             Object.Destroy(letterHolder);
+            DestroyUI();
+           
+            
             return null;
         }
 

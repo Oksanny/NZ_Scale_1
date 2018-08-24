@@ -1,0 +1,200 @@
+fileFormatVersion: 2
+guid: 4d78ad0fb5966804ba1e3ff9c91f6237
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: powerbank_sunum:camera1
+    100004: powerbank_sunum:directionalLight1
+    100006: powerbank_sunum:group1
+    100008: powerbank_sunum:group2
+    100010: powerbank_sunum:pCube3
+    100012: powerbank_sunum:pCube3 1
+    100014: powerbank_sunum:polySurface10
+    100016: powerbank_sunum:polySurface10 1
+    100018: powerbank_sunum:polySurface12
+    100020: powerbank_sunum:polySurface12 1
+    100022: powerbank_sunum:polySurface14
+    100024: powerbank_sunum:polySurface14 1
+    100026: powerbank_sunum:polySurface3
+    100028: powerbank_sunum:polySurface3 1
+    100030: powerbank_sunum:polySurface5
+    100032: powerbank_sunum:polySurface5 1
+    100034: powerbank_sunum:polySurface6
+    100036: powerbank_sunum:polySurface6 1
+    100038: powerbank_sunum:polySurface8
+    100040: powerbank_sunum:polySurface8 1
+    100042: powerbank_sunum:polySurface9
+    100044: powerbank_sunum:polySurface9 1
+    100046: powerbank_sunum:pPlane1
+    400000: //RootNode
+    400002: powerbank_sunum:camera1
+    400004: powerbank_sunum:directionalLight1
+    400006: powerbank_sunum:group1
+    400008: powerbank_sunum:group2
+    400010: powerbank_sunum:pCube3
+    400012: powerbank_sunum:pCube3 1
+    400014: powerbank_sunum:polySurface10
+    400016: powerbank_sunum:polySurface10 1
+    400018: powerbank_sunum:polySurface12
+    400020: powerbank_sunum:polySurface12 1
+    400022: powerbank_sunum:polySurface14
+    400024: powerbank_sunum:polySurface14 1
+    400026: powerbank_sunum:polySurface3
+    400028: powerbank_sunum:polySurface3 1
+    400030: powerbank_sunum:polySurface5
+    400032: powerbank_sunum:polySurface5 1
+    400034: powerbank_sunum:polySurface6
+    400036: powerbank_sunum:polySurface6 1
+    400038: powerbank_sunum:polySurface8
+    400040: powerbank_sunum:polySurface8 1
+    400042: powerbank_sunum:polySurface9
+    400044: powerbank_sunum:polySurface9 1
+    400046: powerbank_sunum:pPlane1
+    2000000: powerbank_sunum:camera1
+    2100000: powerbank_sunum_lambert2
+    2100002: powerbank_sunum_siyah
+    2100004: lambert1
+    2100006: powerbank_sunum_beyaz
+    2100008: powerbank_sunum_useBackground1
+    2300000: powerbank_sunum:pCube3
+    2300002: powerbank_sunum:pCube3 1
+    2300004: powerbank_sunum:polySurface10
+    2300006: powerbank_sunum:polySurface10 1
+    2300008: powerbank_sunum:polySurface12
+    2300010: powerbank_sunum:polySurface12 1
+    2300012: powerbank_sunum:polySurface14
+    2300014: powerbank_sunum:polySurface14 1
+    2300016: powerbank_sunum:polySurface3
+    2300018: powerbank_sunum:polySurface3 1
+    2300020: powerbank_sunum:polySurface5
+    2300022: powerbank_sunum:polySurface5 1
+    2300024: powerbank_sunum:polySurface6
+    2300026: powerbank_sunum:polySurface6 1
+    2300028: powerbank_sunum:polySurface8
+    2300030: powerbank_sunum:polySurface8 1
+    2300032: powerbank_sunum:polySurface9
+    2300034: powerbank_sunum:polySurface9 1
+    2300036: powerbank_sunum:pPlane1
+    3300000: powerbank_sunum:pCube3
+    3300002: powerbank_sunum:pCube3 1
+    3300004: powerbank_sunum:polySurface10
+    3300006: powerbank_sunum:polySurface10 1
+    3300008: powerbank_sunum:polySurface12
+    3300010: powerbank_sunum:polySurface12 1
+    3300012: powerbank_sunum:polySurface14
+    3300014: powerbank_sunum:polySurface14 1
+    3300016: powerbank_sunum:polySurface3
+    3300018: powerbank_sunum:polySurface3 1
+    3300020: powerbank_sunum:polySurface5
+    3300022: powerbank_sunum:polySurface5 1
+    3300024: powerbank_sunum:polySurface6
+    3300026: powerbank_sunum:polySurface6 1
+    3300028: powerbank_sunum:polySurface8
+    3300030: powerbank_sunum:polySurface8 1
+    3300032: powerbank_sunum:polySurface9
+    3300034: powerbank_sunum:polySurface9 1
+    3300036: powerbank_sunum:pPlane1
+    4300000: powerbank_sunum:polySurface8
+    4300002: powerbank_sunum:polySurface9
+    4300004: powerbank_sunum:polySurface3
+    4300006: powerbank_sunum:polySurface5
+    4300008: powerbank_sunum:polySurface6
+    4300010: powerbank_sunum:polySurface10
+    4300012: powerbank_sunum:polySurface12
+    4300014: powerbank_sunum:pCube3
+    4300016: powerbank_sunum:polySurface14
+    4300018: powerbank_sunum:polySurface8
+    4300020: powerbank_sunum:polySurface9
+    4300022: powerbank_sunum:polySurface3
+    4300024: powerbank_sunum:polySurface5
+    4300026: powerbank_sunum:polySurface6
+    4300028: powerbank_sunum:polySurface10
+    4300030: powerbank_sunum:polySurface12
+    4300032: powerbank_sunum:pCube3
+    4300034: powerbank_sunum:polySurface14
+    4300036: powerbank_sunum:pPlane1
+    10800000: powerbank_sunum:directionalLight1
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

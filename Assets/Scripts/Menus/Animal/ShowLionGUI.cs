@@ -9,6 +9,7 @@ namespace Menus
         public GameObject LabelInfo;
         public GameObject LabelTimeOut;
         public GameObject LabelGreat;
+        public GameObject LabelPoint;
         // public GUIButton Previous_Button;
         //  public GUIButton Next_Button;
 
