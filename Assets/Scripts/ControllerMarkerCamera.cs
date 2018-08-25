@@ -34,7 +34,7 @@ public class ControllerMarkerCamera : MonoBehaviour
             ArCameraGameObject.transform.position.z - CenterZona.transform.position.z);
          Debug.Log("word= "+WordCoordinate.x+"   "+WordCoordinate.z);
 
-        ImageCursor.anchoredPosition = new Vector2(-WordCoordinate.x * factorTransform, WordCoordinate.z * factorTransform);
+        ImageCursor.anchoredPosition = new Vector2(-WordCoordinate.z * factorTransform, WordCoordinate.x * factorTransform);
         Debug.Log("Image= " + new Vector2(WordCoordinate.z * factorTransform, -WordCoordinate.x * factorTransform));
     }
 }
