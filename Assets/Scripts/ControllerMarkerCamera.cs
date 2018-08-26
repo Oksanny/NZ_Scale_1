@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class ControllerMarkerCamera : MonoBehaviour
 {
+    public Text angelCamera;
+    public Text angelGround;
     public GameObject CenterZona;
     public GameObject ArCameraGameObject;
     public GameObject ReperPoint;
@@ -22,6 +24,8 @@ public class ControllerMarkerCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        angelCamera.text = ArCameraGameObject.transform.eulerAngles.z.ToString();
+        angelGround.text = CenterZona.transform.eulerAngles.z.ToString();
         Debug.Log("CZ="+CenterZona.transform.position);
         Debug.Log("AR="+ArCameraGameObject.transform.position);
         factorTransform = ImagePreview.rect.height / 2/Vector3.Distance(new Vector3(CenterZona.transform.position.x, CenterZona.transform.position.y, CenterZona.transform.position.z),
