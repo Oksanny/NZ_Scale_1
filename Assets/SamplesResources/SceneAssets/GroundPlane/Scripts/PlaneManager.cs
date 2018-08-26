@@ -166,7 +166,7 @@ public class PlaneManager : MonoBehaviour
                     }
                    // CommonData.currentUser.data.Plus += 300;
                    // CommonData.currentUser.data.Minus -= 200;
-                    CommonData.mainManager.stateManager.PushState(new CheckBancomat());
+                    CommonData.mainManager.stateManager.PushState(new CheckLion());
                     CommonData.prefabs.gameobjectLookup[StringConstants.PrefabTimer].SetActive(true);
                     CommonData.prefabs.gameobjectLookup[StringConstants.PrefabMarkerCamera].SetActive(true);
                     CommonData.prefabs.gameobjectLookup[StringConstants.PrefabTimer].GetComponent<ControllerTime>().StartTime = true;

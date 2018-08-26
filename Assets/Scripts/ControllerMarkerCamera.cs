@@ -37,7 +37,7 @@ public class ControllerMarkerCamera : MonoBehaviour
         Vector3 WordCoordinate = new Vector3(ArCameraGameObject.transform.position.x - CenterZona.transform.position.x,
             ArCameraGameObject.transform.position.y - CenterZona.transform.position.y,
             ArCameraGameObject.transform.position.z - CenterZona.transform.position.z);
-         Debug.Log("word= "+WordCoordinate.x+"   "+WordCoordinate.z);
+        
          if (X >= 0 && z >= 0)
          {
              ImageCursor.anchoredPosition = new Vector2(-WordCoordinate.z * factorTransform, WordCoordinate.x * factorTransform);
@@ -47,7 +47,7 @@ public class ControllerMarkerCamera : MonoBehaviour
              ImageCursor.anchoredPosition = new Vector2(WordCoordinate.z * factorTransform, -WordCoordinate.x * factorTransform);
          }
         ImageCursor.localEulerAngles=new Vector3(0,0,270-ArCameraGameObject.transform.eulerAngles.y);
-        Debug.Log("Image= " + ImageCursor.localEulerAngles.z);
+        
         angelGround.text = ImageCursor.localEulerAngles.z.ToString();
     }
 }

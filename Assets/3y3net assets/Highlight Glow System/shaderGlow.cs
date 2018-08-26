@@ -46,14 +46,16 @@ public class shaderGlow : MonoBehaviour {
 	private bool flashDirectionUp = true;
 	private GUIStyle style;
 	private bool showLabel=false;
-
+    public Camera _MainCamera;
 	void Awake() {
+        
 		//Grab the glow shader
 		highightShaderVisibleNormal = Shader.Find ("3y3net/GlowVisibleNormal");
 		highightShaderHiddenNormal = Shader.Find ("3y3net/GlowHiddenNormal");
 		highightShaderVisible = Shader.Find ("3y3net/GlowVisible");
 		highightShaderHidden = Shader.Find ("3y3net/GlowHidden");
 	}
+
     
     Mesh CreateMesh(int[] triangles, int index, Mesh mesh)
     {
@@ -176,7 +178,7 @@ public class shaderGlow : MonoBehaviour {
 
     // Use this for initialization
     void Start() {
-
+        _MainCamera = CommonData.prefabs.gameobjectLookup[StringConstants.ARCamera].GetComponent<Camera>();
         Component[] renderers = GetComponentsInChildren<Renderer>();
         foreach (Renderer singleRenderer in renderers)
             SplitInChilds(singleRenderer.gameObject);
@@ -223,7 +225,7 @@ public class shaderGlow : MonoBehaviour {
 	
 	
 	void OnGUI () {
-		if (!showLabel || Camera.main==null)
+        if (!showLabel || _MainCamera == null)
 			return;
 		float x=0, y=0;
         if (labelMode == labelModes.onMouseEnter) {
@@ -232,13 +234,13 @@ public class shaderGlow : MonoBehaviour {
         }
         else {
             if (GetComponent<Renderer>() != null) {
-                Vector3 pos = Camera.main.WorldToScreenPoint(GetComponent<Renderer>().bounds.center);
+                Vector3 pos = _MainCamera.WorldToScreenPoint(GetComponent<Renderer>().bounds.center);
                 x = pos.x - 150;
                 y = Screen.height - pos.y;
             }
             else
             {
-                Vector3 pos = Camera.main.WorldToScreenPoint(transform.position);
+                Vector3 pos = _MainCamera.WorldToScreenPoint(transform.position);
                 x = pos.x - 150;
                 y = Screen.height - pos.y;
             }
@@ -335,7 +337,7 @@ public class shaderGlow : MonoBehaviour {
 			lightOn();
 
 		if(highlighted) {
-			float distance = Vector3.Distance (gameObject.transform.position, Camera.main.transform.position);
+            float distance = Vector3.Distance(gameObject.transform.position, _MainCamera.transform.position);
 			distance = Mathf.Clamp (distance, clipDistance, maxDistance);
 			distance -= clipDistance;
 			float glow = clipGlow+(distance * (maxGlow - clipGlow) / ((maxDistance) - (clipDistance)));
