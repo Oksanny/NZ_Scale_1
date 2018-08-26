@@ -39,6 +39,7 @@ public class ControllerMarkerCamera : MonoBehaviour
          Debug.Log("word= "+WordCoordinate.x+"   "+WordCoordinate.z);
 
         ImageCursor.anchoredPosition = new Vector2(-WordCoordinate.z * factorTransform, WordCoordinate.x * factorTransform);
+        ImageCursor.localEulerAngles=new Vector3(0,0,-ArCameraGameObject.transform.eulerAngles.y);
         Debug.Log("Image= " + new Vector2(WordCoordinate.z * factorTransform, -WordCoordinate.x * factorTransform));
     }
 }

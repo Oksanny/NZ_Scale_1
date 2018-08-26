@@ -853,7 +853,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 310422455}
-  m_LocalRotation: {x: -0, y: -0.6858186, z: 0, w: -0.7277726}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -0.003, y: 1, z: 0.21}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -866,7 +866,7 @@ Transform:
   - {fileID: 1884881201}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -273.4, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &310422461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1112,6 +1112,8 @@ MonoBehaviour:
     prefab: {fileID: 773064737}
   - name: Timer
     prefab: {fileID: 895567495}
+  - name: MArkerCamera
+    prefab: {fileID: 2009283764}
 --- !u!114 &341416440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2380,6 +2382,33 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1296385639935826, guid: b2fcc1a9a6d994d488615032bdac7352,
     type: 2}
   m_PrefabInternal: {fileID: 1844312618}
+--- !u!114 &1545090275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1545090273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c0c54c083335444a993e4ce9b142dfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useNormal: 0
+  glowMode: 1
+  flashing: 0
+  flashSpeed: 1
+  noOcclusion: 0
+  scaleGlow: 1
+  glowIntensity: 1
+  glowOpacity: 1
+  glowColor: {r: 0.059407253, g: 0.8396226, b: 0.23008625, a: 1}
+  labelToDisplay: LABEL
+  labelMode: 0
+  labelColor: {r: 1, g: 1, b: 1, a: 1}
+  outlined: 1
+  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  textFont: {fileID: 0}
+  fontSize: 12
 --- !u!1 &1550871677
 GameObject:
   m_ObjectHideFlags: 0
@@ -2766,20 +2795,20 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2009283765
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2009283764}
-  m_LocalRotation: {x: -0, y: 0, z: -0.9506512, w: -0.31026167}
+  m_LocalRotation: {x: 0, y: -0, z: 0.2334455, w: -0.97236997}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.10363, y: 0.10363, z: 0.10363}
   m_Children: []
   m_Father: {fileID: 61241761}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -216.15}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 333}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 146.7, y: -145.3}

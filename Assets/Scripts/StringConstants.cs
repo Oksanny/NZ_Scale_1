@@ -75,6 +75,7 @@ using UnityEngine;
       public const string PrefabShelf = "Shelf";
       public const string PrefabKioskInsurance = "kioskInsurance";
       public const string PrefabTimer = "Timer";
+      public const string PrefabMarkerCamera = "MArkerCamera";
       
  }
  
