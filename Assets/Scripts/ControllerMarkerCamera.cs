@@ -24,8 +24,8 @@ public class ControllerMarkerCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        angelCamera.text = ArCameraGameObject.transform.eulerAngles.z.ToString();
-        angelGround.text = CenterZona.transform.eulerAngles.z.ToString();
+        angelCamera.text = ArCameraGameObject.transform.eulerAngles.y.ToString();
+        
         Debug.Log("CZ="+CenterZona.transform.position);
         Debug.Log("AR="+ArCameraGameObject.transform.position);
         factorTransform = ImagePreview.rect.height / 2/Vector3.Distance(new Vector3(CenterZona.transform.position.x, CenterZona.transform.position.y, CenterZona.transform.position.z),
@@ -39,7 +39,8 @@ public class ControllerMarkerCamera : MonoBehaviour
          Debug.Log("word= "+WordCoordinate.x+"   "+WordCoordinate.z);
 
         ImageCursor.anchoredPosition = new Vector2(-WordCoordinate.z * factorTransform, WordCoordinate.x * factorTransform);
-        ImageCursor.localEulerAngles=new Vector3(0,0,-ArCameraGameObject.transform.eulerAngles.y);
-        Debug.Log("Image= " + new Vector2(WordCoordinate.z * factorTransform, -WordCoordinate.x * factorTransform));
+        ImageCursor.localEulerAngles=new Vector3(0,0,270-ArCameraGameObject.transform.eulerAngles.y);
+        Debug.Log("Image= " + ImageCursor.localEulerAngles.z);
+        angelGround.text = ImageCursor.localEulerAngles.z.ToString();
     }
 }
