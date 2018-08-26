@@ -26,19 +26,26 @@ public class ControllerMarkerCamera : MonoBehaviour
     {
         angelCamera.text = ArCameraGameObject.transform.eulerAngles.y.ToString();
         
-        Debug.Log("CZ="+CenterZona.transform.position);
-        Debug.Log("AR="+ArCameraGameObject.transform.position);
+       
         factorTransform = ImagePreview.rect.height / 2/Vector3.Distance(new Vector3(CenterZona.transform.position.x, CenterZona.transform.position.y, CenterZona.transform.position.z),
             new Vector3(ReperPoint.transform.position.x, ReperPoint.transform.position.y, ReperPoint.transform.position.z));
-        Debug.Log("K="+factorTransform);
-        Debug.Log(Vector3.Distance(new Vector3(CenterZona.transform.position.x, CenterZona.transform.position.y, CenterZona.transform.position.z),
-            new Vector3(ReperPoint.transform.position.x, ReperPoint.transform.position.y, ReperPoint.transform.position.z)));
+      
+
+        float X = CenterZona.transform.position.x - ArCameraGameObject.transform.position.x;
+        float z = CenterZona.transform.position.z - ArCameraGameObject.transform.position.z;
+        
         Vector3 WordCoordinate = new Vector3(ArCameraGameObject.transform.position.x - CenterZona.transform.position.x,
             ArCameraGameObject.transform.position.y - CenterZona.transform.position.y,
             ArCameraGameObject.transform.position.z - CenterZona.transform.position.z);
          Debug.Log("word= "+WordCoordinate.x+"   "+WordCoordinate.z);
-
-        ImageCursor.anchoredPosition = new Vector2(-WordCoordinate.z * factorTransform, WordCoordinate.x * factorTransform);
+         if (X >= 0 && z >= 0)
+         {
+             ImageCursor.anchoredPosition = new Vector2(-WordCoordinate.z * factorTransform, WordCoordinate.x * factorTransform);
+         }
+         if (X <= 0 && z <= 0)
+         {
+             ImageCursor.anchoredPosition = new Vector2(WordCoordinate.z * factorTransform, -WordCoordinate.x * factorTransform);
+         }
         ImageCursor.localEulerAngles=new Vector3(0,0,270-ArCameraGameObject.transform.eulerAngles.y);
         Debug.Log("Image= " + ImageCursor.localEulerAngles.z);
         angelGround.text = ImageCursor.localEulerAngles.z.ToString();
