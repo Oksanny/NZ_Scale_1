@@ -9,6 +9,11 @@ public class ControllerShelf : MonoBehaviour
     RaycastHit hit;
     private bool FeetHitten;
     public ShowAcssesorShop ShowAcssesorShop;
+    public shaderGlow ShaderGlowPhone;
+    public shaderGlow ShaderGlowPowerBAnk_1;
+    public shaderGlow ShaderGlowPowerBAnk_2;
+    public shaderGlow ShaderGlowCase;
+    public shaderGlow ShaderGlowChenge;
     // Use this for initialization
     void Start()
     {
@@ -32,30 +37,40 @@ public class ControllerShelf : MonoBehaviour
                 {
                     case "deer_head_case":
                         FeetHitten = true;
+                        ShaderGlowCase.lightOn();
                         if (ShowAcssesorShop != null)
                         {
                             ShowAcssesorShop.SelectCase();
+                           // hit.collider.gameObject.SetActive(false);
                         }
                         break;
                     case "charger":
                         FeetHitten = true;
+                        ShaderGlowChenge.lightOn();
                         if (ShowAcssesorShop != null)
                         {
                             ShowAcssesorShop.SelectCharge();
+                           // hit.collider.gameObject.SetActive(false);
                         }
                         break;
                     case "Powerbank":
                         FeetHitten = true;
+                        ShaderGlowPowerBAnk_1.lightOn();
+                        ShaderGlowPowerBAnk_2.lightOn();
+
                         if (ShowAcssesorShop != null)
                         {
                             ShowAcssesorShop.SelectPowerBank();
+                          //  hit.collider.gameObject.SetActive(false);
                         }
                         break;
                     case "Headphones_b_prefab":
+                        ShaderGlowPhone.lightOn();
                         FeetHitten = true;
                         if (ShowAcssesorShop != null)
                         {
                             ShowAcssesorShop.SelectPhone();
+                           // hit.collider.gameObject.SetActive(false);
                         }
                         break;
                 }
@@ -89,34 +104,40 @@ public class ControllerShelf : MonoBehaviour
                 {
                     case "deer_head_case":
                         FeetHitten = true;
+                        ShaderGlowCase.lightOn();
                         if (ShowAcssesorShop != null)
                         {
                             ShowAcssesorShop.SelectCase();
-                            hit.collider.gameObject.SetActive(false);
+                           // hit.collider.gameObject.SetActive(false);
                         }
                         break;
                     case "charger":
                         FeetHitten = true;
+                        ShaderGlowChenge.lightOn();
                         if (ShowAcssesorShop != null)
                         {
                             ShowAcssesorShop.SelectCharge();
-                            hit.collider.gameObject.SetActive(false);
+                           // hit.collider.gameObject.SetActive(false);
                         }
                         break;
                     case "Powerbank":
                         FeetHitten = true;
+                        ShaderGlowPowerBAnk_1.lightOn();
+                        ShaderGlowPowerBAnk_2.lightOn();
+
                         if (ShowAcssesorShop != null)
                         {
                             ShowAcssesorShop.SelectPowerBank();
-                            hit.collider.gameObject.SetActive(false);
+                          //  hit.collider.gameObject.SetActive(false);
                         }
                         break;
                     case "Headphones_b_prefab":
+                        ShaderGlowPhone.lightOn();
                         FeetHitten = true;
                         if (ShowAcssesorShop != null)
                         {
                             ShowAcssesorShop.SelectPhone();
-                            hit.collider.gameObject.SetActive(false);
+                           // hit.collider.gameObject.SetActive(false);
                         }
                         break;
                 }
@@ -137,6 +158,14 @@ public class ControllerShelf : MonoBehaviour
 #endif
     }
 
+    public void Rewind()
+    {
+        ShaderGlowCase.lightOff();
+        ShaderGlowChenge.lightOff();
+        ShaderGlowPowerBAnk_1.lightOff();
+        ShaderGlowPowerBAnk_2.lightOff();
+        ShaderGlowPhone.lightOff();
+    }
     public void SelectPhone()
     {
         if (ShowAcssesorShop != null)

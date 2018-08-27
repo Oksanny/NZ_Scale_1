@@ -56,6 +56,8 @@ using UnityEngine;
      public const string PrefabCheckCheckoutAre = "CheckCheckoutArea";
      public const string PrefabShowCheckoutAre = "ShowCheckoutArea";
      public const string PrefabShowMissionFailed = "PrefabShowMissionFailed";
+     public const string PrefabShowTitle = "PrefabShowTitle";
+     public const string PrefabShowReset = "PrefabShowReset";
 
      public const string PrefabBasicDialog = "PrefabBasicDialog";
      public const string PrefabMainMenu = "PrefabMainMenu";
@@ -76,6 +78,8 @@ using UnityEngine;
       public const string PrefabKioskInsurance = "kioskInsurance";
       public const string PrefabTimer = "Timer";
       public const string PrefabMarkerCamera = "MArkerCamera";
+      public const string PrefabResetButton = "ResetButton";
+      public const string PrefabArrowInsuranceBox = "ArrowInsuranceBox";
       
  }
  

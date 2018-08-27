@@ -54,6 +54,8 @@ namespace States
             
             menuComponent.StartCoroutine(ShowLabelGreat());
         }
+
+        
         public void SetAnimationEndShoot()
         {
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabShark].GetComponent<Animator>().SetTrigger("EndShoot");

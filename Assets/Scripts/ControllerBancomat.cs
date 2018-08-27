@@ -9,6 +9,7 @@ public class ControllerBancomat : MonoBehaviour
     RaycastHit hit;
     private bool FeetHitten;
     public ShowBancomat ShowBancomat;
+    public shaderGlow ShaderGlow;
     // Use this for initialization
     void Start()
     {
@@ -30,10 +31,10 @@ public class ControllerBancomat : MonoBehaviour
 
                 if (hit.collider.gameObject.name.Contains("ATM") )
                 {
-                    
+                    ShaderGlow.lightOn();
                     // Debug.Log("It's working!");
                     FeetHitten = true;
-                   if (ShowBancomat!=null)
+                    if (ShowBancomat != null)
                     {
                         ShowBancomat.SelectBancomat();
                     }
@@ -68,7 +69,7 @@ public class ControllerBancomat : MonoBehaviour
 
                 if (hit.collider.gameObject.name.Contains("ATM"))
                 {
-
+                    ShaderGlow.lightOn();
                     // Debug.Log("It's working!");
                     FeetHitten = true;
                     if (ShowBancomat != null)
@@ -97,4 +98,8 @@ public class ControllerBancomat : MonoBehaviour
 #endif
     }
 
+    public void Rewind()
+    {
+        ShaderGlow.lightOff();
+    }
 }

@@ -177,8 +177,9 @@ public class shaderGlow : MonoBehaviour {
     }
 
     // Use this for initialization
-    void Start() {
-        _MainCamera = CommonData.prefabs.gameobjectLookup[StringConstants.ARCamera].GetComponent<Camera>();
+    void Start()
+    {
+        StartCoroutine(SetCamera());
         Component[] renderers = GetComponentsInChildren<Renderer>();
         foreach (Renderer singleRenderer in renderers)
             SplitInChilds(singleRenderer.gameObject);
@@ -193,7 +194,11 @@ public class shaderGlow : MonoBehaviour {
 		else
 			style.font= (Font)Resources.GetBuiltinResource(typeof(Font), "Arial.ttf");
 	}
-
+    IEnumerator SetCamera()
+    {
+        yield return new WaitForSeconds(1f);
+        _MainCamera = CommonData.prefabs.gameobjectLookup[StringConstants.ARCamera].GetComponent<Camera>();
+    }
     public void OtherPointerEnter()
     {
         OnMouseEnter();

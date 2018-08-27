@@ -9,6 +9,10 @@ public class ControllerSmartphone : MonoBehaviour
     RaycastHit hit;
     private bool FeetHitten;
     public ShowSmartphone ShowSmartphone;
+    public GameObject FrameSmarticall_9;
+    public GameObject FrameCommunata_8;
+    public shaderGlow PhoneSmarticall_9;
+    public shaderGlow PhoneCommunata_8;
 	// Use this for initialization
 	void Start () {
 		
@@ -30,6 +34,8 @@ public class ControllerSmartphone : MonoBehaviour
                 {
                     case "Smarticall_9":
                         FeetHitten = true;
+                        FrameSmarticall_9.SetActive(true);
+                        PhoneSmarticall_9.lightOn();
                         if (ShowSmartphone != null)
                         {
                             ShowSmartphone.SelectSmartical();
@@ -37,6 +43,8 @@ public class ControllerSmartphone : MonoBehaviour
                         break;
                     case "Communata_8":
                         FeetHitten = true;
+                        PhoneCommunata_8.lightOn();
+                        FrameCommunata_8.SetActive(true);
                         if (ShowSmartphone != null)
                         {
                             ShowSmartphone.SelectCommunata();
@@ -73,6 +81,8 @@ public class ControllerSmartphone : MonoBehaviour
                 {
                     case "Smarticall_9":
                         FeetHitten = true;
+                        FrameSmarticall_9.SetActive(true);
+                        PhoneSmarticall_9.lightOn();
                         if (ShowSmartphone != null)
                         {
                             ShowSmartphone.SelectSmartical();
@@ -80,6 +90,8 @@ public class ControllerSmartphone : MonoBehaviour
                         break;
                     case "Communata_8":
                         FeetHitten = true;
+                        PhoneCommunata_8.lightOn();
+                        FrameCommunata_8.SetActive(true);
                         if (ShowSmartphone != null)
                         {
                             ShowSmartphone.SelectCommunata();
@@ -104,5 +116,12 @@ public class ControllerSmartphone : MonoBehaviour
 #endif
 	}
 
+    public void Rewind()
+    {
+        FrameSmarticall_9.SetActive(false);
+        PhoneSmarticall_9.lightOff();
+        PhoneCommunata_8.lightOff();
+        FrameCommunata_8.SetActive(false);
+    }
     
 }

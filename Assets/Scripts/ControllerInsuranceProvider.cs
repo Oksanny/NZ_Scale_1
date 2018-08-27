@@ -9,6 +9,8 @@ public class ControllerInsuranceProvider : MonoBehaviour
     RaycastHit hit;
     private bool FeetHitten;
     public ShowInsuranceeProvider ShowInsuranceeProvider;
+    public GameObject FrameInsuramore;
+    public GameObject FramePlanetsure;
     // Use this for initialization
     void Start()
     {
@@ -30,8 +32,9 @@ public class ControllerInsuranceProvider : MonoBehaviour
 
                 switch (hit.collider.gameObject.name)
                 {
-                    case "Insuramore":
+                     case "Insuramore":
                         FeetHitten = true;
+                        FrameInsuramore.SetActive(true);
                         if (ShowInsuranceeProvider != null)
                         {
                             ShowInsuranceeProvider.SelecInsuramore();
@@ -39,6 +42,7 @@ public class ControllerInsuranceProvider : MonoBehaviour
                         break;
                     case "Planetsure":
                         FeetHitten = true;
+                        FramePlanetsure.SetActive(true);
                         if (ShowInsuranceeProvider != null)
                         {
                             ShowInsuranceeProvider.SelecPlanetsure();
@@ -74,14 +78,18 @@ public class ControllerInsuranceProvider : MonoBehaviour
                 switch (hit.collider.gameObject.name)
                 {
                     case "Insuramore":
+                        CommonData.prefabs.gameobjectLookup[StringConstants.PrefabArrowInsuranceBox].SetActive(false);
                         FeetHitten = true;
+                        FrameInsuramore.SetActive(true);
                         if (ShowInsuranceeProvider != null)
                         {
                             ShowInsuranceeProvider.SelecInsuramore();
                         }
                         break;
                     case "Planetsure":
+                        CommonData.prefabs.gameobjectLookup[StringConstants.PrefabArrowInsuranceBox].SetActive(false);
                         FeetHitten = true;
+                        FramePlanetsure.SetActive(true);
                         if (ShowInsuranceeProvider != null)
                         {
                             ShowInsuranceeProvider.SelecPlanetsure();
@@ -106,6 +114,10 @@ public class ControllerInsuranceProvider : MonoBehaviour
 #endif
     }
 
-    
+    public void Rewind()
+    {
+        FrameInsuramore.SetActive(false);
+        FramePlanetsure.SetActive(false);
+    }
 
 }

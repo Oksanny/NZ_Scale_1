@@ -87,7 +87,7 @@ namespace States
            
             yield return new WaitForSeconds(10f);
           
-            CommonData.mainManager.stateManager.PopState();
+            CommonData.mainManager.stateManager.SwapState(new ShowReset());
 
         }
         public override void Suspend()

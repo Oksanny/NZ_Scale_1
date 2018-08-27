@@ -56,4 +56,15 @@ public class ControllerPathLion : MonoBehaviour
        // PathExitFromCage.Stop();
         PathRoundLion.Play();
     }
+
+    public void Rewind()
+    {
+        PathRoundLion.Stop();
+        PathRoundLion.Rewind();
+        PathExitFromCage.Target = PathRoundLion.Target;
+        PathRoundLion.Target = null;
+        PathExitFromCage.Rewind();
+        AnimatorLion.SetTrigger("Idle");
+        animationCage.Play("close_door");
+    }
 }

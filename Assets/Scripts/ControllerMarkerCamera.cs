@@ -14,11 +14,12 @@ public class ControllerMarkerCamera : MonoBehaviour
     public RectTransform ImageCursor;
     private float factorTransform;
     public float X;
-    public float Y;
+    public float z;
     // Use this for initialization
     void Start()
     {
-
+         X = CenterZona.transform.position.x - ArCameraGameObject.transform.position.x;
+         z = CenterZona.transform.position.z - ArCameraGameObject.transform.position.z;
     }
 
     // Update is called once per frame
@@ -31,8 +32,7 @@ public class ControllerMarkerCamera : MonoBehaviour
             new Vector3(ReperPoint.transform.position.x, ReperPoint.transform.position.y, ReperPoint.transform.position.z));
       
 
-        float X = CenterZona.transform.position.x - ArCameraGameObject.transform.position.x;
-        float z = CenterZona.transform.position.z - ArCameraGameObject.transform.position.z;
+        
         
         Vector3 WordCoordinate = new Vector3(ArCameraGameObject.transform.position.x - CenterZona.transform.position.x,
             ArCameraGameObject.transform.position.y - CenterZona.transform.position.y,

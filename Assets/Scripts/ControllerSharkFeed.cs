@@ -8,7 +8,7 @@ public class ControllerSharkFeed : MonoBehaviour
 {
     Ray ray;
     RaycastHit hit;
-
+    public PathMagic PathShark;
     public List<GameObject> MissFeeds = new List<GameObject>();
     private bool FeetHitten;
     public float Force;
@@ -178,12 +178,18 @@ public class ControllerSharkFeed : MonoBehaviour
         }
 
     }
+
+    public void HideShark()
+    {
+        PathShark.Target.gameObject.SetActive(false);
+    }
     IEnumerator SpawnFeedAfterHiT()
     {
         
         yield return new WaitForSeconds(2.5f);
         CommonData.prefabs.gameobjectLookup["LowerJaw"].SetActive(false);
-        GetNewFeed();
+        PathShark.Play();
+        //GetNewFeed();
     }
     IEnumerator SpawnFeedAfterMiss()
     {
@@ -194,5 +200,13 @@ public class ControllerSharkFeed : MonoBehaviour
         // {
         //     Destroy(Feed);
         // }
+    }
+
+    public void Rewind()
+    {
+        PathShark.Stop();
+        PathShark.Rewind();
+        PathShark.Target.gameObject.SetActive(true);
+        CommonData.prefabs.gameobjectLookup[StringConstants.PrefabShark].GetComponent<Animator>().SetTrigger("EndShoot");
     }
 }

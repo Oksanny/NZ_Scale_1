@@ -12,7 +12,7 @@ namespace States
         private Vector3 pointARCamerVector3;
         public override void Initialize()
         {
-
+            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabArrowInsuranceBox].SetActive(true);
             InitializeUI();
         }
         private void InitializeUI()

@@ -8,6 +8,8 @@ public class ControllerInfoBox : MonoBehaviour {
     RaycastHit hit;
     private bool FeetHitten;
     public ShowServiceProv ShowServiceProvider;
+    public GameObject FrameConnectaPhone;
+    public GameObject FramePolacone;
 	// Use this for initialization
 	void Start () {
 		
@@ -29,6 +31,7 @@ public class ControllerInfoBox : MonoBehaviour {
                 {
                     case "ConnectaPhone":
                         FeetHitten = true;
+                        FrameConnectaPhone.SetActive(true);
                         if (ShowServiceProvider != null)
                         {
                             ShowServiceProvider.SelecConnectaPhone();
@@ -36,6 +39,7 @@ public class ControllerInfoBox : MonoBehaviour {
                         break;
                     case "Polacon":
                         FeetHitten = true;
+                        FramePolacone.SetActive(true);
                         if (ShowServiceProvider != null)
                         {
                             ShowServiceProvider.SelecPolacon();
@@ -72,6 +76,7 @@ public class ControllerInfoBox : MonoBehaviour {
                 {
                     case "ConnectaPhone":
                         FeetHitten = true;
+                        FrameConnectaPhone.SetActive(true);
                         if (ShowServiceProvider != null)
                         {
                             ShowServiceProvider.SelecConnectaPhone();
@@ -79,6 +84,7 @@ public class ControllerInfoBox : MonoBehaviour {
                         break;
                     case "Polacon":
                         FeetHitten = true;
+                        FramePolacone.SetActive(true);
                         if (ShowServiceProvider != null)
                         {
                             ShowServiceProvider.SelecPolacon();
@@ -103,6 +109,10 @@ public class ControllerInfoBox : MonoBehaviour {
 #endif
 	}
 
-    
+    public void Rewind()
+    {
+        FrameConnectaPhone.SetActive(false);
+        FramePolacone.SetActive(false);
+    }
 
 }

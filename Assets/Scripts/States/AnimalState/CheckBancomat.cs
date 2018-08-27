@@ -26,7 +26,12 @@ namespace States
         }
         public override void Initialize()
         {
+            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabResetButton].SetActive(false);
+            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabTimer].SetActive(true);
+            
+            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabTimer].GetComponent<ControllerTime>().StartTime = true;
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointBancomat].SetActive(true);
+            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabMarkerCamera].SetActive(true);
             InitializeUI();
         }
         private void InitializeUI()
