@@ -64,31 +64,165 @@ MonoBehaviour:
     Languages:
     - 
     - 
-    - 
     Languages_Touch:
     - Nova Digitale Marke GE
     - Nova Digital Market  EN
-    - Nova Digital Marke FR
-    Flags: 000000
+    Flags: 0000
   - Term: CheckBancomat
     TermType: 0
     Description: 
     Languages:
     - 
     - 
+    Languages_Touch:
+    - "Ber\xFChren Sie Bancomat"
+    - Touch Bancomat
+    Flags: 0000
+  - Term: Nova Digitale Marke GE
+    TermType: 0
+    Description: 
+    Languages:
+    - 
     - 
     Languages_Touch:
-    - "Touch Bancomat.\r GE"
-    - "Touch Bancomat.\r EN"
-    - "Touch Bancomat.\r FR"
-    Flags: 000000
+    - 
+    - 
+    Flags: 0000
+  - Term: Touch Bancomat to pick up your starting tokens
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - 
+    - "Ber\xFChre den Bankomat um deine Start-Tokens abzuheben"
+    Flags: 0000
+  - Term: Ber hre den Bankomat um deine Start Tokens abzuheben
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - "Ber\xFChre den Bankomat um deine Start-Tokens abzuheben"
+    - Touch Bancomat to pick up your starting tokens
+    Flags: 0000
+  - Term: Aim At Shark s Mouth to Feed Shark
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: CheckShark
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - "Zeiele auf den Mund des Hais um ihn zu f\xFCttern!"
+    - "Aim At Shark\u2019s Mouth to Feed\r\nShark!"
+    Flags: 0000
+  - Term: ShowSharkInfo
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - "Zeiele auf den Mund des Hais um ihn zu f\xFCttern!"
+    - "Aim At Shark\u2019s Mouth to Feed\r\nShark!"
+    Flags: 0000
+  - Term: ShowSharkMiss
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - Miss!
+    - Verfehlt!
+    Flags: 0000
+  - Term: ShowSharkNiceWork
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: CheckAcssesorShop
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - "W\xE4hle drei Telefonzubeh\xF6re, indem du sie antippst."
+    - 'Pick up to three Accessories by tapping on them! '
+    Flags: 0000
+  - Term: Pick up to three Accessories by tapping on them
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: ShowAcsProductAdd
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - "Produkt hinzugef\xFCgt!"
+    - Product Added!
+    Flags: 0000
+  - Term: CheckCheckoutArea
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - 
+    - Go to Checkout Area!
+    Flags: 0000
+  - Term: CheckServiceProvider
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - "W\xE4hle einen Service Provider indem du ihn antippst!"
+    - Pick a service provider by touching the screen!
+    Flags: 0000
+  - Term: ShowServiceProvider
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - "W\xE4hle einen Service Provider indem du ihn antippst!"
+    - Pick a service provider by touching the screen!
+    Flags: 0000
   mLanguages:
   - Name: German (Germany)
     Code: de-DE
   - Name: English (United States)
     Code: en-US
-  - Name: French (France)
-    Code: fr-FR
   CaseInsensitiveTerms: 0
   Assets: []
   NeverDestroy: 1

@@ -98,7 +98,7 @@ MonoBehaviour:
   PrimaryTermModifier: 0
   SecondaryTermModifier: 0
   LocalizeOnAwake: 1
-  Source: {fileID: 0}
+  Source: {fileID: 114859518135799454, guid: 6fd6bab07f198b448a050abfb856c660, type: 2}
   mTarget: {fileID: 114201074455301496}
   CanUseSecondaryTerm: 1
   AllowMainTermToBeRTL: 1
@@ -163,7 +163,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Touch Bancomat.\r GE"
+  m_Text: "Ber\xFChren Sie Bancomat"
 --- !u!114 &114455517449783718
 MonoBehaviour:
   m_ObjectHideFlags: 1
