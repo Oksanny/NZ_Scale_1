@@ -46,7 +46,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1237691202610644
 GameObject:
   m_ObjectHideFlags: 1
@@ -57,7 +57,6 @@ GameObject:
   - component: {fileID: 224556347074687056}
   - component: {fileID: 222184763959057692}
   - component: {fileID: 114381829053503956}
-  - component: {fileID: 114145488156402650}
   m_Layer: 0
   m_Name: Title
   m_TagString: Untagged
@@ -65,34 +64,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &114145488156402650
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1237691202610644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 344445a89b4f74a0e9a0a766903df87e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mTerm: ShowTitle
-  mTermSecondary: 
-  PrimaryTermModifier: 0
-  SecondaryTermModifier: 0
-  LocalizeOnAwake: 1
-  Source: {fileID: 114859518135799454, guid: 6fd6bab07f198b448a050abfb856c660, type: 2}
-  mTarget: {fileID: 114381829053503956}
-  CanUseSecondaryTerm: 1
-  AllowMainTermToBeRTL: 1
-  AllowSecondTermToBeRTL: 0
-  IgnoreRTL: 0
-  MaxCharactersInRTL: 0
-  CorrectAlignmentForRTL: 1
-  TranslatedObjects: []
-  LocalizeCallBack:
-    Target: {fileID: 0}
-    MethodName: 
 --- !u!114 &114375511630247738
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -166,7 +137,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Nova Digitale Marke GE
+  m_Text: Nova Digitale Market
 --- !u!114 &114649993870548646
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -312,8 +283,8 @@ RectTransform:
   m_Father: {fileID: 224134142645530398}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -825.2998, y: -70.1001}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -70.1001}
   m_SizeDelta: {x: 886.7, y: 199.2}
   m_Pivot: {x: 0.5, y: 0.5}

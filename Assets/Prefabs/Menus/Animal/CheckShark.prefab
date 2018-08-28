@@ -331,7 +331,7 @@ MonoBehaviour:
   PrimaryTermModifier: 0
   SecondaryTermModifier: 0
   LocalizeOnAwake: 1
-  Source: {fileID: 0}
+  Source: {fileID: 114859518135799454, guid: 6fd6bab07f198b448a050abfb856c660, type: 2}
   mTarget: {fileID: 114453531324525146}
   CanUseSecondaryTerm: 1
   AllowMainTermToBeRTL: 1
@@ -375,7 +375,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Aim At Shark\u2019s Mouth to Feed\r\nShark!"
+  m_Text: "Zeiele auf den Mund des Hais um ihn zu f\xFCttern!"
 --- !u!114 &114499373460000112
 MonoBehaviour:
   m_ObjectHideFlags: 1

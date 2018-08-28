@@ -155,8 +155,8 @@ MonoBehaviour:
     - 
     - 
     Languages_Touch:
-    - 
-    - 
+    - 'Gute Arbeit: Task 1 abgeschlossen!'
+    - 'Nice Work: Task 1 Complete!'
     Flags: 0000
   - Term: CheckAcssesorShop
     TermType: 0
@@ -195,7 +195,7 @@ MonoBehaviour:
     - 
     - 
     Languages_Touch:
-    - 
+    - Gehe zur Kasse!
     - Go to Checkout Area!
     Flags: 0000
   - Term: CheckServiceProvider
@@ -217,6 +217,247 @@ MonoBehaviour:
     Languages_Touch:
     - "W\xE4hle einen Service Provider indem du ihn antippst!"
     - Pick a service provider by touching the screen!
+    Flags: 0000
+  - Term: Go to Checkout Area
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: Toss ice cream to the crocodile
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - 
+    - 
+    Flags: 0000
+  - Term: Toss ice cream
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - 'Toss Eis zum
+
+      Krokodil.'
+    - "Toss ice cream to the\r\ncrocodile."
+    Flags: 0000
+  - Term: Tickle elephant by touching
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - "Kitzle den Elefanten indem du ihn 3 Mal ber\xFChrst!"
+    - "Tickle elephant by touching it 3\r\ntimes! "
+    Flags: 0000
+  - Term: Draw the code with your finger
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - "Zeichne den Code mit deinem Finger um den L\xF6wen aus dem K\xE4fig zu befreien.
+      Das Zeichnen l\xE4uft in drei Schritten ab: Bewege den Finger von der Nr. 1
+      bis zum Ende des Pfeils. Hebe deinen Finger an und setze ihn bei Nr. 2 wieder
+      ab und bewege ihn bis zum Ende des Pfeils und so weiter."
+    - Draw the code with your finger to free the lion from the cage.  You must do
+      this in 3 steps.  Move your finger in the direction of the arrow until it reaches
+      the Number 1, lift your finger and repeat for Number 2 and 3 to complete the
+      code.
+    Flags: 0000
+  - Term: Price   80
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - 'Preis: 80'
+    - 'Price: -80'
+    Flags: 0000
+  - Term: Price   35
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - 'Preis: 35'
+    - 'Price: -35'
+    Flags: 0000
+  - Term: Price   50
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - 'Preis: 80'
+    - 'Price: -80'
+    Flags: 0000
+  - Term: Price   45
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - 'Preis: 45'
+    - 'Price: -45'
+    Flags: 0000
+  - Term: Miss
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - Verfehlt!
+    - Miss!
+    Flags: 0000
+  - Term: Pick your insurance provider
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - "W\xE4hle deine Versicherung!"
+    - Pick your insurance provider!
+    Flags: 0000
+  - Term: Bonus   250
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - 
+    - 'Bonus: +250'
+    Flags: 0000
+  - Term: Nice Work  Task 2  Complete
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - 'Gute Arbeit: Task 2 abgeschlossen!'
+    - 'Nice Work: Task 2  Complete!'
+    Flags: 0000
+  - Term: Price   120
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - 'Preis: 120'
+    - 'Price: -120 '
+    Flags: 0000
+  - Term: Price   180
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - 'Preis: 180'
+    - 'Price: -180'
+    Flags: 0000
+  - Term: Act of Kindness Complete
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - Gute Tat vollbracht! Aufgabe 3 abgeschlossen!
+    - 'Act of Kindness Complete! '
+    Flags: 0000
+  - Term: Best Value
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - "Leistungsverh\xE4ltnis!"
+    - 'Best Value! '
+    Flags: 0000
+  - Term: Price   600
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - 'Preis: 600'
+    - 'Price: -600'
+    Flags: 0000
+  - Term: Smart Choice
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - ntelligente Wahl!
+    - Smart Choice!
+    Flags: 0000
+  - Term: Price   1000
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - 'Preis: 1000'
+    - 'Price: -1000'
+    Flags: 0000
+  - Term: Luxury Choice
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - "Gr\xF6sster Nutzen!"
+    - 'Luxury Choice!  '
+    Flags: 0000
+  - Term: Free Bonus 500 Points
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - 500 Gratis Bonuspunkte
+    - Free Bonus 500 Points!
+    Flags: 0000
+  - Term: Congratulations  You have  scored xxx points  Hope you enjoyed your Augmented
+      Reality experience
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - Gratulation! Du hast xxx Punkte erzielt! Wir hoffen du hast deine Nova Augmented
+      Reality Erfahrung genossen!
+    - Congratulations! You have scored xxx points! Hope you enjoyed the Nova Augmented
+      Reality experience!
     Flags: 0000
   mLanguages:
   - Name: German (Germany)

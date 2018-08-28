@@ -240,7 +240,7 @@ MonoBehaviour:
   PrimaryTermModifier: 0
   SecondaryTermModifier: 0
   LocalizeOnAwake: 1
-  Source: {fileID: 0}
+  Source: {fileID: 114859518135799454, guid: 6fd6bab07f198b448a050abfb856c660, type: 2}
   mTarget: {fileID: 114864435902261564}
   CanUseSecondaryTerm: 1
   AllowMainTermToBeRTL: 1
@@ -1096,9 +1096,9 @@ RectTransform:
   m_Father: {fileID: 224577957879587114}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1622, y: -110.8999}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: -45, y: -110.8999}
   m_SizeDelta: {x: 1577.6, y: 222.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224390046400798208
