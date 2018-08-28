@@ -32,21 +32,45 @@ public class ControllerSmartphone : MonoBehaviour
 
                 switch (hit.collider.gameObject.name)
                 {
-                    case "Smarticall_9":
+                     case "Smarticall_9":
                         FeetHitten = true;
-                        FrameSmarticall_9.SetActive(true);
-                        PhoneSmarticall_9.lightOn();
+                       
                         if (ShowSmartphone != null)
                         {
+                            FrameSmarticall_9.SetActive(true);
+                            PhoneSmarticall_9.lightOn();
                             ShowSmartphone.SelectSmartical();
+                            CommonData.currentUser.data.SmarticallBuy = true;
+                        }
+                        break;
+                    case "Smartphone_Smart":
+                        FeetHitten = true;
+
+                        if (ShowSmartphone != null)
+                        {
+                            FrameSmarticall_9.SetActive(true);
+                            PhoneSmarticall_9.lightOn();
+                            ShowSmartphone.SelectSmartical();
+                            CommonData.currentUser.data.SmarticallBuy = true;
                         }
                         break;
                     case "Communata_8":
                         FeetHitten = true;
-                        PhoneCommunata_8.lightOn();
-                        FrameCommunata_8.SetActive(true);
+                        
                         if (ShowSmartphone != null)
                         {
+                            PhoneCommunata_8.lightOn();
+                            FrameCommunata_8.SetActive(true);
+                            ShowSmartphone.SelectCommunata();
+                        }
+                        break;
+                    case "Smartphone_Communata":
+                        FeetHitten = true;
+
+                        if (ShowSmartphone != null)
+                        {
+                            PhoneCommunata_8.lightOn();
+                            FrameCommunata_8.SetActive(true);
                             ShowSmartphone.SelectCommunata();
                         }
                         break;
@@ -81,19 +105,43 @@ public class ControllerSmartphone : MonoBehaviour
                 {
                     case "Smarticall_9":
                         FeetHitten = true;
-                        FrameSmarticall_9.SetActive(true);
-                        PhoneSmarticall_9.lightOn();
+                       
                         if (ShowSmartphone != null)
                         {
+                            FrameSmarticall_9.SetActive(true);
+                            PhoneSmarticall_9.lightOn();
                             ShowSmartphone.SelectSmartical();
+                            CommonData.currentUser.data.SmarticallBuy = true;
+                        }
+                        break;
+                    case "Smartphone_Smart":
+                        FeetHitten = true;
+
+                        if (ShowSmartphone != null)
+                        {
+                            FrameSmarticall_9.SetActive(true);
+                            PhoneSmarticall_9.lightOn();
+                            ShowSmartphone.SelectSmartical();
+                            CommonData.currentUser.data.SmarticallBuy = true;
                         }
                         break;
                     case "Communata_8":
                         FeetHitten = true;
-                        PhoneCommunata_8.lightOn();
-                        FrameCommunata_8.SetActive(true);
+                        
                         if (ShowSmartphone != null)
                         {
+                            PhoneCommunata_8.lightOn();
+                            FrameCommunata_8.SetActive(true);
+                            ShowSmartphone.SelectCommunata();
+                        }
+                        break;
+                    case "Smartphone_Communata":
+                        FeetHitten = true;
+
+                        if (ShowSmartphone != null)
+                        {
+                            PhoneCommunata_8.lightOn();
+                            FrameCommunata_8.SetActive(true);
                             ShowSmartphone.SelectCommunata();
                         }
                         break;

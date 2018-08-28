@@ -26,7 +26,7 @@ public class ControllerTime : MonoBehaviour
 	        {
 	            currentTime = 0;
 	            StopTime = true;
-                CommonData.mainManager.stateManager.SwapState(new ShowMissionFailed());
+              //  CommonData.mainManager.stateManager.SwapState(new ShowMissionFailed());
 	        }
 	        SetTime();
 	    }

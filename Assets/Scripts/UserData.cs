@@ -7,7 +7,8 @@ public class UserData
 
     public int Plus ;
     public int Minus;
-
+    public int contAcssesur;
+    public bool SmarticallBuy;
     public UserData()
     {
         Plus=0;

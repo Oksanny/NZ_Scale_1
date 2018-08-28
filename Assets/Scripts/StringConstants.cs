@@ -80,6 +80,11 @@ using UnityEngine;
       public const string PrefabMarkerCamera = "MArkerCamera";
       public const string PrefabResetButton = "ResetButton";
       public const string PrefabArrowInsuranceBox = "ArrowInsuranceBox";
+      public const string PrefabCage = "Cage";
+      public const string PrefabCrocodile = "crocodile_01";
+      public const string PrefabSpecialBonuse = "SpecialBonuse";
+      public const string PrefabCheckoutArea = "CheckoutArea";
+      public const string PrefabArrowController = "ArrowController";
       
  }
  

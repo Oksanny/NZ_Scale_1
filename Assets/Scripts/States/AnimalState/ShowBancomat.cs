@@ -27,7 +27,9 @@ namespace States
         }
         public override void Initialize()
         {
+            
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointBancomat].SetActive(false);
+            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabArrowController].GetComponent<ControllerLookAtPoint>().Target = CommonData.prefabs.gameobjectLookup[StringConstants.PrefabBancomat];
             InitializeUI();
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabBancomat].GetComponent<ControllerBancomat>()
                 .ShowBancomat = this;

@@ -22,6 +22,10 @@ namespace States
                 menuComponent = SpawnUI<Menus.CheckCheckoutAreaGUI>(StringConstants.PrefabCheckCheckoutAre);
             }
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointCheckoutArea].SetActive(true);
+            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabArrowController].GetComponent<ControllerLookAtPoint>().Target = CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckoutArea];
+
+            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabKioskInsurance].GetComponent<bl_MiniMapItem>().Size = 0;
+            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckoutArea].GetComponent<bl_MiniMapItem>().Size = 40; 
             ShowUI();
 
         }

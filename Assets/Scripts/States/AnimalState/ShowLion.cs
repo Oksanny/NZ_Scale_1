@@ -21,12 +21,14 @@ namespace States
         private bool complete;
         public override void Initialize()
         {
+            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointLion].SetActive(false);
+            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabArrowController].GetComponent<ControllerLookAtPoint>().Target = CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCage];
 
             InitializeUI();
         }
         private void InitializeUI()
         {
-            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointLion].SetActive(false);
+            
             if ( !CommonData.StateLion)
             {
                 if (menuComponent == null)
@@ -41,7 +43,8 @@ namespace States
                 letterHolder = (GameObject)Object.Instantiate(CommonData.prefabs.gameobjectLookup["Letter"],
                     CommonData.prefabs.gameobjectLookup["SpawnLetter"].transform.position,
                     CommonData.prefabs.gameobjectLookup["SpawnLetter"].transform.rotation);
-
+                
+                
                 letterHolder.gameObject.transform.parent = CommonData.prefabs.gameobjectLookup["CameraLetter"].transform;
                 letterHolder.GetComponent<WritingHandler>().ShowLion = this;
                 controllerPathLion = CommonData.prefabs.gameobjectLookup["lion_sv_ip"].GetComponent<ControllerPathLion>();

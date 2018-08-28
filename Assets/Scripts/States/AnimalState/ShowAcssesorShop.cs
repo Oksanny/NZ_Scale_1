@@ -39,6 +39,8 @@ namespace States
         {
             countItem = 0;
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointAcssesorShop].SetActive(false);
+            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabArrowController].GetComponent<ControllerLookAtPoint>().Target = CommonData.prefabs.gameobjectLookup[StringConstants.PrefabShelf];
+
             InitializeUI();
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabShelf].GetComponent<ControllerShelf>()
                 .ShowAcssesorShop = this;

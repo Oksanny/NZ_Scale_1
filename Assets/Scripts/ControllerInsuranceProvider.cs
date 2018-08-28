@@ -78,20 +78,24 @@ public class ControllerInsuranceProvider : MonoBehaviour
                 switch (hit.collider.gameObject.name)
                 {
                     case "Insuramore":
-                        CommonData.prefabs.gameobjectLookup[StringConstants.PrefabArrowInsuranceBox].SetActive(false);
+                       
                         FeetHitten = true;
-                        FrameInsuramore.SetActive(true);
+                       
                         if (ShowInsuranceeProvider != null)
                         {
+                            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabArrowInsuranceBox].SetActive(false);
+                            FrameInsuramore.SetActive(true);
                             ShowInsuranceeProvider.SelecInsuramore();
                         }
                         break;
                     case "Planetsure":
-                        CommonData.prefabs.gameobjectLookup[StringConstants.PrefabArrowInsuranceBox].SetActive(false);
+                        
                         FeetHitten = true;
-                        FramePlanetsure.SetActive(true);
+                        
                         if (ShowInsuranceeProvider != null)
                         {
+                            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabArrowInsuranceBox].SetActive(false);
+                            FramePlanetsure.SetActive(true);
                             ShowInsuranceeProvider.SelecPlanetsure();
                         }
                         break;

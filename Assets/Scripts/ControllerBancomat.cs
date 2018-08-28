@@ -31,11 +31,10 @@ public class ControllerBancomat : MonoBehaviour
 
                 if (hit.collider.gameObject.name.Contains("ATM") )
                 {
-                    ShaderGlow.lightOn();
-                    // Debug.Log("It's working!");
                     FeetHitten = true;
                     if (ShowBancomat != null)
                     {
+                        ShaderGlow.lightOn();
                         ShowBancomat.SelectBancomat();
                     }
                    
@@ -69,11 +68,12 @@ public class ControllerBancomat : MonoBehaviour
 
                 if (hit.collider.gameObject.name.Contains("ATM"))
                 {
-                    ShaderGlow.lightOn();
+                    
                     // Debug.Log("It's working!");
                     FeetHitten = true;
                     if (ShowBancomat != null)
                     {
+                        ShaderGlow.lightOn();
                         ShowBancomat.SelectBancomat();
                     }
 

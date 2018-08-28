@@ -57,6 +57,10 @@ public class ControllerPathLion : MonoBehaviour
         PathRoundLion.Play();
     }
 
+    public void HideTarget()
+    {
+       PathExitFromCage.Target.gameObject.SetActive(false); 
+    }
     public void Rewind()
     {
         PathRoundLion.Stop();

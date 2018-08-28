@@ -28,6 +28,8 @@ namespace States
         public override void Initialize()
         {
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointInsurance].SetActive(false);
+            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabArrowController].GetComponent<ControllerLookAtPoint>().Target = CommonData.prefabs.gameobjectLookup[StringConstants.PrefabKioskInsurance];
+
             InitializeUI();
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabKioskInsurance].GetComponent<ControllerInsuranceProvider>()
                 .ShowInsuranceeProvider = this;

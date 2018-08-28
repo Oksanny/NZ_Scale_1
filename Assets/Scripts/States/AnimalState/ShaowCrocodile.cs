@@ -21,6 +21,8 @@ namespace States
         private void InitializeUI()
         {
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointCrocodile].SetActive(false);
+            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabArrowController].GetComponent<ControllerLookAtPoint>().Target = CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCrocodile];
+
             if (menuComponent == null)
             {
                 menuComponent = SpawnUI<Menus.ShowCrocodileGUI>(StringConstants.PrefabShowCrocodile);
@@ -77,7 +79,15 @@ namespace States
         {
             yield return new WaitForSeconds(2f);
             menuComponent.LabelGreat.SetActive(false);
-            CommonData.mainManager.stateManager.SwapState(new SpecialBonus());
+            if (CommonData.currentUser.data.SmarticallBuy && CommonData.currentUser.data.contAcssesur==3)
+            {
+                CommonData.mainManager.stateManager.SwapState(new SpecialBonus());
+            }
+            else
+            {
+                CommonData.mainManager.stateManager.SwapState(new CheckInsuranceProvider());
+            }
+            
         }
         public override void Suspend()
         {

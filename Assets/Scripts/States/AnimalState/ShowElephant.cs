@@ -15,12 +15,14 @@ namespace States
         public ShowElephant() { }
         public override void Initialize()
         {
+            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointElephant].SetActive(false);
+            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabArrowController].GetComponent<ControllerLookAtPoint>().Target = CommonData.prefabs.gameobjectLookup[StringConstants.PrefabElephant];
 
             InitializeUI();
         }
         private void InitializeUI()
         {
-            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointElephant].SetActive(false);
+            
             if (menuComponent == null)
             {
                 menuComponent = SpawnUI<Menus.ShowElephantGUI>(StringConstants.PrefabShowElephant);

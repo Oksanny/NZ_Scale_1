@@ -20,6 +20,8 @@ namespace States
         private void InitializeUI()
         {
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointShark].SetActive(false);
+            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabArrowController].GetComponent<ControllerLookAtPoint>().Target = CommonData.prefabs.gameobjectLookup[StringConstants.PrefabShark];
+
             if (menuComponent == null)
             {
                 menuComponent = SpawnUI<Menus.ShowSharkGUI>(StringConstants.PrefabShowShark);

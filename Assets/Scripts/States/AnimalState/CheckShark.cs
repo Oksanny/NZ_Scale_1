@@ -23,6 +23,9 @@ namespace States
                 menuComponent = SpawnUI<Menus.CheckSharkGUI>(StringConstants.PrefabCheckShark);
             }
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointShark].SetActive(true);
+            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabArrowController].GetComponent<ControllerLookAtPoint>().Target = CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointShark];
+            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabBancomat].GetComponent<bl_MiniMapItem>().Size = 0;
+            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabShark].GetComponent<bl_MiniMapItem>().Size = 40;
             ShowUI();
 
         }

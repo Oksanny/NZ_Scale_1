@@ -13,7 +13,11 @@ namespace States
         private Vector3 pointARCamerVector3;
         public override void Initialize()
         {
+            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointCrocodile].SetActive(true);
+            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabArrowController].GetComponent<ControllerLookAtPoint>().Target = CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointCrocodile];
 
+            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabShelf].GetComponent<bl_MiniMapItem>().Size = 0;
+            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCrocodile].GetComponent<bl_MiniMapItem>().Size = 40;
             InitializeUI();
         }
         private void InitializeUI()
@@ -23,8 +27,7 @@ namespace States
                 menuComponent = SpawnUI<Menus.CheckCrocodileGUI>(StringConstants.PrefabCheckCrocodile);
             }
             ShowUI();
-            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointCrocodile].SetActive(true);
-
+            
         }
         public override void Update()
         {

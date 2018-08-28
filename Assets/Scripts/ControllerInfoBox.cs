@@ -30,18 +30,21 @@ public class ControllerInfoBox : MonoBehaviour {
                 switch (hit.collider.gameObject.name)
                 {
                     case "ConnectaPhone":
+
                         FeetHitten = true;
-                        FrameConnectaPhone.SetActive(true);
                         if (ShowServiceProvider != null)
                         {
+                            
+                            FrameConnectaPhone.SetActive(true);
                             ShowServiceProvider.SelecConnectaPhone();
                         }
                         break;
                     case "Polacon":
                         FeetHitten = true;
-                        FramePolacone.SetActive(true);
+                        
                         if (ShowServiceProvider != null)
                         {
+                            FramePolacone.SetActive(true);
                             ShowServiceProvider.SelecPolacon();
                         }
                         break;
@@ -75,18 +78,21 @@ public class ControllerInfoBox : MonoBehaviour {
                 switch (hit.collider.gameObject.name)
                 {
                     case "ConnectaPhone":
+
                         FeetHitten = true;
-                        FrameConnectaPhone.SetActive(true);
                         if (ShowServiceProvider != null)
                         {
+                            
+                            FrameConnectaPhone.SetActive(true);
                             ShowServiceProvider.SelecConnectaPhone();
                         }
                         break;
                     case "Polacon":
                         FeetHitten = true;
-                        FramePolacone.SetActive(true);
+                        
                         if (ShowServiceProvider != null)
                         {
+                            FramePolacone.SetActive(true);
                             ShowServiceProvider.SelecPolacon();
                         }
                         break;

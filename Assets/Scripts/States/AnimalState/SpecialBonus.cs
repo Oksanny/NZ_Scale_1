@@ -20,6 +20,10 @@ namespace States
         private void InitializeUI()
         {
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointSpecialBonuse].SetActive(true);
+            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabArrowController].GetComponent<ControllerLookAtPoint>().Target = CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointSpecialBonuse];
+
+            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCrocodile].GetComponent<bl_MiniMapItem>().Size = 0;
+            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabSpecialBonuse].GetComponent<bl_MiniMapItem>().Size = 40; 
             if (menuComponent == null)
             {
                 menuComponent = SpawnUI<Menus.SpecialBonusGUI>(StringConstants.PrefabSpecialBonus);
@@ -85,6 +89,8 @@ namespace States
         IEnumerator Exit()
         {
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointSpecialBonuse].SetActive(false);
+            
+            
             yield return new WaitForSeconds(3f);
            
             

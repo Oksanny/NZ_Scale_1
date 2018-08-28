@@ -16,7 +16,9 @@ namespace States
         
         public override void Initialize()
         {
+            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckoutArea].GetComponent<bl_MiniMapItem>().Size = 0; 
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointCheckoutArea].SetActive(false);
+            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabArrowController].GetComponent<ControllerLookAtPoint>().Target = null;
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabTimer].GetComponent<ControllerTime>().StopTime = true;
             AddBonuse();
             InitializeUI();

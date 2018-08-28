@@ -12,7 +12,11 @@ namespace States
         private Vector3 pointARCamerVector3;
         public override void Initialize()
         {
+            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointSmartphone].SetActive(true);
+            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabArrowController].GetComponent<ControllerLookAtPoint>().Target = CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointSmartphone];
 
+            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabElephant].GetComponent<bl_MiniMapItem>().Size = 0;
+            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabSmartphone].GetComponent<bl_MiniMapItem>().Size = 40;
             InitializeUI();
         }
         private void InitializeUI()
@@ -21,7 +25,7 @@ namespace States
             {
                 menuComponent = SpawnUI<Menus.CheckSmartphoneGUI>(StringConstants.PrefabCheckSmartphone);
             }
-            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointSmartphone].SetActive(true);
+            
             ShowUI();
 
         }

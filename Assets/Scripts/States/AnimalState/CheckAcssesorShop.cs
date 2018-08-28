@@ -13,7 +13,11 @@ namespace States
 
         public override void Initialize()
         {
+            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointAcssesorShop].SetActive(true);
+            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabArrowController].GetComponent<ControllerLookAtPoint>().Target = CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointAcssesorShop];
 
+            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCage].GetComponent<bl_MiniMapItem>().Size = 0;
+            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabShelf].GetComponent<bl_MiniMapItem>().Size = 40;
             InitializeUI();
         }
         private void InitializeUI()
@@ -22,7 +26,7 @@ namespace States
             {
                 menuComponent = SpawnUI<Menus.CheckAcssesorShopGUI>(StringConstants.PrefabCheckAcssesorShop);
             }
-            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointAcssesorShop].SetActive(true);
+           
             ShowUI();
 
         }
