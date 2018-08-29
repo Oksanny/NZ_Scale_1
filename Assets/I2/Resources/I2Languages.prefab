@@ -459,6 +459,16 @@ MonoBehaviour:
     - Congratulations! You have scored xxx points! Hope you enjoyed the Nova Augmented
       Reality experience!
     Flags: 0000
+  - Term: Pick a smartphone
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - "W\xE4hle ein Smartphone aus."
+    - Pick a smartphone!
+    Flags: 0000
   mLanguages:
   - Name: German (Germany)
     Code: de-DE
