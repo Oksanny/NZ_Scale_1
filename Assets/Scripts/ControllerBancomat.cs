@@ -19,42 +19,42 @@ public class ControllerBancomat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-#if ((UNITY_ANDROID || UNITY_IOS) && !UNITY_EDITOR)
-        if (Input.touchCount == 1)
-        {
-
-            Touch touch = Input.touches[0];
-
-            ray = CommonData.prefabs.gameobjectLookup[StringConstants.ARCamera].GetComponent<Camera>().ScreenPointToRay(Input.touches[0].position);
-            if (touch.phase == TouchPhase.Stationary && Physics.Raycast(ray.origin, ray.direction, out hit))
-            {
-
-                if (hit.collider.gameObject.name.Contains("ATM") )
-                {
-                    FeetHitten = true;
-                    if (ShowBancomat != null)
-                    {
-                        ShaderGlow.lightOn();
-                        ShowBancomat.SelectBancomat();
-                    }
-                   
-                }
-
-                // Debug.Log(hit.collider.gameObject.name);
-
-            }
-            else
-                if ((touch.phase == TouchPhase.Ended && FeetHitten))
-                {
-
-
-                    FeetHitten = false;
-                    
-                }
-
-
-        }
-#else
+//#if ((UNITY_ANDROID || UNITY_IOS) && !UNITY_EDITOR)
+//        if (Input.touchCount == 1)
+//        {
+//
+//            Touch touch = Input.touches[0];
+//
+//            ray = CommonData.prefabs.gameobjectLookup[StringConstants.ARCamera].GetComponent<Camera>().ScreenPointToRay(Input.touches[0].position);
+//            if (touch.phase == TouchPhase.Stationary && Physics.Raycast(ray.origin, ray.direction, out hit))
+//            {
+//
+//                if (hit.collider.gameObject.name.Contains("ATM") )
+//                {
+//                    FeetHitten = true;
+//                    if (ShowBancomat != null)
+//                    {
+//                        ShaderGlow.lightOn();
+//                        ShowBancomat.SelectBancomat();
+//                    }
+//                   
+//                }
+//
+//                // Debug.Log(hit.collider.gameObject.name);
+//
+//            }
+//            else
+//                if ((touch.phase == TouchPhase.Ended && FeetHitten))
+//                {
+//
+//
+//                    FeetHitten = false;
+//                    
+//                }
+//
+//
+//        }
+//#else
         //Mouse
         if (Input.GetMouseButtonDown(0))
         {
@@ -95,7 +95,7 @@ public class ControllerBancomat : MonoBehaviour
             //  StartCoroutine(GetNewFeed());
             //Debug.Log("Mouse is UP");
         }
-#endif
+//#endif
     }
 
     public void Rewind()
