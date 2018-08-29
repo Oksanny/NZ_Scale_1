@@ -77,7 +77,7 @@ namespace States
         }
         IEnumerator Exit()
         {
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(6f);
             menuComponent.LabelGreat.SetActive(false);
             if (CommonData.currentUser.data.SmarticallBuy && CommonData.currentUser.data.contAcssesur==3)
             {

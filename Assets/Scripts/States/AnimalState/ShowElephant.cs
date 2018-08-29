@@ -79,7 +79,7 @@ namespace States
         }
         IEnumerator ShowLabel()
         {
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(6f);
             menuComponent.LabelGreat.SetActive(false);
             menuComponent.LabelPoint.SetActive(false);
             CommonData.mainManager.stateManager.SwapState(new CheckSmartphone());

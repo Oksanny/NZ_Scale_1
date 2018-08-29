@@ -68,7 +68,7 @@ namespace States
         {
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabKioskInsurance].GetComponent<ControllerInsuranceProvider>()
                .ShowInsuranceeProvider = null;
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(6f);
            // CommonData.mainManager.stateManager.SwapState(new CheckElephant());
             CommonData.mainManager.stateManager.SwapState(new CheckCheckoutArear());
         }

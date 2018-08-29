@@ -72,7 +72,7 @@ namespace States
         {
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabInfoBox].GetComponent<ControllerInfoBox>()
                  .ShowServiceProvider = null;
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(6f);
             CommonData.mainManager.stateManager.SwapState(new CheckElephant());
 
         }

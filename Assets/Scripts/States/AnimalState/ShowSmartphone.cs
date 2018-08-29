@@ -68,7 +68,7 @@ namespace States
         {
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabSmartphone].GetComponent<ControllerSmartphone>()
                .ShowSmartphone = null;
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(6f);
            CommonData.mainManager.stateManager.SwapState(new CheckLion());
 
         }

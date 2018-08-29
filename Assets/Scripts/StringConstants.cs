@@ -77,7 +77,7 @@ using UnityEngine;
       public const string PrefabShelf = "Shelf";
       public const string PrefabKioskInsurance = "kioskInsurance";
       public const string PrefabTimer = "Timer";
-      public const string PrefabMarkerCamera = "MArkerCamera";
+      
       public const string PrefabResetButton = "ResetButton";
       public const string PrefabArrowInsuranceBox = "ArrowInsuranceBox";
       public const string PrefabCage = "Cage";
@@ -85,6 +85,7 @@ using UnityEngine;
       public const string PrefabSpecialBonuse = "SpecialBonuse";
       public const string PrefabCheckoutArea = "CheckoutArea";
       public const string PrefabArrowController = "ArrowController";
+      public const string PrefabResetSceneButton = "ResetSceneButton";
       
  }
  

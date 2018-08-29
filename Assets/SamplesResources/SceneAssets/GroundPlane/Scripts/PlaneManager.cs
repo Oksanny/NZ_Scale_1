@@ -8,6 +8,7 @@ countries.
 using System.Collections.Generic;
 using States;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Vuforia;
 using StateManager = Vuforia.StateManager;
 
@@ -221,6 +222,10 @@ public class PlaneManager : MonoBehaviour
       //  CommonData.mainManager.stateManager.PopState();
     }
 
+    public void ReloadScene()
+    {
+        SceneManager.LoadScene("Main");
+    }
     public void ResetTrackers()
     {
         Debug.Log("ResetTrackers() called.");

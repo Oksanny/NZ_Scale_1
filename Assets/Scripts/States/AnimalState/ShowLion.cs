@@ -130,7 +130,7 @@ namespace States
                 WrHandler.RefreshProcess();
             }
             controllerPathLion.StartExit();
-            
+            yield return new WaitForSeconds(4f);
             CommonData.mainManager.stateManager.SwapState(new CheckAcssesorShop());
         }
         public override void Suspend()

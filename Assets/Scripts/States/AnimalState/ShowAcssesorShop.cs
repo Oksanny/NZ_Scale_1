@@ -128,7 +128,7 @@ namespace States
 
         IEnumerator HideLabel(GameObject label)
         {
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(4f);
             label.SetActive(false);
         }
 
@@ -136,7 +136,7 @@ namespace States
         {
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabShelf].GetComponent<ControllerShelf>()
                 .ShowAcssesorShop = null;
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(5f);
             label.SetActive(false);
             CommonData.mainManager.stateManager.SwapState(new CheckCrocodile());
 

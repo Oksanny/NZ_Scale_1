@@ -20,15 +20,15 @@ namespace States
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabArrowController].GetComponent<ControllerLookAtPoint>().Target = null;
 
             
-            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabResetButton].SetActive(true);
+            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabResetSceneButton].SetActive(true);
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabTimer].SetActive(false);
-             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabBancomat].GetComponent<ControllerBancomat>().Rewind();
-            CommonData.prefabs.gameobjectLookup[StringConstants.ARCamera].GetComponent<ControllerSharkFeed>().Rewind();
-            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabInfoBox].GetComponent<ControllerInfoBox>().Rewind();
-            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabSmartphone].GetComponent<ControllerSmartphone>().Rewind();
-            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabShelf].GetComponent<ControllerShelf>().Rewind();
-            CommonData.prefabs.gameobjectLookup["lion_sv_ip"].GetComponent<ControllerPathLion>().Rewind();
-            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabKioskInsurance].GetComponent<ControllerInsuranceProvider>().Rewind();
+         //   CommonData.prefabs.gameobjectLookup[StringConstants.PrefabBancomat].GetComponent<ControllerBancomat>().Rewind();
+         //  CommonData.prefabs.gameobjectLookup[StringConstants.ARCamera].GetComponent<ControllerSharkFeed>().Rewind();
+         //  CommonData.prefabs.gameobjectLookup[StringConstants.PrefabInfoBox].GetComponent<ControllerInfoBox>().Rewind();
+         //  CommonData.prefabs.gameobjectLookup[StringConstants.PrefabSmartphone].GetComponent<ControllerSmartphone>().Rewind();
+         //  CommonData.prefabs.gameobjectLookup[StringConstants.PrefabShelf].GetComponent<ControllerShelf>().Rewind();
+         //  CommonData.prefabs.gameobjectLookup["lion_sv_ip"].GetComponent<ControllerPathLion>().Rewind();
+         //  CommonData.prefabs.gameobjectLookup[StringConstants.PrefabKioskInsurance].GetComponent<ControllerInsuranceProvider>().Rewind();
             InitializeUI();
        
             

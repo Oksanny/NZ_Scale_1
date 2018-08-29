@@ -78,7 +78,7 @@ namespace States
             complete = true;
             CommonData.prefabs.gameobjectLookup[StringConstants.ARCamera].GetComponent<ControllerSharkFeed>().DeleteFeed();
             CommonData.prefabs.gameobjectLookup[StringConstants.ARCamera].GetComponent<ControllerSharkFeed>().ShowShark = null;
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(6f);
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabShark].GetComponent<Animator>().SetTrigger("EndShoot");
             CommonData.mainManager.stateManager.SwapState(new CheckServiceProvider());
         }

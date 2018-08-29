@@ -60,7 +60,7 @@ namespace States
         {
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabBancomat].GetComponent<ControllerBancomat>()
                  .ShowBancomat = null;
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(6f);
             CommonData.mainManager.stateManager.SwapState(new CheckShark());
 
         }
