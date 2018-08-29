@@ -130,6 +130,10 @@ namespace States
                 WrHandler.RefreshProcess();
             }
             controllerPathLion.StartExit();
+            if (CommonData.prefabs.gameobjectLookup[StringConstants.PrefabLion].GetComponent<AudioSource>().isPlaying)
+            {
+                CommonData.prefabs.gameobjectLookup[StringConstants.PrefabLion].GetComponent<AudioSource>().Stop();
+            }
             yield return new WaitForSeconds(4f);
             CommonData.mainManager.stateManager.SwapState(new CheckAcssesorShop());
         }

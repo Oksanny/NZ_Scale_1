@@ -16,6 +16,8 @@ namespace States
         
         public override void Initialize()
         {
+            CommonData.prefabs.gameobjectLookup[StringConstants.PrefaLabelTotalPoints].SetActive(false);
+            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckoutArea].GetComponent<AudioSource>().Play(); 
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckoutArea].GetComponent<bl_MiniMapItem>().Size = 0; 
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointCheckoutArea].SetActive(false);
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabArrowController].GetComponent<ControllerLookAtPoint>().Target = null;

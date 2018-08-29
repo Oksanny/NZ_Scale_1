@@ -75,6 +75,7 @@ namespace States
             complete = true;
             Elephant.GetComponent<ControllerElephant>().ShowElephant = null;
             Elephant.GetComponent<CapsuleCollider>().enabled = false;
+            Elephant.GetComponent<ControllerElephant>().AudioSource.Stop();
             menuComponent.StartCoroutine(ShowLabel());
         }
         IEnumerator ShowLabel()
@@ -82,6 +83,7 @@ namespace States
             yield return new WaitForSeconds(6f);
             menuComponent.LabelGreat.SetActive(false);
             menuComponent.LabelPoint.SetActive(false);
+
             CommonData.mainManager.stateManager.SwapState(new CheckSmartphone());
         }
         public override StateExitValue Cleanup()
@@ -89,6 +91,7 @@ namespace States
             SetIdleAnimation();
             Elephant.GetComponent<ControllerElephant>().ShowElephant = null;
             Elephant.GetComponent<CapsuleCollider>().enabled = false;
+            Elephant.GetComponent<ControllerElephant>().AudioSource.Stop();
             DestroyUI();
             return null;
         }

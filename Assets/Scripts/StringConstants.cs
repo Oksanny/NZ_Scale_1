@@ -86,6 +86,9 @@ using UnityEngine;
       public const string PrefabCheckoutArea = "CheckoutArea";
       public const string PrefabArrowController = "ArrowController";
       public const string PrefabResetSceneButton = "ResetSceneButton";
+      public const string PrefabLion = "lion_sv_ip";
+      public const string PrefaCheckoutArea = "CheckoutArea";
+      public const string PrefaLabelTotalPoints = "LabelTotalPoints";
       
  }
  

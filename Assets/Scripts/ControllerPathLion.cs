@@ -59,6 +59,8 @@ public class ControllerPathLion : MonoBehaviour
 
     public void HideTarget()
     {
+        TargetLion.GetComponent<AudioSource>().Stop();
+        
        PathExitFromCage.Target.gameObject.SetActive(false); 
     }
     public void Rewind()

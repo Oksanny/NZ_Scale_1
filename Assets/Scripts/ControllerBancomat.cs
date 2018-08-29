@@ -69,11 +69,12 @@ public class ControllerBancomat : MonoBehaviour
 
                 if (hit.collider.gameObject.name.Contains("ATM"))
                 {
-                    AudioSource.Play();
+                    
                     // Debug.Log("It's working!");
                     FeetHitten = true;
                     if (ShowBancomat != null)
                     {
+                        AudioSource.Play();
                         ShaderGlow.lightOn();
                         ShowBancomat.SelectBancomat();
                     }
