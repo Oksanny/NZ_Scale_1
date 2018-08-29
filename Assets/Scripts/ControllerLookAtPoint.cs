@@ -33,7 +33,7 @@ public class ControllerLookAtPoint : MonoBehaviour
             // transform.rotation = Quaternion.Slerp(transform.rotation, rot, 100);
             transform.LookAt(tempGameObject);
             Arrow.transform.localEulerAngles = new Vector3(Arrow.transform.localEulerAngles.x, Arrow.transform.localEulerAngles.y, -transform.localEulerAngles.y);
-            Debug.Log(transform.localEulerAngles.y);
+            //Debug.Log(transform.localEulerAngles.y);
           // if (Mathf.Abs(transform.localEulerAngles.y) < 15f || Mathf.Abs(transform.localEulerAngles.y) > 345f)
           // {
           //     foreach (var mesh in Arrow.GetComponentsInChildren<MeshRenderer>())

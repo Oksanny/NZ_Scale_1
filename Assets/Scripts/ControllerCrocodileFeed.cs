@@ -15,7 +15,7 @@ public class ControllerCrocodileFeed : MonoBehaviour
     public GameObject Feed;
     public GameObject DirectionShoot;
 
-
+    public AudioSource AudioSource;
     public GameObject FeedInstant;
     public GameObject SpawnFeed;
     public ShowCrocodile ShowCrocodile;
@@ -28,37 +28,7 @@ public class ControllerCrocodileFeed : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-#if ((UNITY_ANDROID || UNITY_IOS) && !UNITY_EDITOR)
-        if (Input.touchCount == 1)
-        {
 
-            Touch touch = Input.touches[0];
-
-            ray = CommonData.prefabs.gameobjectLookup["ARCamera"].GetComponent<Camera>().ScreenPointToRay(Input.touches[0].position);
-            if (touch.phase == TouchPhase.Stationary && Physics.Raycast(ray.origin, ray.direction, out hit))
-            {
-
-                if (hit.collider.gameObject.name.Contains("icePop") )
-                {
-                    FeetHitten = true;
-                    StartFlight();
-                }
-
-                // Debug.Log(hit.collider.gameObject.name);
-
-            }
-            else
-                if ((touch.phase == TouchPhase.Ended && FeetHitten))
-                {
-
-
-                    FeetHitten = false;
-                    
-                }
-
-
-        }
-#else
         //Mouse
         if (Input.GetMouseButtonDown(0))
         {
@@ -87,13 +57,7 @@ public class ControllerCrocodileFeed : MonoBehaviour
             }
 
         }
-        if (Input.GetMouseButtonUp(0) && FeetHitten)
-        {
-            FeetHitten = false;
-            //  StartCoroutine(GetNewFeed());
-            //Debug.Log("Mouse is UP");
-        }
-#endif
+ 
     }
     public void GetNewFeed()
     {
@@ -171,7 +135,8 @@ public class ControllerCrocodileFeed : MonoBehaviour
             Feed = null;
             Destroy(tempFeed);
         }
-        StartCoroutine(SpawnFeedAfterHiT());
+      //  StartCoroutine(SpawnFeedAfterHiT());
+        AudioSource.Play();
     }
 
     public void DeleteFeed()

@@ -20,7 +20,7 @@ namespace States
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointCheckoutArea].SetActive(false);
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabArrowController].GetComponent<ControllerLookAtPoint>().Target = null;
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabTimer].GetComponent<ControllerTime>().StopTime = true;
-            AddBonuse();
+          //  AddBonuse();
             InitializeUI();
        
             

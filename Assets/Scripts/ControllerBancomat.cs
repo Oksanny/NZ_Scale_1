@@ -10,6 +10,7 @@ public class ControllerBancomat : MonoBehaviour
     private bool FeetHitten;
     public ShowBancomat ShowBancomat;
     public shaderGlow ShaderGlow;
+    public AudioSource AudioSource;
     // Use this for initialization
     void Start()
     {
@@ -68,7 +69,7 @@ public class ControllerBancomat : MonoBehaviour
 
                 if (hit.collider.gameObject.name.Contains("ATM"))
                 {
-                    
+                    AudioSource.Play();
                     // Debug.Log("It's working!");
                     FeetHitten = true;
                     if (ShowBancomat != null)
@@ -89,12 +90,7 @@ public class ControllerBancomat : MonoBehaviour
             }
 
         }
-        if (Input.GetMouseButtonUp(0) && FeetHitten)
-        {
-            FeetHitten = false;
-            //  StartCoroutine(GetNewFeed());
-            //Debug.Log("Mouse is UP");
-        }
+        
 //#endif
     }
 

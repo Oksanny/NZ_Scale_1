@@ -13,6 +13,7 @@ public class ControllerSmartphone : MonoBehaviour
     public GameObject FrameCommunata_8;
     public shaderGlow PhoneSmarticall_9;
     public shaderGlow PhoneCommunata_8;
+    public AudioSource AudioSource;
 	// Use this for initialization
 	void Start () {
 		
@@ -20,77 +21,7 @@ public class ControllerSmartphone : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update () {
-#if ((UNITY_ANDROID || UNITY_IOS) && !UNITY_EDITOR)
-        if (Input.touchCount == 1)
-        {
 
-            Touch touch = Input.touches[0];
-
-            ray = CommonData.prefabs.gameobjectLookup[StringConstants.ARCamera].GetComponent<Camera>().ScreenPointToRay(Input.touches[0].position);
-            if (touch.phase == TouchPhase.Stationary && Physics.Raycast(ray.origin, ray.direction, out hit))
-            {
-
-                switch (hit.collider.gameObject.name)
-                {
-                     case "Smarticall_9":
-                        FeetHitten = true;
-                       
-                        if (ShowSmartphone != null)
-                        {
-                            FrameSmarticall_9.SetActive(true);
-                            PhoneSmarticall_9.lightOn();
-                            ShowSmartphone.SelectSmartical();
-                            CommonData.currentUser.data.SmarticallBuy = true;
-                        }
-                        break;
-                    case "Smartphone_Smart":
-                        FeetHitten = true;
-
-                        if (ShowSmartphone != null)
-                        {
-                            FrameSmarticall_9.SetActive(true);
-                            PhoneSmarticall_9.lightOn();
-                            ShowSmartphone.SelectSmartical();
-                            CommonData.currentUser.data.SmarticallBuy = true;
-                        }
-                        break;
-                    case "Communata_8":
-                        FeetHitten = true;
-                        
-                        if (ShowSmartphone != null)
-                        {
-                            PhoneCommunata_8.lightOn();
-                            FrameCommunata_8.SetActive(true);
-                            ShowSmartphone.SelectCommunata();
-                        }
-                        break;
-                    case "Smartphone_Communata":
-                        FeetHitten = true;
-
-                        if (ShowSmartphone != null)
-                        {
-                            PhoneCommunata_8.lightOn();
-                            FrameCommunata_8.SetActive(true);
-                            ShowSmartphone.SelectCommunata();
-                        }
-                        break;
-                }
-
-                // Debug.Log(hit.collider.gameObject.name);
-
-            }
-            else
-                if ((touch.phase == TouchPhase.Ended && FeetHitten))
-                {
-
-
-                    FeetHitten = false;
-                    
-                }
-
-
-        }
-#else
                        //Mouse
         if (Input.GetMouseButtonDown(0))
         {
@@ -108,6 +39,7 @@ public class ControllerSmartphone : MonoBehaviour
                        
                         if (ShowSmartphone != null)
                         {
+                            AudioSource.Play();
                             FrameSmarticall_9.SetActive(true);
                             PhoneSmarticall_9.lightOn();
                             ShowSmartphone.SelectSmartical();
@@ -119,6 +51,7 @@ public class ControllerSmartphone : MonoBehaviour
 
                         if (ShowSmartphone != null)
                         {
+                            AudioSource.Play();
                             FrameSmarticall_9.SetActive(true);
                             PhoneSmarticall_9.lightOn();
                             ShowSmartphone.SelectSmartical();
@@ -130,6 +63,7 @@ public class ControllerSmartphone : MonoBehaviour
                         
                         if (ShowSmartphone != null)
                         {
+                            AudioSource.Play();
                             PhoneCommunata_8.lightOn();
                             FrameCommunata_8.SetActive(true);
                             ShowSmartphone.SelectCommunata();
@@ -140,6 +74,7 @@ public class ControllerSmartphone : MonoBehaviour
 
                         if (ShowSmartphone != null)
                         {
+                            AudioSource.Play();
                             PhoneCommunata_8.lightOn();
                             FrameCommunata_8.SetActive(true);
                             ShowSmartphone.SelectCommunata();
@@ -155,13 +90,7 @@ public class ControllerSmartphone : MonoBehaviour
             }
 
         }
-        if (Input.GetMouseButtonUp(0) && FeetHitten)
-        {
-            FeetHitten = false;
-            //  StartCoroutine(GetNewFeed());
-            //Debug.Log("Mouse is UP");
-        }
-#endif
+ 
 	}
 
     public void Rewind()

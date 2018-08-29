@@ -11,6 +11,7 @@ public class ControllerInsuranceProvider : MonoBehaviour
     public ShowInsuranceeProvider ShowInsuranceeProvider;
     public GameObject FrameInsuramore;
     public GameObject FramePlanetsure;
+    public AudioSource AudioSource;
     // Use this for initialization
     void Start()
     {
@@ -20,51 +21,7 @@ public class ControllerInsuranceProvider : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-#if ((UNITY_ANDROID || UNITY_IOS) && !UNITY_EDITOR)
-        if (Input.touchCount == 1)
-        {
 
-            Touch touch = Input.touches[0];
-
-            ray = CommonData.prefabs.gameobjectLookup[StringConstants.ARCamera].GetComponent<Camera>().ScreenPointToRay(Input.touches[0].position);
-            if (touch.phase == TouchPhase.Stationary && Physics.Raycast(ray.origin, ray.direction, out hit))
-            {
-
-                switch (hit.collider.gameObject.name)
-                {
-                     case "Insuramore":
-                        FeetHitten = true;
-                        FrameInsuramore.SetActive(true);
-                        if (ShowInsuranceeProvider != null)
-                        {
-                            ShowInsuranceeProvider.SelecInsuramore();
-                        }
-                        break;
-                    case "Planetsure":
-                        FeetHitten = true;
-                        FramePlanetsure.SetActive(true);
-                        if (ShowInsuranceeProvider != null)
-                        {
-                            ShowInsuranceeProvider.SelecPlanetsure();
-                        }
-                        break;
-                }
-
-                // Debug.Log(hit.collider.gameObject.name);
-
-            }
-            else
-                if ((touch.phase == TouchPhase.Ended && FeetHitten))
-                {
-
-
-                    FeetHitten = false;
-                    
-                }
-
-
-        }
-#else
         //Mouse
         if (Input.GetMouseButtonDown(0))
         {
@@ -83,6 +40,7 @@ public class ControllerInsuranceProvider : MonoBehaviour
                        
                         if (ShowInsuranceeProvider != null)
                         {
+                            AudioSource.Play();
                             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabArrowInsuranceBox].SetActive(false);
                             FrameInsuramore.SetActive(true);
                             ShowInsuranceeProvider.SelecInsuramore();
@@ -94,6 +52,7 @@ public class ControllerInsuranceProvider : MonoBehaviour
                         
                         if (ShowInsuranceeProvider != null)
                         {
+                            AudioSource.Play();
                             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabArrowInsuranceBox].SetActive(false);
                             FramePlanetsure.SetActive(true);
                             ShowInsuranceeProvider.SelecPlanetsure();
@@ -109,13 +68,7 @@ public class ControllerInsuranceProvider : MonoBehaviour
             }
 
         }
-        if (Input.GetMouseButtonUp(0) && FeetHitten)
-        {
-            FeetHitten = false;
-            //  StartCoroutine(GetNewFeed());
-            //Debug.Log("Mouse is UP");
-        }
-#endif
+
     }
 
     public void Rewind()

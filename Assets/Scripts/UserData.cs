@@ -4,7 +4,7 @@ using UnityEngine;
 [System.Serializable]
 public class UserData
 {
-
+    public int TimeBonus;
     public int Plus ;
     public int Minus;
     public int contAcssesur;

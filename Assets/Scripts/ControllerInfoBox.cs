@@ -10,6 +10,7 @@ public class ControllerInfoBox : MonoBehaviour {
     public ShowServiceProv ShowServiceProvider;
     public GameObject FrameConnectaPhone;
     public GameObject FramePolacone;
+    public AudioSource AudioSource;
 	// Use this for initialization
 	void Start () {
 		
@@ -17,54 +18,54 @@ public class ControllerInfoBox : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-#if ((UNITY_ANDROID || UNITY_IOS) && !UNITY_EDITOR)
-        if (Input.touchCount == 1)
-        {
-
-            Touch touch = Input.touches[0];
-
-            ray = CommonData.prefabs.gameobjectLookup[StringConstants.ARCamera].GetComponent<Camera>().ScreenPointToRay(Input.touches[0].position);
-            if (touch.phase == TouchPhase.Stationary && Physics.Raycast(ray.origin, ray.direction, out hit))
-            {
-
-                switch (hit.collider.gameObject.name)
-                {
-                    case "ConnectaPhone":
-
-                        FeetHitten = true;
-                        if (ShowServiceProvider != null)
-                        {
-                            
-                            FrameConnectaPhone.SetActive(true);
-                            ShowServiceProvider.SelecConnectaPhone();
-                        }
-                        break;
-                    case "Polacon":
-                        FeetHitten = true;
-                        
-                        if (ShowServiceProvider != null)
-                        {
-                            FramePolacone.SetActive(true);
-                            ShowServiceProvider.SelecPolacon();
-                        }
-                        break;
-                }
-
-                // Debug.Log(hit.collider.gameObject.name);
-
-            }
-            else
-                if ((touch.phase == TouchPhase.Ended && FeetHitten))
-                {
-
-
-                    FeetHitten = false;
-                    
-                }
-
-
-        }
-#else
+//#if ((UNITY_ANDROID || UNITY_IOS) && !UNITY_EDITOR)
+//        if (Input.touchCount == 1)
+//        {
+//
+//            Touch touch = Input.touches[0];
+//
+//            ray = CommonData.prefabs.gameobjectLookup[StringConstants.ARCamera].GetComponent<Camera>().ScreenPointToRay(Input.touches[0].position);
+//            if (touch.phase == TouchPhase.Stationary && Physics.Raycast(ray.origin, ray.direction, out hit))
+//            {
+//
+//                switch (hit.collider.gameObject.name)
+//                {
+//                    case "ConnectaPhone":
+//
+//                        FeetHitten = true;
+//                        if (ShowServiceProvider != null)
+//                        {
+//                            
+//                            FrameConnectaPhone.SetActive(true);
+//                            ShowServiceProvider.SelecConnectaPhone();
+//                        }
+//                        break;
+//                    case "Polacon":
+//                        FeetHitten = true;
+//                        
+//                        if (ShowServiceProvider != null)
+//                        {
+//                            FramePolacone.SetActive(true);
+//                            ShowServiceProvider.SelecPolacon();
+//                        }
+//                        break;
+//                }
+//
+//                // Debug.Log(hit.collider.gameObject.name);
+//
+//            }
+//            else
+//                if ((touch.phase == TouchPhase.Ended && FeetHitten))
+//                {
+//
+//
+//                    FeetHitten = false;
+//                    
+//                }
+//
+//
+//        }
+//#else
                        //Mouse
         if (Input.GetMouseButtonDown(0))
         {
@@ -82,7 +83,7 @@ public class ControllerInfoBox : MonoBehaviour {
                         FeetHitten = true;
                         if (ShowServiceProvider != null)
                         {
-                            
+                            AudioSource.Play();
                             FrameConnectaPhone.SetActive(true);
                             ShowServiceProvider.SelecConnectaPhone();
                         }
@@ -92,6 +93,7 @@ public class ControllerInfoBox : MonoBehaviour {
                         
                         if (ShowServiceProvider != null)
                         {
+                            AudioSource.Play();
                             FramePolacone.SetActive(true);
                             ShowServiceProvider.SelecPolacon();
                         }
@@ -106,13 +108,8 @@ public class ControllerInfoBox : MonoBehaviour {
             }
 
         }
-        if (Input.GetMouseButtonUp(0) && FeetHitten)
-        {
-            FeetHitten = false;
-            //  StartCoroutine(GetNewFeed());
-            //Debug.Log("Mouse is UP");
-        }
-#endif
+        
+//#endif
 	}
 
     public void Rewind()

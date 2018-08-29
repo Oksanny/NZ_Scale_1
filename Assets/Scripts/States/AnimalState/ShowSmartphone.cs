@@ -74,15 +74,15 @@ namespace States
         }
         public override void Suspend()
         {
-            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabSmartphone].GetComponent<ControllerSmartphone>()
-               .ShowSmartphone = null;
+            
             HideUI();
         }
 
         public override StateExitValue Cleanup()
         {
 
-
+            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabSmartphone].GetComponent<ControllerSmartphone>()
+               .ShowSmartphone = null;
             DestroyUI();
             return null;
         }

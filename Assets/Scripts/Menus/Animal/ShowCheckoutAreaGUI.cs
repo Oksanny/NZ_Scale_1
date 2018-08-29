@@ -16,20 +16,27 @@ namespace Menus
 
          void Start()
          {
-             
+             if (CommonData.currentUser.data.TimeBonus>=0)
+             {
+                 CommonData.currentUser.data.Plus += CommonData.currentUser.data.TimeBonus;
+             }
+             else
+             {
+                 CommonData.currentUser.data.Minus += CommonData.currentUser.data.TimeBonus;
+             }
              PlusLabel.text = "+" + CommonData.currentUser.data.Plus.ToString() + " points";
              MinusLabel.text =  CommonData.currentUser.data.Minus.ToString() + " points";
              int total = CommonData.currentUser.data.Plus + CommonData.currentUser.data.Minus;
              Debug.Log(total);
              if (total > 0)
              {
-                 total = CommonData.currentUser.data.Plus + CommonData.currentUser.data.Minus;
+                
                  Total.text = "+" + total.ToString() + " Total Points!";
                  Message.text = "Congratulations! You have scored +"+total.ToString()+" points! Hope you enjoyed your Augmented Reality experience!";
              }
              if (total < 0)
              {
-                 total = CommonData.currentUser.data.Plus + CommonData.currentUser.data.Minus;
+                 
                  Total.text = total.ToString() + " Total Points!";
                  Message.text = "Congratulations! You have scored " + total.ToString() + " points! Hope you enjoyed your Augmented Reality experience!";
              }
