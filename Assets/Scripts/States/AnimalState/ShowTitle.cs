@@ -16,7 +16,9 @@ namespace States
         
         public override void Initialize()
         {
-           
+            CommonData.prefabs.gameobjectLookup[StringConstants.PrefaMiniMap].GetComponent<Canvas>().enabled=true;
+            CommonData.prefabs.gameobjectLookup[StringConstants.Prefa_EN_Button].SetActive(true);
+            CommonData.prefabs.gameobjectLookup[StringConstants.Prefa_GM_Button].SetActive(true);
             InitializeUI();
        
             

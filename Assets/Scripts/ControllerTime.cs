@@ -18,6 +18,7 @@ public class ControllerTime : MonoBehaviour
 	{
 	    currentTime = StringConstants.TimeGame;
         TotalPoints.SetActive(true);
+        CommonData.prefabs.gameobjectLookup[StringConstants.PrefaArrowPivot].SetActive(true);
 	}
 	
 	// Update is called once per frame

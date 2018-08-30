@@ -89,6 +89,10 @@ using UnityEngine;
       public const string PrefabLion = "lion_sv_ip";
       public const string PrefaCheckoutArea = "CheckoutArea";
       public const string PrefaLabelTotalPoints = "LabelTotalPoints";
+      public const string PrefaMiniMap = "MiniMap";
+      public const string Prefa_EN_Button = "EN_Button";
+      public const string Prefa_GM_Button = "GM_Button";
+      public const string PrefaArrowPivot = "ArrowPivot";
       
  }
  
