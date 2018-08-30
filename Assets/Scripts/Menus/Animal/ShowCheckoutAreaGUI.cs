@@ -10,23 +10,27 @@ namespace Menus
 
         public GameObject LabelInfo;
         public Text PlusLabel;
+        public Text TimeBonusLabel;
         public Text MinusLabel;
         public Text Total;
         public Text Message;
 
          void Start()
          {
+             PlusLabel.text = "Cash Collected: " + "+" + CommonData.currentUser.data.Plus.ToString() + " points";
+             
              if (CommonData.currentUser.data.TimeBonus>=0)
              {
-                 CommonData.currentUser.data.Plus += CommonData.currentUser.data.TimeBonus;
+
+                 TimeBonusLabel.text = "Time Bonus: " + "+" + CommonData.currentUser.data.TimeBonus.ToString() + " points";
              }
              else
              {
-                 CommonData.currentUser.data.Minus += CommonData.currentUser.data.TimeBonus;
+                 TimeBonusLabel.text = "Penalty: " +  CommonData.currentUser.data.TimeBonus.ToString() + " points";
              }
-             PlusLabel.text = "+" + CommonData.currentUser.data.Plus.ToString() + " points";
-             MinusLabel.text =  CommonData.currentUser.data.Minus.ToString() + " points";
-             int total = CommonData.currentUser.data.Plus + CommonData.currentUser.data.Minus;
+             
+             MinusLabel.text ="Purchases: "+  CommonData.currentUser.data.Minus.ToString() + " points";
+             int total = CommonData.currentUser.data.Plus + CommonData.currentUser.data.Minus + CommonData.currentUser.data.TimeBonus;
              Debug.Log(total);
              if (total > 0)
              {

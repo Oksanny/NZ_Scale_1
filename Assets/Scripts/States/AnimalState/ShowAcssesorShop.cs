@@ -65,6 +65,9 @@ namespace States
         {
             countItem++;
             menuComponent.PhonePointsLabel.SetActive(true);
+            menuComponent.CasePointsLabel.SetActive(false);
+            menuComponent.ChargePointsLabel.SetActive(false);
+            menuComponent.PowerBankPointsLabel.SetActive(false);
             CommonData.currentUser.data.Minus -= 80;
             if (countItem==3)
             {
@@ -81,6 +84,9 @@ namespace States
         {
             countItem++;
             menuComponent.PowerBankPointsLabel.SetActive(true);
+            menuComponent.PhonePointsLabel.SetActive(false);
+            menuComponent.CasePointsLabel.SetActive(false);
+            menuComponent.ChargePointsLabel.SetActive(false);
             CommonData.currentUser.data.Minus -= 50;
             if (countItem == 3)
             {
@@ -97,6 +103,9 @@ namespace States
         {
             countItem++;
             menuComponent.CasePointsLabel.SetActive(true);
+            menuComponent.PowerBankPointsLabel.SetActive(false);
+            menuComponent.PhonePointsLabel.SetActive(false);
+            menuComponent.ChargePointsLabel.SetActive(false);
             CommonData.currentUser.data.Minus -= 35;
             if (countItem == 3)
             {
@@ -113,6 +122,10 @@ namespace States
         {
             countItem++;
             menuComponent.ChargePointsLabel.SetActive(true);
+            menuComponent.PowerBankPointsLabel.SetActive(false);
+            menuComponent.PhonePointsLabel.SetActive(false);
+            menuComponent.CasePointsLabel.SetActive(false);
+            
             CommonData.currentUser.data.Minus -= 45;
             if (countItem == 3)
             {

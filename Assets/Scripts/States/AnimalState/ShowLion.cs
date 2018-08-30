@@ -116,6 +116,7 @@ namespace States
                 menuComponent.LabelGreat.SetActive(true);
                 menuComponent.LabelPoint.SetActive(true);
                 CommonData.currentUser.data.Plus += 250;
+                letterHolder.SetActive(false);
                 menuComponent.StartCoroutine(DeleteLetter());
             }
             

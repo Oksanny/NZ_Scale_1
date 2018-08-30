@@ -45,7 +45,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1122653817877602
 GameObject:
   m_ObjectHideFlags: 0
@@ -81,7 +81,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1139031545581096
 GameObject:
   m_ObjectHideFlags: 1
@@ -330,7 +330,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1903937044012806
 GameObject:
   m_ObjectHideFlags: 1
@@ -422,7 +422,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Product Added!
+  m_Text: "Produkt hinzugef\xFCgt!"
 --- !u!114 &114105606812348340
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -747,7 +747,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Pick up to three Accessories by tapping on them! '
+  m_Text: "W\xE4hle drei Telefonzubeh\xF6re, indem du sie antippst."
 --- !u!114 &114357912526932214
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -977,7 +977,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Price: -80'
+  m_Text: 'Preis: 80'
 --- !u!114 &114514328694566580
 MonoBehaviour:
   m_ObjectHideFlags: 1
