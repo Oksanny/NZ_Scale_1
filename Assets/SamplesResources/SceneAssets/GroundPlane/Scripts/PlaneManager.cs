@@ -167,7 +167,7 @@ public class PlaneManager : MonoBehaviour
                     }
                    // CommonData.currentUser.data.Plus += 300;
                    // CommonData.currentUser.data.Minus -= 200;
-                    CommonData.mainManager.stateManager.PushState(new ShowTitle());
+                    CommonData.mainManager.stateManager.PushState(new CheckBancomat());
                     
                    // CommonData.StateAnimal = true;
                     setOblect = true;

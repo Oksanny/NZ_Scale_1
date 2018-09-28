@@ -56,6 +56,7 @@ GameObject:
   - component: {fileID: 224982438060180042}
   - component: {fileID: 222125419662602932}
   - component: {fileID: 114140556530258230}
+  - component: {fileID: 114083365403585812}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -220,6 +221,34 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &114083365403585812
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1296031749818476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 344445a89b4f74a0e9a0a766903df87e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mTerm: Toss ice cream
+  mTermSecondary: 
+  PrimaryTermModifier: 0
+  SecondaryTermModifier: 0
+  LocalizeOnAwake: 1
+  Source: {fileID: 114859518135799454, guid: 6fd6bab07f198b448a050abfb856c660, type: 2}
+  mTarget: {fileID: 114140556530258230}
+  CanUseSecondaryTerm: 1
+  AllowMainTermToBeRTL: 1
+  AllowSecondTermToBeRTL: 0
+  IgnoreRTL: 0
+  MaxCharactersInRTL: 0
+  CorrectAlignmentForRTL: 1
+  TranslatedObjects: []
+  LocalizeCallBack:
+    Target: {fileID: 0}
+    MethodName: 
 --- !u!114 &114140556530258230
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -864,7 +893,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.015014648, y: 0}
+  m_AnchoredPosition: {x: -0.014892578, y: 0}
   m_SizeDelta: {x: 77, y: 0.00024414}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224220352591489388
@@ -937,7 +966,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -926, y: -287}
+  m_AnchoredPosition: {x: -926, y: -320}
   m_SizeDelta: {x: 432.69995, y: 81.099976}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224505798093041158
@@ -1019,7 +1048,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -925, y: -199}
+  m_AnchoredPosition: {x: -925, y: -223}
   m_SizeDelta: {x: 323.90002, y: 124.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224771307823466916

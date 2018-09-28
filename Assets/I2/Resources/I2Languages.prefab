@@ -283,7 +283,7 @@ MonoBehaviour:
     - 
     - 
     Languages_Touch:
-    - 'Preis: 80'
+    - 'Preis: -80'
     - 'Price: -80'
     Flags: 0000
   - Term: Price   35
@@ -293,7 +293,7 @@ MonoBehaviour:
     - 
     - 
     Languages_Touch:
-    - 'Preis: 35'
+    - 'Preis: -35'
     - 'Price: -35'
     Flags: 0000
   - Term: Price   50
@@ -303,8 +303,8 @@ MonoBehaviour:
     - 
     - 
     Languages_Touch:
-    - 'Preis: 80'
-    - 'Price: -80'
+    - 'Preis: -50'
+    - 'Price: -50'
     Flags: 0000
   - Term: Price   45
     TermType: 0
@@ -313,7 +313,7 @@ MonoBehaviour:
     - 
     - 
     Languages_Touch:
-    - 'Preis: 45'
+    - 'Preis: -45'
     - 'Price: -45'
     Flags: 0000
   - Term: Miss
@@ -363,7 +363,7 @@ MonoBehaviour:
     - 
     - 
     Languages_Touch:
-    - 'Preis: 120'
+    - 'Preis: -120'
     - 'Price: -120 '
     Flags: 0000
   - Term: Price   180
@@ -373,7 +373,7 @@ MonoBehaviour:
     - 
     - 
     Languages_Touch:
-    - 'Preis: 180'
+    - 'Preis: -180'
     - 'Price: -180'
     Flags: 0000
   - Term: Act of Kindness Complete
@@ -403,7 +403,7 @@ MonoBehaviour:
     - 
     - 
     Languages_Touch:
-    - 'Preis: 600'
+    - 'Preis: -600'
     - 'Price: -600'
     Flags: 0000
   - Term: Smart Choice
@@ -423,7 +423,7 @@ MonoBehaviour:
     - 
     - 
     Languages_Touch:
-    - 'Preis: 1000'
+    - 'Preis: -1000'
     - 'Price: -1000'
     Flags: 0000
   - Term: Luxury Choice
@@ -468,6 +468,26 @@ MonoBehaviour:
     Languages_Touch:
     - "W\xE4hle ein Smartphone aus."
     - Pick a smartphone!
+    Flags: 0000
+  - Term: Price   570
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - 'Preis: -570'
+    - 'Price: -570'
+    Flags: 0000
+  - Term: Price   360
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - 'Preis: -360'
+    - 'Price: -360'
     Flags: 0000
   mLanguages:
   - Name: German (Germany)
