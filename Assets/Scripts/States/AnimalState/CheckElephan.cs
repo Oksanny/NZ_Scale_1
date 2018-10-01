@@ -25,8 +25,8 @@ namespace States
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointElephant].SetActive(true);
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabArrowController].GetComponent<ControllerLookAtPoint>().Target = CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointElephant];
 
-            
-            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabInfoBox].GetComponent<bl_MiniMapItem>().Size = 0;
+
+            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabBancomat].GetComponent<bl_MiniMapItem>().Size = 0;
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabElephant].GetComponent<bl_MiniMapItem>().Size = 40;
             ShowUI();
 

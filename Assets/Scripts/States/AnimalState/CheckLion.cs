@@ -20,7 +20,7 @@ namespace States
            
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointLion].SetActive(true);
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabArrowController].GetComponent<ControllerLookAtPoint>().Target = CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointLion];
-            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabSmartphone].GetComponent<bl_MiniMapItem>().Size = 0;
+            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabInfoBox].GetComponent<bl_MiniMapItem>().Size = 0;
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCage].GetComponent<bl_MiniMapItem>().Size = 40;
             InitializeUI();
         }

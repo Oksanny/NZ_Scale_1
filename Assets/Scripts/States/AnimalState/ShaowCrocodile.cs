@@ -79,14 +79,15 @@ namespace States
         {
             yield return new WaitForSeconds(6f);
             menuComponent.LabelGreat.SetActive(false);
-            if (CommonData.currentUser.data.SmarticallBuy && CommonData.currentUser.data.contAcssesur==3)
-            {
-                CommonData.mainManager.stateManager.SwapState(new SpecialBonus());
-            }
-            else
-            {
-                CommonData.mainManager.stateManager.SwapState(new CheckInsuranceProvider());
-            }
+            CommonData.mainManager.stateManager.SwapState(new CheckInsuranceProvider());
+          // if (true||CommonData.currentUser.data.SmarticallBuy && CommonData.currentUser.data.contAcssesur==3)
+          // {
+          //     CommonData.mainManager.stateManager.SwapState(new SpecialBonus());
+          // }
+          // else
+          // {
+          //     CommonData.mainManager.stateManager.SwapState(new CheckInsuranceProvider());
+          // }
             
         }
         public override void Suspend()

@@ -44,6 +44,11 @@ namespace States
                
                 menuComponent.LabelPointCommunata.SetActive(false);
                 menuComponent.LabelPointsSmartical.SetActive(false);
+                menuComponent.LabelSelectPhone_1.SetActive(false);
+                menuComponent.LabelSelectPhone_2.SetActive(false);
+                menuComponent.LabelSelectPhone_3.SetActive(false);
+                menuComponent.LabelSelectPhone_4.SetActive(false);
+                menuComponent.LabelInfo.SetActive(true);
             }
             ShowUI();
 
@@ -64,12 +69,40 @@ namespace States
             CommonData.currentUser.data.Minus -= 1000;
             menuComponent.StartCoroutine(Exit());
         }
+        public void SelectPhone_1()
+        {
+            menuComponent.LabelSelectPhone_1.SetActive(true);
+           // CommonData.currentUser.data.Minus -= 600;
+            complete = true;
+            menuComponent.StartCoroutine(Exit());
+        }
+        public void SelectPhone_2()
+        {
+            menuComponent.LabelSelectPhone_2.SetActive(true);
+           // CommonData.currentUser.data.Minus -= 600;
+            complete = true;
+            menuComponent.StartCoroutine(Exit());
+        }
+        public void SelectPhone_3()
+        {
+            menuComponent.LabelSelectPhone_3.SetActive(true);
+            CommonData.currentUser.data.Minus -= 100;
+            complete = true;
+            menuComponent.StartCoroutine(Exit());
+        }
+        public void SelectPhone_4()
+        {
+            menuComponent.LabelSelectPhone_4.SetActive(true);
+            CommonData.currentUser.data.Minus -= 100;
+            complete = true;
+            menuComponent.StartCoroutine(Exit());
+        }
         IEnumerator Exit()
         {
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabSmartphone].GetComponent<ControllerSmartphone>()
                .ShowSmartphone = null;
             yield return new WaitForSeconds(6f);
-           CommonData.mainManager.stateManager.SwapState(new CheckLion());
+            CommonData.mainManager.stateManager.SwapState(new SpecialBonus());
 
         }
         public override void Suspend()

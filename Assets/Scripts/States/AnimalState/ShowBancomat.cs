@@ -61,7 +61,7 @@ namespace States
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabBancomat].GetComponent<ControllerBancomat>()
                  .ShowBancomat = null;
             yield return new WaitForSeconds(6f);
-            CommonData.mainManager.stateManager.SwapState(new CheckShark());
+            CommonData.mainManager.stateManager.SwapState(new CheckElephant());
 
         }
         public override void Suspend()

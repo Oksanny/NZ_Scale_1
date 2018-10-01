@@ -22,7 +22,7 @@ namespace States
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointSpecialBonuse].SetActive(true);
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabArrowController].GetComponent<ControllerLookAtPoint>().Target = CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointSpecialBonuse];
 
-            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCrocodile].GetComponent<bl_MiniMapItem>().Size = 0;
+            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabSmartphone].GetComponent<bl_MiniMapItem>().Size = 0;
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabSpecialBonuse].GetComponent<bl_MiniMapItem>().Size = 40; 
             if (menuComponent == null)
             {
@@ -94,7 +94,7 @@ namespace States
             yield return new WaitForSeconds(3f);
            
             
-            CommonData.mainManager.stateManager.SwapState(new CheckInsuranceProvider());
+            CommonData.mainManager.stateManager.SwapState(new CheckCrocodile());
 
         }
         public override StateExitValue Cleanup()

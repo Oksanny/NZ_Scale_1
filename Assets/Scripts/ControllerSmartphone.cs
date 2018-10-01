@@ -13,6 +13,11 @@ public class ControllerSmartphone : MonoBehaviour
     public GameObject FrameCommunata_8;
     public shaderGlow PhoneSmarticall_9;
     public shaderGlow PhoneCommunata_8;
+
+    public shaderGlow PhoneGlow_1;
+    public shaderGlow PhoneGlow_2;
+    public shaderGlow PhoneGlow_3;
+    public shaderGlow PhoneGlow_4;
     public AudioSource AudioSource;
 	// Use this for initialization
 	void Start () {
@@ -78,6 +83,50 @@ public class ControllerSmartphone : MonoBehaviour
                             PhoneCommunata_8.lightOn();
                             FrameCommunata_8.SetActive(true);
                             ShowSmartphone.SelectCommunata();
+                        }
+                        break;
+                    case "Phone_1_Black":
+                        FeetHitten = true;
+
+                        if (ShowSmartphone != null)
+                        {
+                            AudioSource.Play();
+                            PhoneGlow_1.lightOn();
+                            
+                            ShowSmartphone.SelectPhone_1();
+                        }
+                        break;
+                    case "Phone_2_White":
+                        FeetHitten = true;
+
+                        if (ShowSmartphone != null)
+                        {
+                            AudioSource.Play();
+                            PhoneGlow_2.lightOn();
+
+                            ShowSmartphone.SelectPhone_2();
+                        }
+                        break;
+                    case "Phone_3_Metalic":
+                        FeetHitten = true;
+
+                        if (ShowSmartphone != null)
+                        {
+                            AudioSource.Play();
+                            PhoneGlow_3.lightOn();
+
+                            ShowSmartphone.SelectPhone_3();
+                        }
+                        break;
+                    case "Phone_4_Gold":
+                        FeetHitten = true;
+
+                        if (ShowSmartphone != null)
+                        {
+                            AudioSource.Play();
+                            PhoneGlow_4.lightOn();
+
+                            ShowSmartphone.SelectPhone_4();
                         }
                         break;
 

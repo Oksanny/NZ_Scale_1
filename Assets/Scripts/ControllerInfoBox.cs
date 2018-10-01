@@ -11,6 +11,8 @@ public class ControllerInfoBox : MonoBehaviour {
     public GameObject FrameConnectaPhone;
     public GameObject FramePolacone;
     public AudioSource AudioSource;
+    public shaderGlow Smartphone_Big_Glow;
+    public shaderGlow Smartphone_Small_Glow;
 	// Use this for initialization
 	void Start () {
 		
@@ -96,6 +98,26 @@ public class ControllerInfoBox : MonoBehaviour {
                             AudioSource.Play();
                             FramePolacone.SetActive(true);
                             ShowServiceProvider.SelecPolacon();
+                        }
+                        break;
+                    case "Smartphone_Big":
+                        FeetHitten = true;
+
+                        if (ShowServiceProvider != null)
+                        {
+                            AudioSource.Play();
+                            Smartphone_Big_Glow.lightOn();
+                            ShowServiceProvider.SelecPhone_Big();
+                        }
+                        break;
+                    case "Smartphone_Small":
+                        FeetHitten = true;
+
+                        if (ShowServiceProvider != null)
+                        {
+                            AudioSource.Play();
+                            Smartphone_Small_Glow.lightOn();
+                            ShowServiceProvider.SelecPhone_Small();
                         }
                         break;
 

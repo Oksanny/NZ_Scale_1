@@ -16,7 +16,8 @@ namespace States
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointCrocodile].SetActive(true);
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabArrowController].GetComponent<ControllerLookAtPoint>().Target = CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointCrocodile];
 
-            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabShelf].GetComponent<bl_MiniMapItem>().Size = 0;
+            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabSpecialBonuse].GetComponent<bl_MiniMapItem>().Size = 0;
+            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabSmartphone].GetComponent<bl_MiniMapItem>().Size = 0;
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCrocodile].GetComponent<bl_MiniMapItem>().Size = 40;
             InitializeUI();
         }

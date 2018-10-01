@@ -45,6 +45,8 @@ namespace States
                 menuComponent.LabelInfo.SetActive(true);
                 menuComponent.LabelInfoPolacon.SetActive(false);
                 menuComponent.LabelPointsConnectaPhone.SetActive(false);
+                menuComponent.LabelSelectPhone_Big.SetActive(false);
+                menuComponent.LabelSelectPhone_Small.SetActive(false);
             }
             ShowUI();
 
@@ -68,12 +70,30 @@ namespace States
                  .ShowServiceProvider = null;
             menuComponent.StartCoroutine(Exit());
         }
+        public void SelecPhone_Big()
+        {
+            menuComponent.LabelSelectPhone_Big.SetActive(true);
+            CommonData.currentUser.data.Minus -= 1200;
+            complete = true;
+            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabInfoBox].GetComponent<ControllerInfoBox>()
+                 .ShowServiceProvider = null;
+            menuComponent.StartCoroutine(Exit());
+        }
+        public void SelecPhone_Small()
+        {
+            menuComponent.LabelSelectPhone_Small.SetActive(true);
+            CommonData.currentUser.data.Minus -= 900;
+            complete = true;
+            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabInfoBox].GetComponent<ControllerInfoBox>()
+                 .ShowServiceProvider = null;
+            menuComponent.StartCoroutine(Exit());
+        }
         IEnumerator Exit()
         {
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabInfoBox].GetComponent<ControllerInfoBox>()
                  .ShowServiceProvider = null;
             yield return new WaitForSeconds(6f);
-            CommonData.mainManager.stateManager.SwapState(new CheckElephant());
+            CommonData.mainManager.stateManager.SwapState(new CheckLion());
 
         }
         public override void Suspend()

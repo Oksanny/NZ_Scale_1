@@ -12,6 +12,9 @@ public class ControllerInsuranceProvider : MonoBehaviour
     public GameObject FrameInsuramore;
     public GameObject FramePlanetsure;
     public AudioSource AudioSource;
+    public shaderGlow PhoneGlow_1;
+    public shaderGlow PhoneGlow_2;
+    public shaderGlow PhoneGlow_3;
     // Use this for initialization
     void Start()
     {
@@ -56,6 +59,39 @@ public class ControllerInsuranceProvider : MonoBehaviour
                             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabArrowInsuranceBox].SetActive(false);
                             FramePlanetsure.SetActive(true);
                             ShowInsuranceeProvider.SelecPlanetsure();
+                        }
+                        break;
+                    case "Phone_1_64":
+                        FeetHitten = true;
+
+                        if (ShowInsuranceeProvider != null)
+                        {
+                            AudioSource.Play();
+                            PhoneGlow_1.lightOn();
+
+                            ShowInsuranceeProvider.SelectPhone_1();
+                        }
+                        break;
+                    case "Phone_2_128":
+                        FeetHitten = true;
+
+                        if (ShowInsuranceeProvider != null)
+                        {
+                            AudioSource.Play();
+                            PhoneGlow_2.lightOn();
+
+                            ShowInsuranceeProvider.SelectPhone_2();
+                        }
+                        break;
+                    case "Phone_3_256":
+                        FeetHitten = true;
+
+                        if (ShowInsuranceeProvider != null)
+                        {
+                            AudioSource.Play();
+                            PhoneGlow_3.lightOn();
+
+                            ShowInsuranceeProvider.SelectPhone_3();
                         }
                         break;
                     

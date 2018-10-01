@@ -136,7 +136,7 @@ namespace States
                 CommonData.prefabs.gameobjectLookup[StringConstants.PrefabLion].GetComponent<AudioSource>().Stop();
             }
             yield return new WaitForSeconds(4f);
-            CommonData.mainManager.stateManager.SwapState(new CheckAcssesorShop());
+            CommonData.mainManager.stateManager.SwapState(new CheckSmartphone());
         }
         public override void Suspend()
         {

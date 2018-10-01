@@ -84,7 +84,7 @@ namespace States
             menuComponent.LabelGreat.SetActive(false);
             menuComponent.LabelPoint.SetActive(false);
 
-            CommonData.mainManager.stateManager.SwapState(new CheckSmartphone());
+            CommonData.mainManager.stateManager.SwapState(new CheckServiceProvider());
         }
         public override StateExitValue Cleanup()
         {

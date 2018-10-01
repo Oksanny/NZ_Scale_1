@@ -64,6 +64,30 @@ namespace States
             complete = true;
             menuComponent.StartCoroutine(Exit());
         }
+        public void SelectPhone_1()
+        {
+            menuComponent.LabelSelectPhone_1.SetActive(true);
+
+          //  CommonData.currentUser.data.Minus -= 180;
+            complete = true;
+            menuComponent.StartCoroutine(Exit());
+        }
+        public void SelectPhone_2()
+        {
+            menuComponent.LabelSelectPhone_2.SetActive(true);
+
+            CommonData.currentUser.data.Minus -= 200;
+            complete = true;
+            menuComponent.StartCoroutine(Exit());
+        }
+        public void SelectPhone_3()
+        {
+            menuComponent.LabelSelectPhone_3.SetActive(true);
+
+            CommonData.currentUser.data.Minus -= 300;
+            complete = true;
+            menuComponent.StartCoroutine(Exit());
+        }
         IEnumerator Exit()
         {
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabKioskInsurance].GetComponent<ControllerInsuranceProvider>()

@@ -215,8 +215,8 @@ MonoBehaviour:
     - 
     - 
     Languages_Touch:
-    - "W\xE4hle einen Service Provider indem du ihn antippst!"
-    - Pick a service provider by touching the screen!
+    - "W\xE4hlen Sie Ihren Telefontyp!"
+    - Select Your Phone Type!
     Flags: 0000
   - Term: Go to Checkout Area
     TermType: 0
@@ -403,8 +403,8 @@ MonoBehaviour:
     - 
     - 
     Languages_Touch:
-    - 'Preis: -600'
-    - 'Price: -600'
+    - 'Preis: 0'
+    - 'Price: 0'
     Flags: 0000
   - Term: Smart Choice
     TermType: 0
@@ -423,8 +423,8 @@ MonoBehaviour:
     - 
     - 
     Languages_Touch:
-    - 'Preis: -1000'
-    - 'Price: -1000'
+    - 'Preis: -1200'
+    - 'Price: -1200'
     Flags: 0000
   - Term: Luxury Choice
     TermType: 0
@@ -466,8 +466,8 @@ MonoBehaviour:
     - 
     - 
     Languages_Touch:
-    - "W\xE4hle ein Smartphone aus."
-    - Pick a smartphone!
+    - "W\xE4hlen Sie Ihre Telefonfarbe aus!"
+    - Select Your Phone Color!
     Flags: 0000
   - Term: Price   570
     TermType: 0
@@ -476,8 +476,8 @@ MonoBehaviour:
     - 
     - 
     Languages_Touch:
-    - 'Preis: -570'
-    - 'Price: -570'
+    - "Sch\xF6ne Wahl!"
+    - 'Great Choice!  '
     Flags: 0000
   - Term: Price   360
     TermType: 0
@@ -488,6 +488,106 @@ MonoBehaviour:
     Languages_Touch:
     - 'Preis: -360'
     - 'Price: -360'
+    Flags: 0000
+  - Term: Price   1200
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - 'Preis: -1200'
+    - 'Price: -1200'
+    Flags: 0000
+  - Term: Graet_Choice
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - "Sch\xF6ne Wahl!"
+    - 'Great Choice! '
+    Flags: 0000
+  - Term: Price 0
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - 'Price: 0'
+    - Preis:0
+    Flags: 0000
+  - Term: Price  100
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - 'Preis: -100'
+    - 'Price: -100'
+    Flags: 0000
+  - Term: Select Your Phone Color!
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - "W\xE4hlen Sie Ihre Telefonfarbe aus!"
+    - Select Your Phone Color!
+    Flags: 0000
+  - Term: Select Your Phone Type!
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - "W\xE4hlen Sie Ihren Telefontyp!"
+    - Select Your Phone Type!
+    Flags: 0000
+  - Term: Price   900
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - 'Preis: -900'
+    - 'Price: -900'
+    Flags: 0000
+  - Term: Price 200
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - 'Preis: -200'
+    - 'Price: -200'
+    Flags: 0000
+  - Term: Price 300
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - 'Preis: -300'
+    - 'Price: -300'
+    Flags: 0000
+  - Term: Select Your Storage Size
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - "W\xE4hlen Sie Ihre Speichergr\xF6\xDFe"
+    - Select Your Storage Size
     Flags: 0000
   mLanguages:
   - Name: German (Germany)
@@ -501,4 +601,4 @@ MonoBehaviour:
   UserAgreesToHaveItInsideThePluginsFolder: 0
   Spreadsheet_LocalFileName: 
   Spreadsheet_LocalCSVSeparator: ','
-  Spreadsheet_LocalCSVEncoding: Unicode (UTF-8)
+  Spreadsheet_LocalCSVEncoding: utf-8
