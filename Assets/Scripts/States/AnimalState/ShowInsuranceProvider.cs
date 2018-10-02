@@ -41,8 +41,8 @@ namespace States
             {
                 menuComponent = SpawnUI<Menus.ShowInsuranceProviderGUI>(StringConstants.PrefabInsuranceProvider);
                 menuComponent.LabelInfo.SetActive(true);
-                menuComponent.LabelInsuramoree.SetActive(false);
-                menuComponent.LabelPlanetsure.SetActive(false);
+                menuComponent.LabelLuxury.SetActive(false);
+                menuComponent.LabelStandart.SetActive(false);
             }
             ShowUI();
 
@@ -50,7 +50,7 @@ namespace States
 
         public void SelecInsuramore()
         {
-            menuComponent.LabelInsuramoree.SetActive(true);
+           // menuComponent.LabelInsuramoree.SetActive(true);
             
             CommonData.currentUser.data.Minus -= 120;
             complete = true;
@@ -58,7 +58,7 @@ namespace States
         }
         public void SelecPlanetsure()
         {
-            menuComponent.LabelPlanetsure.SetActive(true);
+          //  menuComponent.LabelPlanetsure.SetActive(true);
             
             CommonData.currentUser.data.Minus -= 180;
             complete = true;
@@ -67,7 +67,7 @@ namespace States
         public void SelectPhone_1()
         {
             menuComponent.LabelSelectPhone_1.SetActive(true);
-
+            menuComponent.LabelStandart.SetActive(true);
           //  CommonData.currentUser.data.Minus -= 180;
             complete = true;
             menuComponent.StartCoroutine(Exit());
@@ -75,7 +75,7 @@ namespace States
         public void SelectPhone_2()
         {
             menuComponent.LabelSelectPhone_2.SetActive(true);
-
+            menuComponent.LabelLuxury.SetActive(true);
             CommonData.currentUser.data.Minus -= 200;
             complete = true;
             menuComponent.StartCoroutine(Exit());
@@ -83,7 +83,7 @@ namespace States
         public void SelectPhone_3()
         {
             menuComponent.LabelSelectPhone_3.SetActive(true);
-
+            menuComponent.LabelLuxury.SetActive(true);
             CommonData.currentUser.data.Minus -= 300;
             complete = true;
             menuComponent.StartCoroutine(Exit());

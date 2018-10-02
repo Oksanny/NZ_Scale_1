@@ -50,9 +50,11 @@ namespace States
                 controllerPathLion = CommonData.prefabs.gameobjectLookup["lion_sv_ip"].GetComponent<ControllerPathLion>();
                 WrHandler = letterHolder.GetComponent<WritingHandler>();
                 menuComponent.LabelInfo.SetActive(true);
+                menuComponent.LabelInstruction.SetActive(true);
                 menuComponent.LabelTimeOut.SetActive(false);
                 menuComponent.LabelGreat.SetActive(false);
                 menuComponent.LabelPoint.SetActive(false);
+                menuComponent.StartCoroutine(HideInstruction());
             }
             
         }
@@ -84,7 +86,7 @@ namespace States
         public void CheckTime()
         {
             menuComponent.LabelTimeOut.SetActive(true);
-            menuComponent.LabelInfo.SetActive(false);
+            
             if (WrHandler != null)
             {
                 WrHandler.RefreshProcess();
@@ -96,7 +98,14 @@ namespace States
         {
             yield return new WaitForSeconds(2f);
             menuComponent.LabelTimeOut.SetActive(false);
+            menuComponent.LabelInfo.SetActive(false);
 
+        }
+
+        IEnumerator HideInstruction()
+        {
+            yield return new WaitForSeconds(5f);
+            menuComponent.LabelInfo.SetActive(false);
         }
         public void FinishLetter()
         {

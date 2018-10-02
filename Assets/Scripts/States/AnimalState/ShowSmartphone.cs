@@ -42,8 +42,8 @@ namespace States
             {
                 menuComponent = SpawnUI<Menus.ShowSmartphoneGUI>(StringConstants.PrefabShowSmartphone);
                
-                menuComponent.LabelPointCommunata.SetActive(false);
-                menuComponent.LabelPointsSmartical.SetActive(false);
+                menuComponent.LabelStandart.SetActive(false);
+                menuComponent.LabelLuxury.SetActive(false);
                 menuComponent.LabelSelectPhone_1.SetActive(false);
                 menuComponent.LabelSelectPhone_2.SetActive(false);
                 menuComponent.LabelSelectPhone_3.SetActive(false);
@@ -56,7 +56,7 @@ namespace States
         public void SelectCommunata()
         {
             Debug.Log("Sc");
-            menuComponent.LabelPointCommunata.SetActive(true);
+           // menuComponent.LabelPointCommunata.SetActive(true);
             CommonData.currentUser.data.Minus -= 600;
             complete = true;
             menuComponent.StartCoroutine(Exit());
@@ -65,13 +65,14 @@ namespace States
         {
             Debug.Log("SS");
             complete = true;
-            menuComponent.LabelPointsSmartical.SetActive(true);
+           // menuComponent.LabelPointsSmartical.SetActive(true);
             CommonData.currentUser.data.Minus -= 1000;
             menuComponent.StartCoroutine(Exit());
         }
         public void SelectPhone_1()
         {
             menuComponent.LabelSelectPhone_1.SetActive(true);
+            menuComponent.LabelStandart.SetActive(true);
            // CommonData.currentUser.data.Minus -= 600;
             complete = true;
             menuComponent.StartCoroutine(Exit());
@@ -79,6 +80,7 @@ namespace States
         public void SelectPhone_2()
         {
             menuComponent.LabelSelectPhone_2.SetActive(true);
+            menuComponent.LabelStandart.SetActive(true);
            // CommonData.currentUser.data.Minus -= 600;
             complete = true;
             menuComponent.StartCoroutine(Exit());
@@ -86,6 +88,7 @@ namespace States
         public void SelectPhone_3()
         {
             menuComponent.LabelSelectPhone_3.SetActive(true);
+            menuComponent.LabelLuxury.SetActive(true);
             CommonData.currentUser.data.Minus -= 100;
             complete = true;
             menuComponent.StartCoroutine(Exit());
@@ -93,6 +96,7 @@ namespace States
         public void SelectPhone_4()
         {
             menuComponent.LabelSelectPhone_4.SetActive(true);
+            menuComponent.LabelLuxury.SetActive(true);
             CommonData.currentUser.data.Minus -= 100;
             complete = true;
             menuComponent.StartCoroutine(Exit());

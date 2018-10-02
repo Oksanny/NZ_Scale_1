@@ -8,9 +8,9 @@ namespace Menus
     {
 
         public GameObject LabelInfo;
-        public GameObject LabelPointsConnectaPhone;
-        public GameObject LabelInfoPolacon;
+       
         public GameObject LabelSelectPhone_Big;
         public GameObject LabelSelectPhone_Small;
+        public GameObject LabelGreat;
     }
 }

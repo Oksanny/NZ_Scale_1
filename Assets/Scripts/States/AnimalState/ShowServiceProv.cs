@@ -43,10 +43,11 @@ namespace States
             {
                 menuComponent = SpawnUI<Menus.ShowServiceProviderGUI>(StringConstants.PrefabShowServiceProviderGUI);
                 menuComponent.LabelInfo.SetActive(true);
-                menuComponent.LabelInfoPolacon.SetActive(false);
-                menuComponent.LabelPointsConnectaPhone.SetActive(false);
+               // menuComponent.LabelInfoPolacon.SetActive(false);
+               // menuComponent.LabelPointsConnectaPhone.SetActive(false);
                 menuComponent.LabelSelectPhone_Big.SetActive(false);
                 menuComponent.LabelSelectPhone_Small.SetActive(false);
+                menuComponent.LabelGreat.SetActive(false);
             }
             ShowUI();
 
@@ -54,7 +55,7 @@ namespace States
 
         public void SelecPolacon()
         {
-            menuComponent.LabelInfoPolacon.SetActive(true);
+            //menuComponent.LabelInfoPolacon.SetActive(true);
             CommonData.currentUser.data.Minus -= 360;
             complete = true;
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabInfoBox].GetComponent<ControllerInfoBox>()
@@ -63,7 +64,8 @@ namespace States
         }
         public void SelecConnectaPhone()
         {
-            menuComponent.LabelPointsConnectaPhone.SetActive(true);
+           // menuComponent.LabelPointsConnectaPhone.SetActive(true);
+            menuComponent.LabelGreat.SetActive(true);
             CommonData.currentUser.data.Minus -= 570;
             complete = true;
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabInfoBox].GetComponent<ControllerInfoBox>()
@@ -73,6 +75,7 @@ namespace States
         public void SelecPhone_Big()
         {
             menuComponent.LabelSelectPhone_Big.SetActive(true);
+            menuComponent.LabelGreat.SetActive(true);
             CommonData.currentUser.data.Minus -= 1200;
             complete = true;
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabInfoBox].GetComponent<ControllerInfoBox>()

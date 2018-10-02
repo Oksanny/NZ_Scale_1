@@ -105,7 +105,7 @@ MonoBehaviour:
     - 
     - 
     Languages_Touch:
-    - "Ber\xFChre den Bankomat um deine Start-Tokens abzuheben"
+    - "Bankomat ber\xFChren um Ihr Start-Geld zu erhalten"
     - Touch Bancomat to pick up your starting tokens
     Flags: 0000
   - Term: Aim At Shark s Mouth to Feed Shark
@@ -383,7 +383,7 @@ MonoBehaviour:
     - 
     - 
     Languages_Touch:
-    - Gute Tat vollbracht! Aufgabe 3 abgeschlossen!
+    - "Gef\xE4lligkeit erledit!"
     - 'Act of Kindness Complete! '
     Flags: 0000
   - Term: Best Value
@@ -423,8 +423,8 @@ MonoBehaviour:
     - 
     - 
     Languages_Touch:
-    - 'Preis: -1200'
-    - 'Price: -1200'
+    - 'Preis: 1200'
+    - 'Price: 1200'
     Flags: 0000
   - Term: Luxury Choice
     TermType: 0
@@ -506,7 +506,7 @@ MonoBehaviour:
     - 
     - 
     Languages_Touch:
-    - "Sch\xF6ne Wahl!"
+    - Grossartige Auswahl
     - 'Great Choice! '
     Flags: 0000
   - Term: Price 0
@@ -526,8 +526,8 @@ MonoBehaviour:
     - 
     - 
     Languages_Touch:
-    - 'Preis: -100'
-    - 'Price: -100'
+    - 'Preis: 100'
+    - 'Price: 100'
     Flags: 0000
   - Term: Select Your Phone Color!
     TermType: 0
@@ -536,7 +536,7 @@ MonoBehaviour:
     - 
     - 
     Languages_Touch:
-    - "W\xE4hlen Sie Ihre Telefonfarbe aus!"
+    - "Telefonfarbe ausw\xE4hlen"
     - Select Your Phone Color!
     Flags: 0000
   - Term: Select Your Phone Type!
@@ -546,7 +546,7 @@ MonoBehaviour:
     - 
     - 
     Languages_Touch:
-    - "W\xE4hlen Sie Ihren Telefontyp!"
+    - "W\xE4hlen Sie Ihr Telefon Typ!"
     - Select Your Phone Type!
     Flags: 0000
   - Term: Price   900
@@ -556,8 +556,8 @@ MonoBehaviour:
     - 
     - 
     Languages_Touch:
-    - 'Preis: -900'
-    - 'Price: -900'
+    - 'Preis: 900'
+    - 'Price: 900'
     Flags: 0000
   - Term: Price 200
     TermType: 0
@@ -566,8 +566,8 @@ MonoBehaviour:
     - 
     - 
     Languages_Touch:
-    - 'Preis: -200'
-    - 'Price: -200'
+    - 'Preis: 200'
+    - 'Price: 200'
     Flags: 0000
   - Term: Price 300
     TermType: 0
@@ -576,8 +576,8 @@ MonoBehaviour:
     - 
     - 
     Languages_Touch:
-    - 'Preis: -300'
-    - 'Price: -300'
+    - 'Preis: 300'
+    - 'Price: 300'
     Flags: 0000
   - Term: Select Your Storage Size
     TermType: 0
@@ -586,8 +586,102 @@ MonoBehaviour:
     - 
     - 
     Languages_Touch:
-    - "W\xE4hlen Sie Ihre Speichergr\xF6\xDFe"
+    - "W\xE4hlen Sie Ihre Speichergr\xF6sse"
     - Select Your Storage Size
+    Flags: 0000
+  - Term: Great
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - "Gro\xDF!\r"
+    - Great!
+    Flags: 0000
+  - Term: Free the Lion!
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - Befreie den Lowen!
+    - 'Free the Lion! '
+    Flags: 0000
+  - Term: Please follow the arrows to the next station.
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - "Bitte folgen Sie dem Pfeil zur n\xE4chsten Station"
+    - Please follow the arrows to the next station.
+    Flags: 0000
+  - Term: Task 3 complete!
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - 'Gute Arbeit!
+
+      Aufgabe 3 erledigt!'
+    - 'Well done!
+
+      Task 3 complete!'
+    Flags: 0000
+  - Term: Standard Choice!
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - Standartauswahl
+    - Standard Choice!
+    Flags: 0000
+  - Term: Luxury Choice!
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - Luxus Auswahl
+    - Luxury Choice!
+    Flags: 0000
+  - Term: Kiosk_1
+    TermType: 5
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - Kiosk_1_GM
+    - Kiosk_EN
+    Flags: 0000
+  - Term: Kiosk_2
+    TermType: 5
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - Kiosk_2_GM
+    - Kiosk_2_EN
+    Flags: 0000
+  - Term: Kiosk_3
+    TermType: 5
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - Kiosk_3_GM
+    - Kios3_EN
     Flags: 0000
   mLanguages:
   - Name: German (Germany)

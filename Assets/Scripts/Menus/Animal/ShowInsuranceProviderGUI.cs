@@ -8,8 +8,8 @@ namespace Menus
     {
 
         public GameObject LabelInfo;
-        public GameObject LabelInsuramoree;
-        public GameObject LabelPlanetsure;
+        public GameObject LabelStandart;
+        public GameObject LabelLuxury;
         public GameObject LabelSelectPhone_1;
         public GameObject LabelSelectPhone_2;
         public GameObject LabelSelectPhone_3;
