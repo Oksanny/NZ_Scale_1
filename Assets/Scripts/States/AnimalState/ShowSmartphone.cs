@@ -106,7 +106,15 @@ namespace States
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabSmartphone].GetComponent<ControllerSmartphone>()
                .ShowSmartphone = null;
             yield return new WaitForSeconds(6f);
-            CommonData.mainManager.stateManager.SwapState(new SpecialBonus());
+            if (true || CommonData.currentUser.data.SmarticallBuy && CommonData.currentUser.data.contAcssesur == 3)
+            {
+                CommonData.mainManager.stateManager.SwapState(new SpecialBonus());
+            }
+            else
+            {
+                CommonData.mainManager.stateManager.SwapState(new CheckCrocodile());
+            }
+           // CommonData.mainManager.stateManager.SwapState(new SpecialBonus());
 
         }
         public override void Suspend()

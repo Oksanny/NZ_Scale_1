@@ -77,6 +77,7 @@ namespace States
             menuComponent.LabelSelectPhone_Big.SetActive(true);
             menuComponent.LabelGreat.SetActive(true);
             CommonData.currentUser.data.Minus -= 1200;
+            CommonData.currentUser.data.SmarticallBuy = true;
             complete = true;
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabInfoBox].GetComponent<ControllerInfoBox>()
                  .ShowServiceProvider = null;
