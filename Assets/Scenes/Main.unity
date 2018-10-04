@@ -2315,12 +2315,12 @@ Prefab:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 310422459}
-    - target: {fileID: 223169077529270924, guid: b2fcc1a9a6d994d488615032bdac7352,
+    - target: {fileID: 223246909803661186, guid: b2fcc1a9a6d994d488615032bdac7352,
         type: 2}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 310422459}
-    - target: {fileID: 223246909803661186, guid: b2fcc1a9a6d994d488615032bdac7352,
+    - target: {fileID: 223169077529270924, guid: b2fcc1a9a6d994d488615032bdac7352,
         type: 2}
       propertyPath: m_Camera
       value: 

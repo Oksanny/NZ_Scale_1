@@ -30616,8 +30616,8 @@ MonoBehaviour:
   MaxCharactersInRTL: 0
   CorrectAlignmentForRTL: 1
   TranslatedObjects:
-  - {fileID: 21300000, guid: 35fdc68386ad55143a4d259e214d6e36, type: 3}
-  - {fileID: 21300000, guid: 6b36e5a311795744799dc44adae3446c, type: 3}
+  - {fileID: 21300000, guid: 195c9626d3c8f4158920155bea78153b, type: 3}
+  - {fileID: 21300000, guid: 9fb32af80fe5e4a8eabbb1264562cdb6, type: 3}
   LocalizeCallBack:
     Target: {fileID: 0}
     MethodName: 
@@ -31786,7 +31786,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 35fdc68386ad55143a4d259e214d6e36, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 195c9626d3c8f4158920155bea78153b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
