@@ -670,8 +670,8 @@ MonoBehaviour:
     - 
     - 
     Languages_Touch:
-    - color_choice_de
-    - color_choice
+    - Kiosk_2_de
+    - Kiosk_2_EN
     Flags: 0000
   - Term: Kiosk_3
     TermType: 5
