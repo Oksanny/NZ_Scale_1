@@ -353,8 +353,8 @@ MonoBehaviour:
     - 
     - 
     Languages_Touch:
-    - 'Gute Arbeit: Task 2 abgeschlossen!'
-    - 'Nice Work: Task 2  Complete!'
+    - 'Gute Arbeit: Task 1 abgeschlossen!'
+    - 'Nice Work: Task 1  Complete!'
     Flags: 0000
   - Term: Price   120
     TermType: 0

@@ -86,6 +86,7 @@ namespace States
         public void SelecPhone_Small()
         {
             menuComponent.LabelSelectPhone_Small.SetActive(true);
+            menuComponent.LabelGreat.SetActive(true);
             CommonData.currentUser.data.Minus -= 900;
             complete = true;
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabInfoBox].GetComponent<ControllerInfoBox>()

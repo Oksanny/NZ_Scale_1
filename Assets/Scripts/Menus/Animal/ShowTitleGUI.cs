@@ -8,7 +8,7 @@ namespace Menus
     public class ShowTitleGUI : BaseMenu
     {
 
-        public GameObject LabelInfo;
-        
+        public GameObject Title_1;
+        public GameObject Title_2; 
     }
 }

@@ -28,7 +28,8 @@ namespace States
             if (menuComponent == null)
             {
                 menuComponent = SpawnUI<Menus.ShowTitleGUI>(StringConstants.PrefabShowTitle);
-                menuComponent.LabelInfo.SetActive(true);
+                menuComponent.Title_1.SetActive(true);
+                menuComponent.Title_2.SetActive(false);
               
             }
             ShowUI();
@@ -39,8 +40,10 @@ namespace States
         IEnumerator Exit()
         {
            
-            yield return new WaitForSeconds(5f);
-
+            yield return new WaitForSeconds(3f);
+            menuComponent.Title_1.SetActive(false);
+            menuComponent.Title_2.SetActive(true);
+            yield return new WaitForSeconds(2f);
             CommonData.mainManager.stateManager.SwapState(new CheckBancomat());
         }
         public override void Suspend()
