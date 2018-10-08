@@ -626,12 +626,8 @@ MonoBehaviour:
     - 
     - 
     Languages_Touch:
-    - 'Gute Arbeit!
-
-      Aufgabe 3 erledigt!'
-    - 'Well done!
-
-      Task 3 complete!'
+    - Gute Arbeit! Aufgabe 3 erledigt!
+    - Well done! Task 3 complete!
     Flags: 0000
   - Term: Standard Choice!
     TermType: 0
