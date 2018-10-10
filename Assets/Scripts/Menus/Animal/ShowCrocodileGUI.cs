@@ -6,9 +6,10 @@ namespace Menus
     public class ShowCrocodileGUI : BaseMenu
     {
         public GameObject LabelInfo;
-        public GameObject LabelMiss;
-        public GameObject LabelGreat;
-        public GameObject LabelPoint;
+        public GameObject LabelMissMessage;
+        public GameObject LabelGreatMessage;
+        public GameObject LabelBonusPoint;
+        public GameObject LabelMissPoint;
 
     }
 }

@@ -9,11 +9,22 @@ using UnityEngine;
      public const float TimePoint_2 = 300f;
      public const float TimePoint_3 = 330f;
 
+     public const float TimeReward = 2100f;
      public const float BancomatReward = 2000f;
-     public const float ElephantReward = 250f;
-     public const float LionReward = 250f;
-     public const float CrocodiletReward = 250f;
+     public const float ElephantReward = 300f;
+     public const float LionReward = 400f;
+     public const float CrocodiletReward = 500f;
      public const float SpecialBonusReward = 500f;
+
+     public const float ElephantMiss = 75f;
+     public const float LionMiss = 100f;
+     public const float CrocodiletMiss= 125f;
+     
+
+     // Station 1
+     public const float BigPhone = 1200f;
+     public const float SmallPhone = 900f;
+   //  public const float SpecialBonusReward = 500f;
      // Title screen text:
      public const string CouldNotFetchUserData = "Could not connect to user database.\n" +
        "Some features will be disabled.";

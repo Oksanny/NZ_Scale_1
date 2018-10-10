@@ -27,14 +27,18 @@ namespace States
             {
                 menuComponent = SpawnUI<Menus.ShowElephantGUI>(StringConstants.PrefabShowElephant);
             }
-            ShowUI();
-            menuComponent.LabelGreat.SetActive(false);
-            menuComponent.LabelPoint.SetActive(false);
+           // menuComponent.BonusPointStr.text = StringConstants.ElephantReward.ToString();
+           // menuComponent.MissPointStr.text = StringConstants.ElephantMiss.ToString();
+            menuComponent.LabelGreatMessage.SetActive(false);
+            menuComponent.LabelMissMessage.SetActive(false);
+            menuComponent.LabelBonusPoint.SetActive(false);
+            menuComponent.LabelMissPoint.SetActive(false);
+            menuComponent.LabelInfo.SetActive(true);
             Elephant = CommonData.prefabs.gameobjectLookup[StringConstants.PrefabElephant];
             SetFightAnimation();
             Elephant.GetComponent<ControllerElephant>().ShowElephant = this;
             Elephant.GetComponent<CapsuleCollider>().enabled = true;
-            
+            ShowUI();
         }
         public override void Update()
         {
@@ -65,12 +69,24 @@ namespace States
         {
             Elephant.GetComponent<Animator>().SetTrigger("Fight_2");
         }
+
+        public void ShowMiss()
+        {
+            menuComponent.LabelGreatMessage.SetActive(false);
+            menuComponent.LabelMissMessage.SetActive(true);
+            menuComponent.LabelBonusPoint.SetActive(false);
+            menuComponent.LabelMissPoint.SetActive(true);
+            CommonData.currentUser.data.Minus -=(int) StringConstants.ElephantMiss;
+            menuComponent.StartCoroutine(HideElement());
+        }
         public void ShowResult()
         {
             Elephant.GetComponent<CapsuleCollider>().enabled = false;
             SetTickleAnimation();
-            menuComponent.LabelGreat.SetActive(true);
-            menuComponent.LabelPoint.SetActive(true);
+            menuComponent.LabelGreatMessage.SetActive(true);
+            menuComponent.LabelMissMessage.SetActive(false);
+            menuComponent.LabelBonusPoint.SetActive(true);
+            menuComponent.LabelMissPoint.SetActive(false);
             CommonData.currentUser.data.Plus +=(int) StringConstants.ElephantReward;
             complete = true;
             Elephant.GetComponent<ControllerElephant>().ShowElephant = null;
@@ -81,10 +97,21 @@ namespace States
         IEnumerator ShowLabel()
         {
             yield return new WaitForSeconds(6f);
-            menuComponent.LabelGreat.SetActive(false);
-            menuComponent.LabelPoint.SetActive(false);
+            menuComponent.LabelGreatMessage.SetActive(false);
+            menuComponent.LabelMissMessage.SetActive(false);
+            menuComponent.LabelBonusPoint.SetActive(false);
+            menuComponent.LabelMissPoint.SetActive(false);
 
             CommonData.mainManager.stateManager.SwapState(new CheckServiceProvider());
+        }
+
+        IEnumerator HideElement()
+        {
+            yield return new WaitForSeconds(1.5f);
+            menuComponent.LabelGreatMessage.SetActive(false);
+            menuComponent.LabelMissMessage.SetActive(false);
+            menuComponent.LabelBonusPoint.SetActive(false);
+            menuComponent.LabelMissPoint.SetActive(false);
         }
         public override StateExitValue Cleanup()
         {

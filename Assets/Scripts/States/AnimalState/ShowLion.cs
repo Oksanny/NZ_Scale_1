@@ -28,8 +28,8 @@ namespace States
         }
         private void InitializeUI()
         {
-            
-            if ( !CommonData.StateLion)
+
+            if (!CommonData.StateLion)
             {
                 if (menuComponent == null)
                 {
@@ -43,26 +43,30 @@ namespace States
                 letterHolder = (GameObject)Object.Instantiate(CommonData.prefabs.gameobjectLookup["Letter"],
                     CommonData.prefabs.gameobjectLookup["SpawnLetter"].transform.position,
                     CommonData.prefabs.gameobjectLookup["SpawnLetter"].transform.rotation);
-                
-                
+
+
                 letterHolder.gameObject.transform.parent = CommonData.prefabs.gameobjectLookup["CameraLetter"].transform;
                 letterHolder.GetComponent<WritingHandler>().ShowLion = this;
                 controllerPathLion = CommonData.prefabs.gameobjectLookup["lion_sv_ip"].GetComponent<ControllerPathLion>();
                 WrHandler = letterHolder.GetComponent<WritingHandler>();
+               // menuComponent.BonusPointStr.text = StringConstants.LionReward.ToString();
+               // menuComponent.MissPointsStr.text = StringConstants.LionMiss.ToString();
                 menuComponent.LabelInfo.SetActive(true);
                 menuComponent.LabelInstruction.SetActive(true);
                 menuComponent.LabelTimeOut.SetActive(false);
                 menuComponent.LabelGreat.SetActive(false);
-                menuComponent.LabelPoint.SetActive(false);
+                menuComponent.LabelBonusPoint.SetActive(false);
+                menuComponent.LabelMissPoint.SetActive(false);
+
                 menuComponent.StartCoroutine(HideInstruction());
             }
-            
+
         }
         public override void Update()
         {
             pointLionVector3 = new Vector3(CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointLion].transform.position.x, 0, CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointLion].transform.position.z);
             pointARCamerVector3 = new Vector3(CommonData.prefabs.gameobjectLookup[StringConstants.ARCamera].transform.position.x, 0, CommonData.prefabs.gameobjectLookup[StringConstants.ARCamera].transform.position.z);
-            if (!complete&&Vector3.Distance(pointLionVector3, pointARCamerVector3) > 0.5f)
+            if (!complete && Vector3.Distance(pointLionVector3, pointARCamerVector3) > 0.5f)
             {
                 Debug.Log("Shark");
                 CommonData.mainManager.stateManager.SwapState(new CheckLion());
@@ -81,12 +85,16 @@ namespace States
                     }
                 }
             }
-            
+
         }
         public void CheckTime()
         {
             menuComponent.LabelTimeOut.SetActive(true);
-            
+            menuComponent.LabelInfo.SetActive(false);
+            menuComponent.LabelGreat.SetActive(false);
+            menuComponent.LabelBonusPoint.SetActive(false);
+            menuComponent.LabelMissPoint.SetActive(true);
+            CommonData.currentUser.data.Minus -= (int)StringConstants.LionMiss;
             if (WrHandler != null)
             {
                 WrHandler.RefreshProcess();
@@ -123,13 +131,16 @@ namespace States
                 currentTime = 0;
                 complete = true;
                 menuComponent.LabelGreat.SetActive(true);
-                menuComponent.LabelPoint.SetActive(true);
+                menuComponent.LabelBonusPoint.SetActive(true);
+                menuComponent.LabelTimeOut.SetActive(false);
+                menuComponent.LabelInfo.SetActive(false);
+                menuComponent.LabelMissPoint.SetActive(false);
                 CommonData.currentUser.data.Plus += (int)StringConstants.LionReward;
                 letterHolder.SetActive(false);
                 menuComponent.StartCoroutine(DeleteLetter());
             }
-            
-            
+
+
         }
 
         IEnumerator DeleteLetter()
@@ -159,12 +170,12 @@ namespace States
             {
                 WrHandler.RefreshProcess();
             }
-            
+
             WritingHandler.currentLetterIndex = 0;
             Object.Destroy(letterHolder);
             DestroyUI();
-           
-            
+
+
             return null;
         }
 
@@ -172,17 +183,17 @@ namespace States
         {
 
 
-         //  if (source == menuComponent.Previous_Button.gameObject)
-         //  {
-         //      Debug.Log(source.name);
-         //      manager.SwapState(new ShowLion());
-         //
-         //  }
-         //  else if (source == menuComponent.Next_Button.gameObject)
-         //  {
-         //      Debug.Log(source.name);
-         //      manager.SwapState(new CheckShark());
-         //  }
+            //  if (source == menuComponent.Previous_Button.gameObject)
+            //  {
+            //      Debug.Log(source.name);
+            //      manager.SwapState(new ShowLion());
+            //
+            //  }
+            //  else if (source == menuComponent.Next_Button.gameObject)
+            //  {
+            //      Debug.Log(source.name);
+            //      manager.SwapState(new CheckShark());
+            //  }
         }
     }
 }

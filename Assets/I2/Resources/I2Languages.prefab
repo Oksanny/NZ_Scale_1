@@ -656,8 +656,8 @@ MonoBehaviour:
     - 
     - 
     Languages_Touch:
-    - Kiosk_1_GM
-    - Kiosk_EN
+    - product_overview_de
+    - product_overview
     Flags: 0000
   - Term: Kiosk_2
     TermType: 5
@@ -666,8 +666,8 @@ MonoBehaviour:
     - 
     - 
     Languages_Touch:
-    - Kiosk_2_de
-    - Kiosk_2_EN
+    - color_choice_de
+    - color_choice
     Flags: 0000
   - Term: Kiosk_3
     TermType: 5
@@ -676,8 +676,18 @@ MonoBehaviour:
     - 
     - 
     Languages_Touch:
-    - Kiosk_3_GM
-    - Kios3_EN
+    - storage_level_de 1
+    - storage_level
+    Flags: 0000
+  - Term: Checkout on top of it
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - "Checkout dar\xFCber"
+    - Checkout on top of it
     Flags: 0000
   mLanguages:
   - Name: German (Germany)

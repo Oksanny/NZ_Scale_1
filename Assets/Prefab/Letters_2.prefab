@@ -259,7 +259,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1966139655973340
 GameObject:
   m_ObjectHideFlags: 1
@@ -478,7 +478,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1767336014299482}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalPosition: {x: -1.89, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4463421528019922}
@@ -1312,11 +1312,13 @@ MonoBehaviour:
   lineRendererPrefab: {fileID: 100000, guid: faa1281afd0a445358fc770206e547f8, type: 2}
   circlePointPrefab: {fileID: 100000, guid: 8588d2771d0a24aabbf5c3234d95c423, type: 2}
   drawingMaterial: {fileID: 2100000, guid: 86f3b4d2d99894f8497c575cfde3983d, type: 2}
+  clickStarted: 0
   hand: {fileID: 4463421528019922}
   showCursor: 1
   cheeringSound: {fileID: 8300000, guid: c687af8608b084943bf4f8629582a6c9, type: 3}
   positiveSound: {fileID: 8300000, guid: 707035145e126455c8c61f002d21e9af, type: 3}
   wrongSound: {fileID: 8300000, guid: dc603632f09da41d19b9ce670be08e79, type: 3}
+  _MainCamera: {fileID: 0}
 --- !u!114 &114505802650555082
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -28,9 +28,11 @@ namespace States
                 menuComponent = SpawnUI<Menus.ShowCrocodileGUI>(StringConstants.PrefabShowCrocodile);
             }
             ShowUI();
-            menuComponent.LabelGreat.SetActive(false);
-            menuComponent.LabelMiss.SetActive(false);
-            menuComponent.LabelPoint.SetActive(false);
+            menuComponent.LabelInfo.SetActive(true);
+            menuComponent.LabelGreatMessage.SetActive(false);
+            menuComponent.LabelMissMessage.SetActive(false);
+            menuComponent.LabelBonusPoint.SetActive(false);
+            menuComponent.LabelMissPoint.SetActive(false);
 
             CommonData.prefabs.gameobjectLookup[StringConstants.ARCamera].GetComponent<ControllerCrocodileFeed>().ShowCrocodile = this;
             CommonData.prefabs.gameobjectLookup[StringConstants.ARCamera].GetComponent<ControllerCrocodileFeed>().GetNewFeed();
@@ -55,9 +57,11 @@ namespace States
         public void SetAnimationEating()
         {
             CommonData.prefabs.gameobjectLookup["crocodile_01"].GetComponent<Animator>().SetTrigger("Eating");
-            menuComponent.LabelGreat.SetActive(true);
-            menuComponent.LabelPoint.SetActive(true);
-            CommonData.currentUser.data.Plus += 250;
+            menuComponent.LabelGreatMessage.SetActive(true);
+            menuComponent.LabelMissMessage.SetActive(false);
+            menuComponent.LabelBonusPoint.SetActive(true);
+            menuComponent.LabelMissPoint.SetActive(false);
+            CommonData.currentUser.data.Plus +=(int) StringConstants.CrocodiletReward;
             complete = true;
             CommonData.prefabs.gameobjectLookup["ARCamera"].GetComponent<ControllerCrocodileFeed>().DeleteFeed();
             CommonData.prefabs.gameobjectLookup[StringConstants.ARCamera].GetComponent<ControllerCrocodileFeed>().ShowCrocodile = null;
@@ -74,19 +78,29 @@ namespace States
         public void SetAnimationEndShoot()
         {
             CommonData.prefabs.gameobjectLookup["crocodile_01"].GetComponent<Animator>().SetTrigger("EndShoot");
-            menuComponent.LabelMiss.SetActive(true);
+            CommonData.currentUser.data.Minus -= (int)StringConstants.CrocodiletMiss;
+            menuComponent.LabelGreatMessage.SetActive(false);
+            menuComponent.LabelMissMessage.SetActive(true);
+            menuComponent.LabelBonusPoint.SetActive(false);
+            menuComponent.LabelMissPoint.SetActive(true);
             menuComponent.StartCoroutine(HideLabel());
         }
         IEnumerator HideLabel()
         {
             yield return new WaitForSeconds(2f);
-            menuComponent.LabelMiss.SetActive(false);
+            menuComponent.LabelGreatMessage.SetActive(false);
+            menuComponent.LabelMissMessage.SetActive(false);
+            menuComponent.LabelBonusPoint.SetActive(false);
+            menuComponent.LabelMissPoint.SetActive(false);
             
         }
         IEnumerator Exit()
         {
             yield return new WaitForSeconds(4f);
-            menuComponent.LabelGreat.SetActive(false);
+            menuComponent.LabelGreatMessage.SetActive(false);
+            menuComponent.LabelMissMessage.SetActive(false);
+            menuComponent.LabelBonusPoint.SetActive(false);
+            menuComponent.LabelMissPoint.SetActive(false);
             CommonData.mainManager.stateManager.SwapState(new CheckInsuranceProvider());
           // if (true||CommonData.currentUser.data.SmarticallBuy && CommonData.currentUser.data.contAcssesur==3)
           // {

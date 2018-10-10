@@ -64,7 +64,7 @@ public class ControllerTime : MonoBehaviour
     {
         int total = CommonData.currentUser.data.Plus + CommonData.currentUser.data.Minus + CommonData.currentUser.data.TimeBonus;
         int GameTotal = (int)StringConstants.BancomatReward + (int)StringConstants.ElephantReward + (int)StringConstants.LionReward +
-                        (int)StringConstants.CrocodiletReward + (int)StringConstants.SpecialBonusReward+(int)StringConstants.TimeGame;
+                        (int)StringConstants.CrocodiletReward + (int)StringConstants.SpecialBonusReward+(int)StringConstants.TimeReward;
         MaskTotalPonts.localScale = new Vector3((float)total/GameTotal, 1, 1);
         Debug.Log("total="+total+"   GameTotal="+GameTotal+"   scale="+(float)total/GameTotal);
         if (total > 0)
