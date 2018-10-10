@@ -7,6 +7,7 @@ public class ControllerElephant : MonoBehaviour {
     Ray ray;
     RaycastHit hit;
     private bool FeetHitten;
+    public shaderGlow ShaderGlow;
     public ShowElephant ShowElephant;
     public int countHit;
     public AudioSource AudioSource;
@@ -37,7 +38,7 @@ public class ControllerElephant : MonoBehaviour {
                         countHit = 0;
                         ShowElephant.ShowResult();
                         AudioSource.Play();
-                        
+                        ShaderGlow.lightOn();
                     }
                     // Debug.Log("It's working!");
                   

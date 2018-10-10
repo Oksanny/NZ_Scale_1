@@ -13,6 +13,7 @@ public class ControllerTime : MonoBehaviour
     public Text LabelTime;
     public Text LabelTotalToken;
     public GameObject TotalPoints;
+    public RectTransform MaskTotalPonts;
 	// Use this for initialization
 	void Start ()
 	{
@@ -62,7 +63,10 @@ public class ControllerTime : MonoBehaviour
     void SetToken()
     {
         int total = CommonData.currentUser.data.Plus + CommonData.currentUser.data.Minus + CommonData.currentUser.data.TimeBonus;
-        Debug.Log("total="+total);
+        int GameTotal = (int)StringConstants.BancomatReward + (int)StringConstants.ElephantReward + (int)StringConstants.LionReward +
+                        (int)StringConstants.CrocodiletReward + (int)StringConstants.SpecialBonusReward+(int)StringConstants.TimeGame;
+        MaskTotalPonts.localScale = new Vector3((float)total/GameTotal, 1, 1);
+        Debug.Log("total="+total+"   GameTotal="+GameTotal+"   scale="+(float)total/GameTotal);
         if (total > 0)
         {
             

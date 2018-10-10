@@ -51,7 +51,7 @@ namespace States
         public void SelectBancomat()
         {
             menuComponent.LabelPoints.SetActive(true);
-            CommonData.currentUser.data.Plus += 2000;
+            CommonData.currentUser.data.Plus +=(int) StringConstants.BancomatReward;
             complete = true;
             menuComponent.StartCoroutine(Exit());
         }

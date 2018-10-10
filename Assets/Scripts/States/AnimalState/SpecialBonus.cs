@@ -70,7 +70,7 @@ namespace States
             Debug.Log("ExitGreat");
             menuComponent.LabelGreat.SetActive(true);
             menuComponent.LabelPoint.SetActive(true);
-            CommonData.currentUser.data.Plus += 500;
+            CommonData.currentUser.data.Plus += (int)StringConstants.SpecialBonusReward;
             menuComponent.StartCoroutine(Exit());
         }
 

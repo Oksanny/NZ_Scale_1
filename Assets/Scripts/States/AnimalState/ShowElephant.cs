@@ -71,7 +71,7 @@ namespace States
             SetTickleAnimation();
             menuComponent.LabelGreat.SetActive(true);
             menuComponent.LabelPoint.SetActive(true);
-            CommonData.currentUser.data.Plus += 250;
+            CommonData.currentUser.data.Plus +=(int) StringConstants.ElephantReward;
             complete = true;
             Elephant.GetComponent<ControllerElephant>().ShowElephant = null;
             Elephant.GetComponent<CapsuleCollider>().enabled = false;

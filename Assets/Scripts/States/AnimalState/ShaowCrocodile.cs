@@ -61,7 +61,15 @@ namespace States
             complete = true;
             CommonData.prefabs.gameobjectLookup["ARCamera"].GetComponent<ControllerCrocodileFeed>().DeleteFeed();
             CommonData.prefabs.gameobjectLookup[StringConstants.ARCamera].GetComponent<ControllerCrocodileFeed>().ShowCrocodile = null;
-            menuComponent.StartCoroutine(Exit());
+            menuComponent.StartCoroutine(SetAnimationRun());
+        }
+
+        IEnumerator SetAnimationRun()
+        {
+            yield return new WaitForSeconds(3f);
+            CommonData.prefabs.gameobjectLookup["crocodile_01"].GetComponent<Animator>().SetTrigger("Run");
+            CommonData.prefabs.gameobjectLookup["ARCamera"].GetComponent<ControllerCrocodileFeed>().StartExitCrocodile();
+              menuComponent.StartCoroutine(Exit());
         }
         public void SetAnimationEndShoot()
         {
@@ -77,7 +85,7 @@ namespace States
         }
         IEnumerator Exit()
         {
-            yield return new WaitForSeconds(6f);
+            yield return new WaitForSeconds(4f);
             menuComponent.LabelGreat.SetActive(false);
             CommonData.mainManager.stateManager.SwapState(new CheckInsuranceProvider());
           // if (true||CommonData.currentUser.data.SmarticallBuy && CommonData.currentUser.data.contAcssesur==3)

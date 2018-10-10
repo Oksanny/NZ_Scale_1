@@ -8,7 +8,7 @@ public class ControllerCrocodileFeed : MonoBehaviour
 {
     Ray ray;
     RaycastHit hit;
-    
+    public PathMagic PathExitCrocodile;
     public List<GameObject> MissFeeds = new List<GameObject>();
     private bool FeetHitten;
     public float Force;
@@ -57,23 +57,23 @@ public class ControllerCrocodileFeed : MonoBehaviour
             }
 
         }
- 
+
     }
     public void GetNewFeed()
     {
-        if (Feed == null && ShowCrocodile!=null)
+        if (Feed == null && ShowCrocodile != null)
         {
             Debug.Log("Instant");
             GameObject feedHolder = (GameObject)Instantiate(FeedInstant, SpawnFeed.transform.position, SpawnFeed.transform.rotation);
             feedHolder.gameObject.transform.parent = gameObject.transform;
             Feed = feedHolder;
         }
-        
+
 
     }
     void ShootFeed()
     {
-        if (ShowCrocodile!=null)
+        if (ShowCrocodile != null)
         {
             Vector3 direction = DirectionShoot.transform.position - SpawnFeed.transform.position;
 
@@ -83,7 +83,7 @@ public class ControllerCrocodileFeed : MonoBehaviour
             Feed.GetComponent<FeedIceItem>().CrocodileController = this;
             Feed.GetComponent<FeedIceItem>().SelfDestruct();
         }
-       
+
     }
 
 
@@ -95,7 +95,7 @@ public class ControllerCrocodileFeed : MonoBehaviour
             ShootFeed();
         }
 
-        
+
         // PathFlight.Play();
     }
 
@@ -105,19 +105,19 @@ public class ControllerCrocodileFeed : MonoBehaviour
         {
             ShowCrocodile.SetAnimationEndShoot();
         }
-        if (Feed!=null)
+        if (Feed != null)
         {
             Feed.gameObject.transform.parent = CommonData.prefabs.gameobjectLookup["Plane"].transform;
             MissFeeds.Add(Feed);
             Feed = null;
-            if (MissFeeds.Count>4)
+            if (MissFeeds.Count > 4)
             {
                 GameObject tempItem = MissFeeds[0];
                 MissFeeds.RemoveAt(0);
                 Destroy(tempItem);
             }
         }
-        
+
 
         StartCoroutine(SpawnFeedAfterMiss());
     }
@@ -135,7 +135,7 @@ public class ControllerCrocodileFeed : MonoBehaviour
             Feed = null;
             Destroy(tempFeed);
         }
-      //  StartCoroutine(SpawnFeedAfterHiT());
+        //  StartCoroutine(SpawnFeedAfterHiT());
         AudioSource.Play();
     }
 
@@ -162,5 +162,14 @@ public class ControllerCrocodileFeed : MonoBehaviour
         // {
         //     Destroy(Feed);
         // }
+    }
+
+    public void StartExitCrocodile()
+    {
+        PathExitCrocodile.Play();
+    }
+    public void HideCrocodile()
+    {
+        PathExitCrocodile.Target.gameObject.SetActive(false);
     }
 }

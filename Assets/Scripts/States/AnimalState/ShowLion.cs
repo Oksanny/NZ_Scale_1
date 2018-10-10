@@ -124,7 +124,7 @@ namespace States
                 complete = true;
                 menuComponent.LabelGreat.SetActive(true);
                 menuComponent.LabelPoint.SetActive(true);
-                CommonData.currentUser.data.Plus += 250;
+                CommonData.currentUser.data.Plus += (int)StringConstants.LionReward;
                 letterHolder.SetActive(false);
                 menuComponent.StartCoroutine(DeleteLetter());
             }
