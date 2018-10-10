@@ -46,7 +46,7 @@ public class ControllerElephant : MonoBehaviour {
                 }
                 else
                 {
-                    //Debug.Log("nopz");
+                    ShowElephant.ShowMiss();
                 }
             }
             else
