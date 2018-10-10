@@ -334,7 +334,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1611627401367990
 GameObject:
   m_ObjectHideFlags: 1
@@ -351,7 +351,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1676250335110120
 GameObject:
   m_ObjectHideFlags: 1
@@ -821,7 +821,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Bonus: +250'
+  m_Text: 'Bonus: +400'
 --- !u!114 &114138548023858900
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -939,8 +939,6 @@ MonoBehaviour:
   LabelBonusPoint: {fileID: 1611627401367990}
   LabelMissPoint: {fileID: 1551146664640524}
   LabelInstruction: {fileID: 1240876223893826}
-  BonusPointStr: {fileID: 114132804286982478}
-  MissPointsStr: {fileID: 114924854856226594}
 --- !u!114 &114243752206014178
 MonoBehaviour:
   m_ObjectHideFlags: 1
