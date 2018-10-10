@@ -105,9 +105,12 @@ namespace States
         IEnumerator ShowCheckTime()
         {
             yield return new WaitForSeconds(2f);
-            menuComponent.LabelTimeOut.SetActive(false);
+            //
             menuComponent.LabelInfo.SetActive(false);
-
+            menuComponent.LabelTimeOut.SetActive(false);
+            menuComponent.LabelGreat.SetActive(false);
+            menuComponent.LabelBonusPoint.SetActive(false);
+            menuComponent.LabelMissPoint.SetActive(false);
         }
 
         IEnumerator HideInstruction()
