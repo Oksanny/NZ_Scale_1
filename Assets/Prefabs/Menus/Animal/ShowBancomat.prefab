@@ -734,7 +734,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 344445a89b4f74a0e9a0a766903df87e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mTerm: Ber hre den Bankomat um deine Start Tokens abzuheben
+  mTerm: Take Your Starting Cash!
   mTermSecondary: 
   PrimaryTermModifier: 0
   SecondaryTermModifier: 0
@@ -1151,7 +1151,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Bankomat ber\xFChren um Ihr Start-Geld zu erhalten"
+  m_Text: Bitte nehmen Sie Ihr Startgeld!
 --- !u!114 &114887289606301798
 MonoBehaviour:
   m_ObjectHideFlags: 1

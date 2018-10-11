@@ -29,6 +29,7 @@ namespace States
                 menuComponent = SpawnUI<Menus.SpecialBonusGUI>(StringConstants.PrefabSpecialBonus);
             }
             menuComponent.LabelInfo.SetActive(true);
+            menuComponent.LabeTimer.SetActive(true);
             menuComponent.LabelGreat.SetActive(false);
             menuComponent.LabelMiss.SetActive(false);
             menuComponent.LabelPoint.SetActive(false);
@@ -68,6 +69,7 @@ namespace States
         void ExitGreat()
         {
             Debug.Log("ExitGreat");
+            menuComponent.LabeTimer.SetActive(false);
             menuComponent.LabelGreat.SetActive(true);
             menuComponent.LabelPoint.SetActive(true);
             CommonData.currentUser.data.Plus += (int)StringConstants.SpecialBonusReward;

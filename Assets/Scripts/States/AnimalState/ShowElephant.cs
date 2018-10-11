@@ -37,7 +37,9 @@ namespace States
             Elephant = CommonData.prefabs.gameobjectLookup[StringConstants.PrefabElephant];
             SetFightAnimation();
             Elephant.GetComponent<ControllerElephant>().ShowElephant = this;
-            Elephant.GetComponent<CapsuleCollider>().enabled = true;
+            Elephant.GetComponent<ControllerElephant>().ColliderCheck.enabled = true;
+
+          //  Elephant.GetComponent<CapsuleCollider>().enabled = true;
             ShowUI();
         }
         public override void Update()
@@ -53,7 +55,8 @@ namespace States
         }
         public override void Suspend()
         {
-            Elephant.GetComponent<CapsuleCollider>().enabled = false;
+            Elephant.GetComponent<ControllerElephant>().ColliderCheck.enabled = false;
+           // Elephant.GetComponent<CapsuleCollider>().enabled = false;
             HideUI();
         }
 
@@ -81,7 +84,8 @@ namespace States
         }
         public void ShowResult()
         {
-            Elephant.GetComponent<CapsuleCollider>().enabled = false;
+            Elephant.GetComponent<ControllerElephant>().ColliderCheck.enabled = false;
+          //  Elephant.GetComponent<CapsuleCollider>().enabled = false;
             SetTickleAnimation();
             menuComponent.LabelGreatMessage.SetActive(true);
             menuComponent.LabelMissMessage.SetActive(false);
@@ -90,7 +94,8 @@ namespace States
             CommonData.currentUser.data.Plus +=(int) StringConstants.ElephantReward;
             complete = true;
             Elephant.GetComponent<ControllerElephant>().ShowElephant = null;
-            Elephant.GetComponent<CapsuleCollider>().enabled = false;
+            Elephant.GetComponent<ControllerElephant>().ColliderCheck.enabled = false;
+          //  Elephant.GetComponent<CapsuleCollider>().enabled = false;
             Elephant.GetComponent<ControllerElephant>().AudioSource.Stop();
             menuComponent.StartCoroutine(ShowLabel());
         }
@@ -117,7 +122,8 @@ namespace States
         {
             SetIdleAnimation();
             Elephant.GetComponent<ControllerElephant>().ShowElephant = null;
-            Elephant.GetComponent<CapsuleCollider>().enabled = false;
+            Elephant.GetComponent<ControllerElephant>().ColliderCheck.enabled = false;
+           // Elephant.GetComponent<CapsuleCollider>().enabled = false;
             Elephant.GetComponent<ControllerElephant>().AudioSource.Stop();
             DestroyUI();
             return null;

@@ -106,7 +106,7 @@ namespace States
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabSmartphone].GetComponent<ControllerSmartphone>()
                .ShowSmartphone = null;
             yield return new WaitForSeconds(6f);
-            if (true || CommonData.currentUser.data.SmarticallBuy && CommonData.currentUser.data.contAcssesur == 3)
+            if (CommonData.currentUser.data.SmarticallBuy )
             {
                 CommonData.mainManager.stateManager.SwapState(new SpecialBonus());
             }

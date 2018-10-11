@@ -14,6 +14,7 @@ public class ControllerTime : MonoBehaviour
     public Text LabelTotalToken;
     public GameObject TotalPoints;
     public RectTransform MaskTotalPonts;
+    public RectTransform MaskTimer;
 	// Use this for initialization
 	void Start ()
 	{
@@ -46,6 +47,7 @@ public class ControllerTime : MonoBehaviour
 
     void SetTime()
     {
+        MaskTimer.localScale = new Vector3(currentTime/StringConstants.TimeGame, 1, 1);
         int current = (int) currentTime;
         int min = current / 60;
         int sec = current%60;
@@ -66,7 +68,7 @@ public class ControllerTime : MonoBehaviour
         int GameTotal = (int)StringConstants.BancomatReward + (int)StringConstants.ElephantReward + (int)StringConstants.LionReward +
                         (int)StringConstants.CrocodiletReward + (int)StringConstants.SpecialBonusReward+(int)StringConstants.TimeReward;
         MaskTotalPonts.localScale = new Vector3((float)total/GameTotal, 1, 1);
-        Debug.Log("total="+total+"   GameTotal="+GameTotal+"   scale="+(float)total/GameTotal);
+       // Debug.Log("total="+total+"   GameTotal="+GameTotal+"   scale="+(float)total/GameTotal);
         if (total > 0)
         {
             
@@ -87,10 +89,10 @@ public class ControllerTime : MonoBehaviour
     {
         int bonuse = 0;
         int current = (int)StringConstants.TimeGame - (int)CommonData.prefabs.gameobjectLookup[StringConstants.PrefabTimer].GetComponent<ControllerTime>().currentTime;
-        Debug.Log(current);
+
         if (current <= StringConstants.TimePoint_1)
         {
-            Debug.Log("1");
+
             bonuse = ((int)StringConstants.TimePoint_1 - current) * 20 +
                      ((int)StringConstants.TimePoint_2 - (int)StringConstants.TimePoint_1) * 10;
         }
@@ -98,21 +100,18 @@ public class ControllerTime : MonoBehaviour
         {
             if (current <= StringConstants.TimePoint_2)
             {
-                Debug.Log("2");
                 bonuse = ((int)StringConstants.TimePoint_2 - current) * 10;
             }
             else
             {
                 if (current <= StringConstants.TimePoint_3)
                 {
-                    Debug.Log("3");
                     bonuse = (current - (int)StringConstants.TimePoint_2) * (-5);
                 }
                 else
                 {
                     if (current <= StringConstants.TimeGame)
                     {
-                        Debug.Log("4");
                         bonuse = (current - (int)StringConstants.TimePoint_3) * (-10) + ((int)StringConstants.TimePoint_3 - (int)StringConstants.TimePoint_2) * (-5);
                     }
                 }
@@ -127,6 +126,6 @@ public class ControllerTime : MonoBehaviour
       // {
       //     CommonData.currentUser.data.Minus += bonuse;
       // }
-        Debug.Log(bonuse);
+
     }
 }

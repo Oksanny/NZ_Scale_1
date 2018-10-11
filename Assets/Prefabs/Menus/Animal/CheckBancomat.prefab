@@ -531,7 +531,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Bitte folgen Sie dem Pfeil zur n\xE4chsten Station"
+  m_Text: "Pfeil dass die Richtung zur n\xE4chsten Station zeigt"
 --- !u!114 &114239535966388156
 MonoBehaviour:
   m_ObjectHideFlags: 1

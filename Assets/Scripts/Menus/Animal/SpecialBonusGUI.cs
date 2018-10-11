@@ -11,5 +11,6 @@ namespace Menus
         public GameObject LabelMiss;
         public GameObject LabelGreat;
         public GameObject LabelPoint;
+        public GameObject LabeTimer;
     }
 }

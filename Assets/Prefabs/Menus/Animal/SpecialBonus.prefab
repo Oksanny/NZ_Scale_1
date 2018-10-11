@@ -1084,6 +1084,7 @@ MonoBehaviour:
   LabelMiss: {fileID: 1679694910347604}
   LabelGreat: {fileID: 1580125264967618}
   LabelPoint: {fileID: 1084571818334002}
+  LabeTimer: {fileID: 1132011872964674}
 --- !u!114 &114528306584146018
 MonoBehaviour:
   m_ObjectHideFlags: 1
