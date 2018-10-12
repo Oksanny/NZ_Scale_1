@@ -49,7 +49,7 @@ namespace States
             if (!complete&&Vector3.Distance(pointElephantVector3, pointARCamerVector3) > 0.5f)
             {
                 Debug.Log("Shark");
-                CommonData.mainManager.stateManager.SwapState(new CheckElephant());
+              //  CommonData.mainManager.stateManager.SwapState(new CheckElephant());
 
             }
         }
@@ -84,24 +84,27 @@ namespace States
         }
         public void ShowResult()
         {
+            complete = true;
             Elephant.GetComponent<ControllerElephant>().ColliderCheck.enabled = false;
           //  Elephant.GetComponent<CapsuleCollider>().enabled = false;
+            Elephant.GetComponent<ControllerElephant>().AudioSource.Play();
             SetTickleAnimation();
             menuComponent.LabelGreatMessage.SetActive(true);
             menuComponent.LabelMissMessage.SetActive(false);
             menuComponent.LabelBonusPoint.SetActive(true);
             menuComponent.LabelMissPoint.SetActive(false);
             CommonData.currentUser.data.Plus +=(int) StringConstants.ElephantReward;
-            complete = true;
+            
             Elephant.GetComponent<ControllerElephant>().ShowElephant = null;
             Elephant.GetComponent<ControllerElephant>().ColliderCheck.enabled = false;
           //  Elephant.GetComponent<CapsuleCollider>().enabled = false;
-            Elephant.GetComponent<ControllerElephant>().AudioSource.Stop();
+          //  Elephant.GetComponent<ControllerElephant>().AudioSource.Stop();
             menuComponent.StartCoroutine(ShowLabel());
         }
         IEnumerator ShowLabel()
         {
-            yield return new WaitForSeconds(6f);
+            yield return new WaitForSeconds(Elephant.GetComponent<ControllerElephant>().AudioSource.clip.length-1f);
+            SetIdleAnimation();
             menuComponent.LabelGreatMessage.SetActive(false);
             menuComponent.LabelMissMessage.SetActive(false);
             menuComponent.LabelBonusPoint.SetActive(false);

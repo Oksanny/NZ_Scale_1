@@ -22,7 +22,8 @@ namespace States
             if (!complete&&Vector3.Distance(pointSewrviceProviderVector3, pointARCamerVector3) > 0.5f)
             {
                 Debug.Log("BAncomat");
-                CommonData.mainManager.stateManager.SwapState(new CheckServiceProvider());
+               // CommonData.prefabs.gameobjectLookup[StringConstants.PrefabInfoBox].GetComponent<ControllerInfoBox>().Rewind();
+               // CommonData.mainManager.stateManager.SwapState(new CheckServiceProvider());
                 
             }
         }
@@ -35,6 +36,7 @@ namespace States
             InitializeUI();
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabInfoBox].GetComponent<ControllerInfoBox>()
                 .ShowServiceProvider = this;
+            CommonData.prefabs.gameobjectLookup[StringConstants.PrefabInfoBox].GetComponent<ControllerInfoBox>().StartPlaySound();
             
         }
         private void InitializeUI()

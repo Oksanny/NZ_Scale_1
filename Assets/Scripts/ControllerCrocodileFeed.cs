@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using I2.Loc;
 using Jacovone;
 using States;
 using UnityEngine;
@@ -8,13 +9,16 @@ public class ControllerCrocodileFeed : MonoBehaviour
 {
     Ray ray;
     RaycastHit hit;
+ 
     public PathMagic PathExitCrocodile;
     public List<GameObject> MissFeeds = new List<GameObject>();
     private bool FeetHitten;
     public float Force;
     public GameObject Feed;
     public GameObject DirectionShoot;
-
+    public AudioClip SmartiCall_2Alligator;
+    public AudioClip Eating;
+    public AudioClip Click_Button;
     public AudioSource AudioSource;
     public GameObject FeedInstant;
     public GameObject SpawnFeed;
@@ -22,7 +26,7 @@ public class ControllerCrocodileFeed : MonoBehaviour
     // Use this for initialization
     private void Start()
     {
-
+        AudioSource.clip = Click_Button;
     }
 
     // Update is called once per frame
@@ -44,6 +48,7 @@ public class ControllerCrocodileFeed : MonoBehaviour
                 {
                     // Debug.Log("It's working!");
                     FeetHitten = true;
+                    AudioSource.Play();
                     StartFlight();
                 }
                 else
@@ -123,22 +128,31 @@ public class ControllerCrocodileFeed : MonoBehaviour
     }
     public void HitCrocodile()
     {
+       
         CommonData.prefabs.gameobjectLookup["Jaw"].SetActive(true);
-        if (ShowCrocodile != null)
-        {
-            ShowCrocodile.SetAnimationEating();
-        }
-
         if (Feed != null)
         {
             GameObject tempFeed = Feed;
             Feed = null;
             Destroy(tempFeed);
         }
+        if (ShowCrocodile != null)
+        {
+            ShowCrocodile.SetAnimationEating();
+        }
+
+        
         //  StartCoroutine(SpawnFeedAfterHiT());
+        AudioSource.clip = Eating;
         AudioSource.Play();
+        StartCoroutine(HideIce());
     }
 
+    IEnumerator HideIce()
+    {
+        yield return new WaitForSeconds(0.5f);
+        CommonData.prefabs.gameobjectLookup["Jaw"].SetActive(false);
+    }
     public void DeleteFeed()
     {
         if (Feed != null)

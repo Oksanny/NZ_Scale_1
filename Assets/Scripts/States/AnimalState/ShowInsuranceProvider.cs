@@ -21,7 +21,7 @@ namespace States
             if (!complete&&Vector3.Distance(pointInsuranceProviderVector3, pointARCamerVector3) > 0.5f)
             {
                 Debug.Log("BAncomat");
-                CommonData.mainManager.stateManager.SwapState(new CheckInsuranceProvider());
+               // CommonData.mainManager.stateManager.SwapState(new CheckInsuranceProvider());
                 
             }
         }
@@ -33,6 +33,7 @@ namespace States
             InitializeUI();
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabKioskInsurance].GetComponent<ControllerInsuranceProvider>()
                 .ShowInsuranceeProvider = this;
+             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabKioskInsurance].GetComponent<ControllerInsuranceProvider>().StartPlaySound();
             
         }
         private void InitializeUI()

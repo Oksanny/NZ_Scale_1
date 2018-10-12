@@ -8,6 +8,10 @@ public class ControllerSmartphone : MonoBehaviour
     Ray ray;
     RaycastHit hit;
     private bool FeetHitten;
+    public AudioClip SmartiCall_2_salesrep_Station_2a;
+    public AudioClip SmartiCall_2_salesrep_Station_2b;
+    public AudioClip Click_Button;
+    public AudioSource AudioSource;
     public ShowSmartphone ShowSmartphone;
     public GameObject FrameSmarticall_9;
     public GameObject FrameCommunata_8;
@@ -18,16 +22,19 @@ public class ControllerSmartphone : MonoBehaviour
     public shaderGlow PhoneGlow_2;
     public shaderGlow PhoneGlow_3;
     public shaderGlow PhoneGlow_4;
-    public AudioSource AudioSource;
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    private bool animationCompleet;
+    public Animator Nathan_Animator;
+    // Use this for initialization
+    void Start()
+    {
 
-                       //Mouse
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+        //Mouse
         if (Input.GetMouseButtonDown(0))
         {
 
@@ -41,7 +48,7 @@ public class ControllerSmartphone : MonoBehaviour
                 {
                     case "Smarticall_9":
                         FeetHitten = true;
-                       
+
                         if (ShowSmartphone != null)
                         {
                             AudioSource.Play();
@@ -65,7 +72,7 @@ public class ControllerSmartphone : MonoBehaviour
                         break;
                     case "Communata_8":
                         FeetHitten = true;
-                        
+
                         if (ShowSmartphone != null)
                         {
                             AudioSource.Play();
@@ -88,18 +95,18 @@ public class ControllerSmartphone : MonoBehaviour
                     case "Phone_1_Black":
                         FeetHitten = true;
 
-                        if (ShowSmartphone != null)
+                        if (animationCompleet && ShowSmartphone != null)
                         {
                             AudioSource.Play();
                             PhoneGlow_1.lightOn();
-                            
+
                             ShowSmartphone.SelectPhone_1();
                         }
                         break;
                     case "Phone_2_White":
                         FeetHitten = true;
 
-                        if (ShowSmartphone != null)
+                        if (animationCompleet && ShowSmartphone != null)
                         {
                             AudioSource.Play();
                             PhoneGlow_2.lightOn();
@@ -110,7 +117,7 @@ public class ControllerSmartphone : MonoBehaviour
                     case "Phone_3_Metalic":
                         FeetHitten = true;
 
-                        if (ShowSmartphone != null)
+                        if (animationCompleet && ShowSmartphone != null)
                         {
                             AudioSource.Play();
                             PhoneGlow_3.lightOn();
@@ -121,7 +128,7 @@ public class ControllerSmartphone : MonoBehaviour
                     case "Phone_4_Gold":
                         FeetHitten = true;
 
-                        if (ShowSmartphone != null)
+                        if (animationCompleet && ShowSmartphone != null)
                         {
                             AudioSource.Play();
                             PhoneGlow_4.lightOn();
@@ -139,9 +146,36 @@ public class ControllerSmartphone : MonoBehaviour
             }
 
         }
- 
-	}
 
+    }
+    public void StartPlaySound()
+    {
+
+        StartCoroutine(PlayEngineSound());
+        Nathan_Animator.SetTrigger("Laughing");
+    }
+    IEnumerator PlayEngineSound()
+    {
+
+        AudioSource.clip = SmartiCall_2_salesrep_Station_2a;
+
+        AudioSource.Play();
+
+
+        yield return new WaitForSeconds(AudioSource.clip.length);
+
+        AudioSource.clip = SmartiCall_2_salesrep_Station_2b;
+        AudioSource.Play();
+
+
+        yield return new WaitForSeconds(AudioSource.clip.length);
+
+        Nathan_Animator.SetTrigger("Idle");
+        animationCompleet = true;
+        AudioSource.clip = Click_Button;
+
+
+    }
     public void Rewind()
     {
         FrameSmarticall_9.SetActive(false);
@@ -149,5 +183,5 @@ public class ControllerSmartphone : MonoBehaviour
         PhoneCommunata_8.lightOff();
         FrameCommunata_8.SetActive(false);
     }
-    
+
 }

@@ -12,11 +12,14 @@ public class ControllerElephant : MonoBehaviour
     public ShowElephant ShowElephant;
     public int countHit;
     public AudioSource AudioSource;
+    public AudioClip SmartiCall_2elephant;
+    public AudioClip Click_Button;
     public BoxCollider ColliderCheck;
     // Use this for initialization
     void Start()
     {
         countHit = 0;
+        AudioSource.clip = Click_Button;
     }
 
     // Update is called once per frame
@@ -40,14 +43,16 @@ public class ControllerElephant : MonoBehaviour
                     {
                         countHit++;
                         ShaderGlow.lightOn();
-                       
+                        AudioSource.Play();
                         if (countHit == 3)
                         {
                             countHit = 0;
 
 
+                            
+                            AudioSource.clip = SmartiCall_2elephant;
+                           // AudioSource.Play();
                             ShowElephant.ShowResult();
-                            AudioSource.Play();
                             StartCoroutine(HideShaderGlow_End());
 
 
@@ -67,6 +72,7 @@ public class ControllerElephant : MonoBehaviour
                     if (ShowElephant != null)
                     {
                         Debug.Log("No Baby_2");
+                        AudioSource.Play();
                         ShowElephant.ShowMiss();
                     }
                     Debug.Log("No Baby");
@@ -77,6 +83,7 @@ public class ControllerElephant : MonoBehaviour
                 if (ShowElephant != null)
                 {
                     Debug.Log("No hit_2");
+                    AudioSource.Play();
                     ShowElephant.ShowMiss();
                 }
                  Debug.Log("No hit");
@@ -94,7 +101,7 @@ public class ControllerElephant : MonoBehaviour
     }
     IEnumerator HideShaderGlow_End()
     {
-        yield return new WaitForSeconds(6f);
+        yield return new WaitForSeconds(SmartiCall_2elephant.length-1f);
         
             ShaderGlow.lightOff();
        

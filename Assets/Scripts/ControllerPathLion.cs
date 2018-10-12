@@ -10,12 +10,27 @@ public class ControllerPathLion : MonoBehaviour
     public PathMagic PathRoundLion;
     public Animation animationCage;
     public Animator AnimatorLion;
+    public AudioSource AudioSource;
 	// Use this for initialization
 	void Start ()
 	{
 	    //StartCoroutine(StartLion());
 	}
 
+    public void TaskCompleet()
+    {
+        AudioSource.Play();
+        animationCage.Play("open_door");
+        AnimatorLion.SetTrigger("Eating");
+
+        StartCoroutine(StopPlaySound());
+    }
+
+    IEnumerator StopPlaySound()
+    {
+        yield return new WaitForSeconds(AudioSource.clip.length-1f);
+        StartExit();
+    }
     public void StartExit()
     {
         OpenCage();
@@ -32,7 +47,7 @@ public class ControllerPathLion : MonoBehaviour
 
     public void OpenCage()
     {
-        animationCage.Play("open_door");
+       // animationCage.Play("open_door");
         StartCoroutine(ExitLion());
     }
 

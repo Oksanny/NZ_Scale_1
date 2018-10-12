@@ -69,7 +69,7 @@ namespace States
             if (!complete && Vector3.Distance(pointLionVector3, pointARCamerVector3) > 0.5f)
             {
                 Debug.Log("Shark");
-                CommonData.mainManager.stateManager.SwapState(new CheckLion());
+              //  CommonData.mainManager.stateManager.SwapState(new CheckLion());
 
             }
             if (!CommonData.StateLion)
@@ -153,12 +153,12 @@ namespace States
             {
                 WrHandler.RefreshProcess();
             }
-            controllerPathLion.StartExit();
-            if (CommonData.prefabs.gameobjectLookup[StringConstants.PrefabLion].GetComponent<AudioSource>().isPlaying)
-            {
-                CommonData.prefabs.gameobjectLookup[StringConstants.PrefabLion].GetComponent<AudioSource>().Stop();
-            }
-            yield return new WaitForSeconds(4f);
+            controllerPathLion.TaskCompleet();
+          // if (CommonData.prefabs.gameobjectLookup[StringConstants.PrefabLion].GetComponent<AudioSource>().isPlaying)
+          // {
+          //     CommonData.prefabs.gameobjectLookup[StringConstants.PrefabLion].GetComponent<AudioSource>().Stop();
+          // }
+            yield return new WaitForSeconds(CommonData.prefabs.gameobjectLookup[StringConstants.PrefabLion].GetComponent<AudioSource>().clip.length+2f);
             CommonData.mainManager.stateManager.SwapState(new CheckSmartphone());
         }
         public override void Suspend()

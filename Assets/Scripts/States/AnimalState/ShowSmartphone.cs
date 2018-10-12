@@ -21,7 +21,7 @@ namespace States
             if (!complete&&Vector3.Distance(pointSmartphoneVector3, pointARCamerVector3) > 0.5f)
             {
                 Debug.Log("BAncomat");
-                CommonData.mainManager.stateManager.SwapState(new CheckSmartphone());
+               // CommonData.mainManager.stateManager.SwapState(new CheckSmartphone());
                 
             }
 
@@ -34,6 +34,7 @@ namespace States
             InitializeUI();
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabSmartphone].GetComponent<ControllerSmartphone>()
                 .ShowSmartphone = this;
+             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabSmartphone].GetComponent<ControllerSmartphone>().StartPlaySound();
 
         }
         private void InitializeUI()

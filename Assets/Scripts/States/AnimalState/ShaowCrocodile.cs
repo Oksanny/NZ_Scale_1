@@ -65,12 +65,20 @@ namespace States
             complete = true;
             CommonData.prefabs.gameobjectLookup["ARCamera"].GetComponent<ControllerCrocodileFeed>().DeleteFeed();
             CommonData.prefabs.gameobjectLookup[StringConstants.ARCamera].GetComponent<ControllerCrocodileFeed>().ShowCrocodile = null;
-            menuComponent.StartCoroutine(SetAnimationRun());
+            menuComponent.StartCoroutine(SetAnimationTaskCompleet());
         }
 
-        IEnumerator SetAnimationRun()
+        IEnumerator SetAnimationTaskCompleet()
         {
             yield return new WaitForSeconds(3f);
+            CommonData.prefabs.gameobjectLookup["crocodile_01"].GetComponent<Animator>().SetTrigger("Hit");
+            CommonData.prefabs.gameobjectLookup[StringConstants.ARCamera].GetComponent<ControllerCrocodileFeed>().AudioSource.clip =CommonData.prefabs.gameobjectLookup[StringConstants.ARCamera].GetComponent<ControllerCrocodileFeed>().SmartiCall_2Alligator;
+            CommonData.prefabs.gameobjectLookup[StringConstants.ARCamera].GetComponent<ControllerCrocodileFeed>().AudioSource.Play();
+            menuComponent.StartCoroutine(SetAnimationRun());
+        }
+        IEnumerator SetAnimationRun()
+        {
+            yield return new WaitForSeconds(CommonData.prefabs.gameobjectLookup[StringConstants.ARCamera].GetComponent<ControllerCrocodileFeed>().AudioSource.clip.length-1f);
             CommonData.prefabs.gameobjectLookup["crocodile_01"].GetComponent<Animator>().SetTrigger("Run");
             CommonData.prefabs.gameobjectLookup["ARCamera"].GetComponent<ControllerCrocodileFeed>().StartExitCrocodile();
               menuComponent.StartCoroutine(Exit());

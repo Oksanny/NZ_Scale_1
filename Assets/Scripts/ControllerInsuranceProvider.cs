@@ -11,10 +11,14 @@ public class ControllerInsuranceProvider : MonoBehaviour
     public ShowInsuranceeProvider ShowInsuranceeProvider;
     public GameObject FrameInsuramore;
     public GameObject FramePlanetsure;
+    public AudioClip SmartiCall_2salesrep_Station3;
+    public AudioClip Click_Button;
     public AudioSource AudioSource;
     public shaderGlow PhoneGlow_1;
     public shaderGlow PhoneGlow_2;
     public shaderGlow PhoneGlow_3;
+    private bool animationCompleet;
+    public Animator Nathan_Animator;
     // Use this for initialization
     void Start()
     {
@@ -64,7 +68,7 @@ public class ControllerInsuranceProvider : MonoBehaviour
                     case "Phone_1_64":
                         FeetHitten = true;
 
-                        if (ShowInsuranceeProvider != null)
+                        if (animationCompleet && ShowInsuranceeProvider != null)
                         {
                             AudioSource.Play();
                             PhoneGlow_1.lightOn();
@@ -75,7 +79,7 @@ public class ControllerInsuranceProvider : MonoBehaviour
                     case "Phone_2_128":
                         FeetHitten = true;
 
-                        if (ShowInsuranceeProvider != null)
+                        if (animationCompleet && ShowInsuranceeProvider != null)
                         {
                             AudioSource.Play();
                             PhoneGlow_2.lightOn();
@@ -86,7 +90,7 @@ public class ControllerInsuranceProvider : MonoBehaviour
                     case "Phone_3_256":
                         FeetHitten = true;
 
-                        if (ShowInsuranceeProvider != null)
+                        if (animationCompleet && ShowInsuranceeProvider != null)
                         {
                             AudioSource.Play();
                             PhoneGlow_3.lightOn();
@@ -106,7 +110,29 @@ public class ControllerInsuranceProvider : MonoBehaviour
         }
 
     }
+    public void StartPlaySound()
+    {
 
+        StartCoroutine(PlayEngineSound());
+        Nathan_Animator.SetTrigger("Pointing");
+    }
+    IEnumerator PlayEngineSound()
+    {
+
+        AudioSource.clip = SmartiCall_2salesrep_Station3;
+
+        AudioSource.Play();
+
+
+        yield return new WaitForSeconds(AudioSource.clip.length);
+
+
+        Nathan_Animator.SetTrigger("Idle");
+        animationCompleet = true;
+        AudioSource.clip = Click_Button;
+
+
+    }
     public void Rewind()
     {
         FrameInsuramore.SetActive(false);

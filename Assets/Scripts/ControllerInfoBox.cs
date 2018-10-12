@@ -7,15 +7,22 @@ public class ControllerInfoBox : MonoBehaviour {
     Ray ray;
     RaycastHit hit;
     private bool FeetHitten;
+    public AudioClip SmartiCall_2_salesrep_Station_1a;
+    public AudioClip SmartiCall_2_salesrep_Station_1b;
+    public AudioClip Click_Button;
     public ShowServiceProv ShowServiceProvider;
     public GameObject FrameConnectaPhone;
     public GameObject FramePolacone;
     public AudioSource AudioSource;
     public shaderGlow Smartphone_Big_Glow;
     public shaderGlow Smartphone_Small_Glow;
+    public Animator Nathan_Animator;
+    private bool animationCompleet;
+    private bool checkPlay;
 	// Use this for initialization
-	void Start () {
-		
+	void Start ()
+	{
+	    
 	}
 	
 	// Update is called once per frame
@@ -83,7 +90,7 @@ public class ControllerInfoBox : MonoBehaviour {
                     case "ConnectaPhone":
 
                         FeetHitten = true;
-                        if (ShowServiceProvider != null)
+                        if (animationCompleet&&ShowServiceProvider != null)
                         {
                             AudioSource.Play();
                             FrameConnectaPhone.SetActive(true);
@@ -92,8 +99,8 @@ public class ControllerInfoBox : MonoBehaviour {
                         break;
                     case "Polacon":
                         FeetHitten = true;
-                        
-                        if (ShowServiceProvider != null)
+
+                        if (animationCompleet && ShowServiceProvider != null)
                         {
                             AudioSource.Play();
                             FramePolacone.SetActive(true);
@@ -103,21 +110,23 @@ public class ControllerInfoBox : MonoBehaviour {
                     case "Smartphone_Big":
                         FeetHitten = true;
 
-                        if (ShowServiceProvider != null)
+                        if (animationCompleet && ShowServiceProvider != null)
                         {
                             AudioSource.Play();
                             Smartphone_Big_Glow.lightOn();
                             ShowServiceProvider.SelecPhone_Big();
+                            animationCompleet = false;
                         }
                         break;
                     case "Smartphone_Small":
                         FeetHitten = true;
 
-                        if (ShowServiceProvider != null)
+                        if (animationCompleet && ShowServiceProvider != null)
                         {
                             AudioSource.Play();
                             Smartphone_Small_Glow.lightOn();
                             ShowServiceProvider.SelecPhone_Small();
+                            animationCompleet = false;
                         }
                         break;
 
@@ -136,8 +145,44 @@ public class ControllerInfoBox : MonoBehaviour {
 
     public void Rewind()
     {
-        FrameConnectaPhone.SetActive(false);
-        FramePolacone.SetActive(false);
+        StopCoroutine(PlayEngineSound());
+        AudioSource.Stop();
+        Nathan_Animator.SetTrigger("Idle");
+        animationCompleet = false;
+        checkPlay = false;
+        // FrameConnectaPhone.SetActive(false);
+        // FramePolacone.SetActive(false);
     }
 
+    public void StartPlaySound()
+    {
+        checkPlay = true;
+        StartCoroutine(PlayEngineSound());
+        Nathan_Animator.SetTrigger("Laughing");
+    }
+    IEnumerator PlayEngineSound()
+    {
+        if (checkPlay)
+        {
+            AudioSource.clip = SmartiCall_2_salesrep_Station_1a;
+
+            AudioSource.Play();
+        }
+       
+        yield return new WaitForSeconds(AudioSource.clip.length);
+        if (checkPlay)
+        {
+            AudioSource.clip = SmartiCall_2_salesrep_Station_1b;
+            AudioSource.Play();
+        }
+        
+        yield return new WaitForSeconds(AudioSource.clip.length);
+        if (checkPlay)
+        {
+            Nathan_Animator.SetTrigger("Idle");
+            animationCompleet = true;
+            AudioSource.clip = Click_Button;
+        }
+        
+    }
 }

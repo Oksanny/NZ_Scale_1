@@ -13,10 +13,10 @@ namespace States
         private Vector3 pointARCamerVector3;
         public override void Initialize()
         {
-            if (!CommonData.prefabs.gameobjectLookup[StringConstants.PrefabLion].GetComponent<AudioSource>().isPlaying)
-            {
-                CommonData.prefabs.gameobjectLookup[StringConstants.PrefabLion].GetComponent<AudioSource>().Play();
-            }
+          // if (!CommonData.prefabs.gameobjectLookup[StringConstants.PrefabLion].GetComponent<AudioSource>().isPlaying)
+          // {
+          //     CommonData.prefabs.gameobjectLookup[StringConstants.PrefabLion].GetComponent<AudioSource>().Play();
+          // }
            
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointLion].SetActive(true);
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabArrowController].GetComponent<ControllerLookAtPoint>().Target = CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointLion];

@@ -167,8 +167,8 @@ public class PlaneManager : MonoBehaviour
                     }
                    // CommonData.currentUser.data.Plus += 300;
                    // CommonData.currentUser.data.Minus -= 200;
-                    CommonData.mainManager.stateManager.PushState(new ShowTitle());
-                    CommonData.prefabs.gameobjectLookup[StringConstants.ARCamera].GetComponent<AudioSource>().Play();
+                    CommonData.mainManager.stateManager.PushState(new CheckCrocodile());
+                   // CommonData.prefabs.gameobjectLookup[StringConstants.ARCamera].GetComponent<AudioSource>().Play();
                    // CommonData.StateAnimal = true;
                     setOblect = true;
                     break;

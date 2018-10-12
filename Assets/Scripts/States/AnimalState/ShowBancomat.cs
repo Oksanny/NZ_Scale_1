@@ -21,7 +21,7 @@ namespace States
             if (!complete&&Vector3.Distance(pointBancomatVector3, pointARCamerVector3) > 0.5f)
             {
                 Debug.Log("BAncomat");
-                CommonData.mainManager.stateManager.SwapState(new CheckBancomat());
+               // CommonData.mainManager.stateManager.SwapState(new CheckBancomat());
                 
             }
         }

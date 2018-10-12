@@ -89,7 +89,7 @@ namespace States
         IEnumerator Exit()
         {
            
-            yield return new WaitForSeconds(10f);
+            yield return new WaitForSeconds(menuComponent.SmartiCall_2OutroatSummary.length+10f);
           
             CommonData.mainManager.stateManager.SwapState(new ShowReset());
 
