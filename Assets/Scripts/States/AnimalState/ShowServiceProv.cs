@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using I2.Loc;
 using UnityEngine;
 
 namespace States
@@ -32,7 +33,7 @@ namespace States
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointServiceProvider].SetActive(false);
 
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabArrowController].GetComponent<ControllerLookAtPoint>().Target = CommonData.prefabs.gameobjectLookup[StringConstants.PrefabInfoBox];
-           
+            LocalizationManager.CurrentLanguage = CommonData.Language;
             InitializeUI();
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabInfoBox].GetComponent<ControllerInfoBox>()
                 .ShowServiceProvider = this;

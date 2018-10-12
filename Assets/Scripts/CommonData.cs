@@ -14,7 +14,7 @@ public class CommonData
     public static DBStruct<UserData> currentUser;
     public static DBStruct<UserMarker> currentUserMarker;
     public static DBStruct<ShipmentsData> currentCategory;
-   
+    public static string Language;
    
     // Paths to various database tables:
     // Trailing slashes required, because in some cases

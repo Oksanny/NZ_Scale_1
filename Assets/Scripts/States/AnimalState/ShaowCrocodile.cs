@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using I2.Loc;
 using UnityEngine;
 
 
@@ -15,7 +16,7 @@ namespace States
         private bool complete;
         public override void Initialize()
         {
-
+            LocalizationManager.CurrentLanguage = CommonData.Language;
             InitializeUI();
         }
         private void InitializeUI()
@@ -87,6 +88,8 @@ namespace States
         {
             CommonData.prefabs.gameobjectLookup["crocodile_01"].GetComponent<Animator>().SetTrigger("EndShoot");
             CommonData.currentUser.data.Minus -= (int)StringConstants.CrocodiletMiss;
+            menuComponent.AudioSrc.clip = menuComponent.OOps;
+            menuComponent.AudioSrc.Play();
             menuComponent.LabelGreatMessage.SetActive(false);
             menuComponent.LabelMissMessage.SetActive(true);
             menuComponent.LabelBonusPoint.SetActive(false);

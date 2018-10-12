@@ -77,6 +77,7 @@ GameObject:
   - component: {fileID: 222503802400243736}
   - component: {fileID: 114879750249481336}
   - component: {fileID: 114104207191444940}
+  - component: {fileID: 114376617043762122}
   m_Layer: 0
   m_Name: Message
   m_TagString: Untagged
@@ -465,7 +466,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -1071,6 +1072,34 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1
   m_ChildControlHeight: 1
+--- !u!114 &114376617043762122
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1232001399666024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 344445a89b4f74a0e9a0a766903df87e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mTerm: ANSWER
+  mTermSecondary: 
+  PrimaryTermModifier: 0
+  SecondaryTermModifier: 0
+  LocalizeOnAwake: 1
+  Source: {fileID: 0}
+  mTarget: {fileID: 114879750249481336}
+  CanUseSecondaryTerm: 1
+  AllowMainTermToBeRTL: 1
+  AllowSecondTermToBeRTL: 0
+  IgnoreRTL: 0
+  MaxCharactersInRTL: 0
+  CorrectAlignmentForRTL: 1
+  TranslatedObjects: []
+  LocalizeCallBack:
+    Target: {fileID: 0}
+    MethodName: 
 --- !u!114 &114381399200190220
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1439,7 +1468,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Checkout on top of it
+  m_Text: "Checkout dar\xFCber"
 --- !u!114 &114671340310483574
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1805,8 +1834,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "ANSWER: An elephant can consume up to 200 KGs of food per day. \n Have
-    great Day!  "
+  m_Text: "ANTWORT: Ein Elefant kann bis zu 200 kg pro Tag essen. \nSch\xF6nen Tag!"
 --- !u!114 &114880260423298944
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1896,6 +1924,7 @@ MonoBehaviour:
   MinusLabel: {fileID: 114821800945433326}
   Total: {fileID: 114738062554941814}
   Message: {fileID: 114852993282229816}
+  Buttonsound: {fileID: 8300000, guid: 004b501ef2ac7274dafaa838bad8f6f2, type: 3}
 --- !u!114 &114927415917675028
 MonoBehaviour:
   m_ObjectHideFlags: 1

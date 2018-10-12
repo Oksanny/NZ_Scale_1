@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using I2.Loc;
 using UnityEngine;
 
 
@@ -17,7 +18,7 @@ namespace States
         {
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointElephant].SetActive(false);
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabArrowController].GetComponent<ControllerLookAtPoint>().Target = CommonData.prefabs.gameobjectLookup[StringConstants.PrefabElephant];
-
+            LocalizationManager.CurrentLanguage = CommonData.Language;
             InitializeUI();
         }
         private void InitializeUI()
@@ -75,6 +76,8 @@ namespace States
 
         public void ShowMiss()
         {
+            menuComponent.AudioSrc.clip = menuComponent.OOps;
+            menuComponent.AudioSrc.Play();
             menuComponent.LabelGreatMessage.SetActive(false);
             menuComponent.LabelMissMessage.SetActive(true);
             menuComponent.LabelBonusPoint.SetActive(false);

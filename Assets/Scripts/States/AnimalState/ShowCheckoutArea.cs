@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using I2.Loc;
 using UnityEngine;
 
 namespace States
@@ -16,6 +17,7 @@ namespace States
         
         public override void Initialize()
         {
+            LocalizationManager.CurrentLanguage = CommonData.Language;
            // CommonData.prefabs.gameobjectLookup[StringConstants.PrefaLabelTotalPoints].SetActive(false);
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckoutArea].GetComponent<AudioSource>().Play(); 
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckoutArea].GetComponent<bl_MiniMapItem>().Size = 0; 

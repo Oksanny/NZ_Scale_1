@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using I2.Loc;
 using UnityEngine;
 
 namespace States
@@ -20,13 +21,14 @@ namespace States
             if (Vector3.Distance(pointBancomatVector3, pointARCamerVector3) <= 0.5f)
             {
                 Debug.Log("BAncomat");
+              
                 CommonData.mainManager.stateManager.SwapState(new ShowBancomat());
                 
             }
         }
         public override void Initialize()
         {
-            
+            LocalizationManager.CurrentLanguage = CommonData.Language;
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabResetButton].SetActive(false);
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabTimer].SetActive(true);
             

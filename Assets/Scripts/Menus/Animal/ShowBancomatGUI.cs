@@ -8,6 +8,13 @@ namespace Menus
     {
         public GameObject LabelInfo;
         public GameObject LabelPoints;
+        public AudioClip Buttonsound;
+        public AudioSource AudioSrc;
 
+        void Start()
+        {
+            AudioSrc.clip = Buttonsound;
+            AudioSrc.Play();
+        }
     }
 }

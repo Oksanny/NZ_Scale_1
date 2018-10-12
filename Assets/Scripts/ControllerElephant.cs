@@ -13,6 +13,7 @@ public class ControllerElephant : MonoBehaviour
     public int countHit;
     public AudioSource AudioSource;
     public AudioClip SmartiCall_2elephant;
+    public AudioClip SoundElephant;
     public AudioClip Click_Button;
     public BoxCollider ColliderCheck;
     // Use this for initialization
@@ -48,11 +49,11 @@ public class ControllerElephant : MonoBehaviour
                         {
                             countHit = 0;
 
-
-                            
-                            AudioSource.clip = SmartiCall_2elephant;
-                           // AudioSource.Play();
-                            ShowElephant.ShowResult();
+                            ColliderCheck.enabled = false;
+                            GetComponent<Animator>().SetTrigger("FightIdle");
+                            AudioSource.clip = SoundElephant;
+                            AudioSource.Play();
+                           
                             StartCoroutine(HideShaderGlow_End());
 
 
@@ -101,7 +102,11 @@ public class ControllerElephant : MonoBehaviour
     }
     IEnumerator HideShaderGlow_End()
     {
-        yield return new WaitForSeconds(SmartiCall_2elephant.length-1f);
+        yield return new WaitForSeconds(1.7f);
+        AudioSource.Stop();
+        AudioSource.clip = SmartiCall_2elephant;
+        ShowElephant.ShowResult();
+        yield return new WaitForSeconds(SmartiCall_2elephant.length-1.5f);
         
             ShaderGlow.lightOff();
        

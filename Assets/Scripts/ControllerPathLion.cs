@@ -10,15 +10,22 @@ public class ControllerPathLion : MonoBehaviour
     public PathMagic PathRoundLion;
     public Animation animationCage;
     public Animator AnimatorLion;
+    public AudioClip LonRoar;
+    public AudioClip SmartiCall_2Lion;
     public AudioSource AudioSource;
 	// Use this for initialization
 	void Start ()
 	{
 	    //StartCoroutine(StartLion());
+	    AudioSource.loop = true;
+	    AudioSource.clip = LonRoar;
 	}
 
     public void TaskCompleet()
     {
+        AudioSource.Stop();
+        AudioSource.loop = false;
+        AudioSource.clip = SmartiCall_2Lion;
         AudioSource.Play();
         animationCage.Play("open_door");
         AnimatorLion.SetTrigger("Eating");

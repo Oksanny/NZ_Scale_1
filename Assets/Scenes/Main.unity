@@ -24,7 +24,7 @@ RenderSettings:
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 4
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.5
@@ -7917,12 +7917,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 223570475203310500, guid: b2fcc1a9a6d994d488615032bdac7352,
-        type: 2}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 310422459}
-    - target: {fileID: 223246909803661186, guid: b2fcc1a9a6d994d488615032bdac7352,
+    - target: {fileID: 223169077529270924, guid: b2fcc1a9a6d994d488615032bdac7352,
         type: 2}
       propertyPath: m_Camera
       value: 
@@ -7932,7 +7927,12 @@ Prefab:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 310422459}
-    - target: {fileID: 223169077529270924, guid: b2fcc1a9a6d994d488615032bdac7352,
+    - target: {fileID: 223246909803661186, guid: b2fcc1a9a6d994d488615032bdac7352,
+        type: 2}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 310422459}
+    - target: {fileID: 223570475203310500, guid: b2fcc1a9a6d994d488615032bdac7352,
         type: 2}
       propertyPath: m_Camera
       value: 

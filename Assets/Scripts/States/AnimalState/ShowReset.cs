@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using I2.Loc;
 using UnityEngine;
 
 namespace States
@@ -18,7 +19,7 @@ namespace States
         {
 
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabArrowController].GetComponent<ControllerLookAtPoint>().Target = null;
-
+            LocalizationManager.CurrentLanguage = CommonData.Language;
             
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabResetSceneButton].SetActive(true);
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabTimer].SetActive(false);
@@ -38,7 +39,7 @@ namespace States
             if (menuComponent == null)
             {
                 menuComponent = SpawnUI<Menus.ShowResetGUI>(StringConstants.PrefabShowReset);
-                menuComponent.LabelInfo.SetActive(true);
+               // menuComponent.LabelInfo.SetActive(true);
               
             }
             ShowUI();

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using I2.Loc;
 using UnityEngine;
 
 namespace States
@@ -12,7 +13,7 @@ namespace States
         private Vector3 pointARCamerVector3;
         public override void Initialize()
         {
-
+            LocalizationManager.CurrentLanguage = CommonData.Language;
             InitializeUI();
         }
         private void InitializeUI()
@@ -37,6 +38,7 @@ namespace States
             if (Vector3.Distance(pointServiceProviderVector3, pointARCamerVector3) <= 0.5f)
             {
                 Debug.Log("ServiceProvider");
+               
                 CommonData.mainManager.stateManager.SwapState(new ShowServiceProv());
 
             }

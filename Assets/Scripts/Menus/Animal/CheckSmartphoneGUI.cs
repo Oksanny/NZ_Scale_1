@@ -6,17 +6,14 @@ namespace Menus
 {
     public class CheckSmartphoneGUI : BaseMenu
     {
+        public AudioClip Buttonsound;
+        public AudioSource AudioSrc;
 
-        // Use this for initialization
-        private void Start()
+        void Start()
         {
-
+            AudioSrc.clip = Buttonsound;
+            AudioSrc.Play();
         }
-
-        // Update is called once per frame
-        private void Update()
-        {
-
-        }
+        
     }
 }

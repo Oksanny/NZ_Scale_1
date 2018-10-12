@@ -252,6 +252,7 @@ public class WritingHandler : MonoBehaviour
         else
         {
             PlayWrongSound();//play negative or wrong answer sound effect
+           
             Destroy(currentLineRender);//destroy the current line
             currentLineRender = null;//release the current line
         }
@@ -410,8 +411,12 @@ public class WritingHandler : MonoBehaviour
     private void PlayWrongSound()
     {
         if (wrongSound != null)
-            Debug.Log("Check succid3");
-        AudioSource.PlayClipAtPoint(wrongSound, Vector3.zero, 0.8f);//play the cheering sound effect
+        {
+            AudioSource.PlayClipAtPoint(wrongSound, Vector3.zero, 0.8f);//play the cheering sound effect
+            ShowLion.MissLine(); 
+        }
+            
+        
     }
 
     //Load the next letter

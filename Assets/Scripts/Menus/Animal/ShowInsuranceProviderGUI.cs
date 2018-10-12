@@ -13,5 +13,13 @@ namespace Menus
         public GameObject LabelSelectPhone_1;
         public GameObject LabelSelectPhone_2;
         public GameObject LabelSelectPhone_3;
+        public AudioClip Buttonsound;
+        public AudioSource AudioSrc;
+
+        void Start()
+        {
+            AudioSrc.clip = Buttonsound;
+            AudioSrc.Play();
+        }
     }
 }

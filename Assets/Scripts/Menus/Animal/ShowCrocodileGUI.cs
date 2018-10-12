@@ -10,6 +10,14 @@ namespace Menus
         public GameObject LabelGreatMessage;
         public GameObject LabelBonusPoint;
         public GameObject LabelMissPoint;
+        public AudioClip OOps;
+        public AudioClip ButtonClick;
+        public AudioSource AudioSrc;
 
+        void Start()
+        {
+            AudioSrc.clip = ButtonClick;
+            AudioSrc.Play();
+        }
     }
 }

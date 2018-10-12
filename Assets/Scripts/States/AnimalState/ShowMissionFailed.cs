@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using I2.Loc;
 using UnityEngine;
 
 namespace States
@@ -16,7 +17,7 @@ namespace States
         
         public override void Initialize()
         {
-           
+            LocalizationManager.CurrentLanguage = CommonData.Language;
             InitializeUI();
        
             

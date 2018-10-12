@@ -7,16 +7,13 @@ namespace Menus
     public class CheckCheckoutAreaGUI : BaseMenu
     {
 
-        // Use this for initialization
-        private void Start()
+        public AudioClip Buttonsound;
+        public AudioSource AudioSrc;
+
+        void Start()
         {
-
-        }
-
-        // Update is called once per frame
-        private void Update()
-        {
-
+            AudioSrc.clip = Buttonsound;
+            AudioSrc.Play();
         }
     }
 }

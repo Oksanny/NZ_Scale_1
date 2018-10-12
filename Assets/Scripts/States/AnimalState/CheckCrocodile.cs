@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using I2.Loc;
 using UnityEngine;
 
 
@@ -15,7 +16,7 @@ namespace States
         {
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointCrocodile].SetActive(true);
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabArrowController].GetComponent<ControllerLookAtPoint>().Target = CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointCrocodile];
-
+            LocalizationManager.CurrentLanguage = CommonData.Language;
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabSpecialBonuse].GetComponent<bl_MiniMapItem>().Size = 0;
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabSmartphone].GetComponent<bl_MiniMapItem>().Size = 0;
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCrocodile].GetComponent<bl_MiniMapItem>().Size = 40;
@@ -37,6 +38,7 @@ namespace States
             if (Vector3.Distance(pointCrocodileVector3, pointARCamerVector3) <= 0.5f)
             {
                 Debug.Log("BAncomat");
+                menuComponent.AudioSrc.Play();
                 CommonData.mainManager.stateManager.SwapState(new ShowCrocodile());
 
             }

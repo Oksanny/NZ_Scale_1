@@ -12,5 +12,14 @@ namespace Menus
         public GameObject LabelGreat;
         public GameObject LabelPoint;
         public GameObject LabeTimer;
+        public AudioClip Buttonsound;
+        public AudioClip OOps;
+        public AudioSource AudioSrc;
+
+        void Start()
+        {
+            AudioSrc.clip = Buttonsound;
+            AudioSrc.Play();
+        }
     }
 }

@@ -31128,6 +31128,7 @@ MonoBehaviour:
   AudioSource: {fileID: 82611209870874316}
   SmartiCall_2elephant: {fileID: 8300000, guid: 64f29a5f30a32bf479eb6b624c8fcaa7,
     type: 3}
+  SoundElephant: {fileID: 8300000, guid: 3c760e5b9c470034c9d0177290d14187, type: 3}
   Click_Button: {fileID: 8300000, guid: 004b501ef2ac7274dafaa838bad8f6f2, type: 3}
   ColliderCheck: {fileID: 65540216662678356}
 --- !u!114 &114733722966591934
@@ -31146,6 +31147,8 @@ MonoBehaviour:
   PathRoundLion: {fileID: 114159607361620452}
   animationCage: {fileID: 111870232462524520}
   AnimatorLion: {fileID: 95676093968905438}
+  LonRoar: {fileID: 8300000, guid: 185f1efaac70e2e46a87a456ea9ae943, type: 3}
+  SmartiCall_2Lion: {fileID: 8300000, guid: 1daa9944bdf475940a1726d8e3957de6, type: 3}
   AudioSource: {fileID: 82126512208521540}
 --- !u!114 &114736119177035828
 MonoBehaviour:

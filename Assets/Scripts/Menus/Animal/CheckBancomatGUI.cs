@@ -6,7 +6,14 @@ namespace Menus
 {
     public class CheckBancomatGUI : BaseMenu
     {
+        public AudioClip Buttonsound;
+        public AudioSource AudioSrc;
 
-        
+        void Start()
+        {
+            AudioSrc.clip = Buttonsound;
+            AudioSrc.Play();
+        }
+
     }
 }

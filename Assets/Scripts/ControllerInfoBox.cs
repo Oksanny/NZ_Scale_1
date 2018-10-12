@@ -176,7 +176,7 @@ public class ControllerInfoBox : MonoBehaviour {
             AudioSource.Play();
         }
         
-        yield return new WaitForSeconds(AudioSource.clip.length);
+        yield return new WaitForSeconds(AudioSource.clip.length-2f);
         if (checkPlay)
         {
             Nathan_Animator.SetTrigger("Idle");

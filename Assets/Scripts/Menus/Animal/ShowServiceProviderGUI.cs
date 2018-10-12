@@ -12,5 +12,13 @@ namespace Menus
         public GameObject LabelSelectPhone_Big;
         public GameObject LabelSelectPhone_Small;
         public GameObject LabelGreat;
+        public AudioClip Buttonsound;
+        public AudioSource AudioSrc;
+
+        void Start()
+        {
+            AudioSrc.clip = Buttonsound;
+            AudioSrc.Play();
+        }
     }
 }

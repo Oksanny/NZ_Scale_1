@@ -16,7 +16,15 @@ namespace Menus
        // public Text MissPointStr;
         // public GUIButton Previous_Button;
         // public GUIButton Next_Button;
+        public AudioClip OOps;
+        public AudioClip ButtonClick;
+        public AudioSource AudioSrc;
 
+        void Start()
+        {
+            AudioSrc.clip = ButtonClick;
+            AudioSrc.Play();
+        }
     }
 }
 

@@ -13,10 +13,12 @@ namespace I2.Loc
 		void OnClick()
 		{
 			ApplyLanguage();
+            Debug.Log(_Language);
         }
 
 		public void ApplyLanguage()
 		{
+            Debug.Log(_Language);
 			if( LocalizationManager.HasLanguage(_Language))
 			{
 				LocalizationManager.CurrentLanguage = _Language;

@@ -124,7 +124,7 @@ public class ControllerInsuranceProvider : MonoBehaviour
         AudioSource.Play();
 
 
-        yield return new WaitForSeconds(AudioSource.clip.length);
+        yield return new WaitForSeconds(AudioSource.clip.length-1f);
 
 
         Nathan_Animator.SetTrigger("Idle");

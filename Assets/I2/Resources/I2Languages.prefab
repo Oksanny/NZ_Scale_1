@@ -719,6 +719,17 @@ MonoBehaviour:
     - de_logo_on
     - de_logo_off
     Flags: 0000
+  - Term: ANSWER
+    TermType: 0
+    Description: 
+    Languages:
+    - 
+    - 
+    Languages_Touch:
+    - "ANTWORT: Ein Elefant kann bis zu 200 kg pro Tag essen. \nSch\xF6nen Tag!"
+    - "ANSWER: An elephant can consume up to 200 KGs of food per day. \nHave great
+      Day! "
+    Flags: 0000
   mLanguages:
   - Name: German (Germany)
     Code: de-DE

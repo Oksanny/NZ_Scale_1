@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using I2.Loc;
 using UnityEngine;
 
 
@@ -13,11 +14,11 @@ namespace States
         private Vector3 pointARCamerVector3;
         public override void Initialize()
         {
-          // if (!CommonData.prefabs.gameobjectLookup[StringConstants.PrefabLion].GetComponent<AudioSource>().isPlaying)
-          // {
-          //     CommonData.prefabs.gameobjectLookup[StringConstants.PrefabLion].GetComponent<AudioSource>().Play();
-          // }
-           
+           if (!CommonData.prefabs.gameobjectLookup[StringConstants.PrefabLion].GetComponent<AudioSource>().isPlaying)
+           {
+               CommonData.prefabs.gameobjectLookup[StringConstants.PrefabLion].GetComponent<AudioSource>().Play();
+           }
+            LocalizationManager.CurrentLanguage = CommonData.Language;
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointLion].SetActive(true);
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabArrowController].GetComponent<ControllerLookAtPoint>().Target = CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointLion];
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabInfoBox].GetComponent<bl_MiniMapItem>().Size = 0;
@@ -40,6 +41,7 @@ namespace States
             if (Vector3.Distance(pointLionVector3, pointARCamerVector3) <= 0.5f)
             {
                 Debug.Log("BAncomat");
+                menuComponent.AudioSrc.Play();
                 CommonData.mainManager.stateManager.SwapState(new ShowLion());
 
             }

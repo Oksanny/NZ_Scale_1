@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using I2.Loc;
 using UnityEngine;
 namespace States
 {
@@ -14,7 +15,7 @@ namespace States
         {
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointSmartphone].SetActive(true);
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabArrowController].GetComponent<ControllerLookAtPoint>().Target = CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointSmartphone];
-
+            LocalizationManager.CurrentLanguage = CommonData.Language;
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCage].GetComponent<bl_MiniMapItem>().Size = 0;
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabSmartphone].GetComponent<bl_MiniMapItem>().Size = 40;
             InitializeUI();
@@ -36,6 +37,7 @@ namespace States
             if (Vector3.Distance(pointSmartphoneVector3, pointARCamerVector3) <= 0.5f)
             {
                 Debug.Log("ServiceProvider");
+                menuComponent.AudioSrc.Play();
                 CommonData.mainManager.stateManager.SwapState(new ShowSmartphone());
 
             }

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using I2.Loc;
 using UnityEngine;
 
 namespace States
@@ -29,7 +30,7 @@ namespace States
         {
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointInsurance].SetActive(false);
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabArrowController].GetComponent<ControllerLookAtPoint>().Target = CommonData.prefabs.gameobjectLookup[StringConstants.PrefabKioskInsurance];
-
+            LocalizationManager.CurrentLanguage = CommonData.Language;
             InitializeUI();
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabKioskInsurance].GetComponent<ControllerInsuranceProvider>()
                 .ShowInsuranceeProvider = this;

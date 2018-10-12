@@ -16,9 +16,14 @@ namespace Menus
         public Text MinusLabel;
         public Text Total;
         public Text Message;
+        public AudioClip Buttonsound;
+        
 
+        
          void Start()
          {
+             AudioSource.clip = Buttonsound;
+             AudioSource.Play();
              LabelInfo.SetActive(true);
              LabelAnswer.SetActive(false);
              PlusLabel.text = "Cash Collected: " + "+" + CommonData.currentUser.data.Plus.ToString() + " points";

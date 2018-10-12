@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using I2.Loc;
 using UnityEngine;
 
 
@@ -23,7 +24,7 @@ namespace States
         {
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointLion].SetActive(false);
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabArrowController].GetComponent<ControllerLookAtPoint>().Target = CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCage];
-
+            LocalizationManager.CurrentLanguage = CommonData.Language;
             InitializeUI();
         }
         private void InitializeUI()
@@ -94,6 +95,7 @@ namespace States
             menuComponent.LabelGreat.SetActive(false);
             menuComponent.LabelBonusPoint.SetActive(false);
             menuComponent.LabelMissPoint.SetActive(true);
+            menuComponent.AudioSrc.Play();
             CommonData.currentUser.data.Minus -= (int)StringConstants.LionMiss;
             if (WrHandler != null)
             {
@@ -102,6 +104,16 @@ namespace States
             menuComponent.StartCoroutine(ShowCheckTime());
         }
 
+        public void MissLine()
+        {
+            menuComponent.LabelTimeOut.SetActive(false);
+            menuComponent.LabelInfo.SetActive(false);
+            menuComponent.LabelGreat.SetActive(false);
+            menuComponent.LabelBonusPoint.SetActive(false);
+            menuComponent.LabelMissPoint.SetActive(true);
+            CommonData.currentUser.data.Minus -= (int)StringConstants.LionMiss;
+            menuComponent.StartCoroutine(ShowCheckTime());
+        }
         IEnumerator ShowCheckTime()
         {
             yield return new WaitForSeconds(2f);

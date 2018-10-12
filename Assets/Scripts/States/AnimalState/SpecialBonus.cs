@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using I2.Loc;
 using UnityEngine;
 
 namespace States
@@ -21,7 +22,7 @@ namespace States
         {
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointSpecialBonuse].SetActive(true);
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabArrowController].GetComponent<ControllerLookAtPoint>().Target = CommonData.prefabs.gameobjectLookup[StringConstants.PrefabCheckPointSpecialBonuse];
-
+            LocalizationManager.CurrentLanguage = CommonData.Language;
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabSmartphone].GetComponent<bl_MiniMapItem>().Size = 0;
             CommonData.prefabs.gameobjectLookup[StringConstants.PrefabSpecialBonuse].GetComponent<bl_MiniMapItem>().Size = 40; 
             if (menuComponent == null)
@@ -69,6 +70,8 @@ namespace States
         void ExitGreat()
         {
             Debug.Log("ExitGreat");
+            menuComponent.AudioSrc.clip = menuComponent.Buttonsound;
+            menuComponent.AudioSrc.Play();
             menuComponent.LabeTimer.SetActive(false);
             menuComponent.LabelGreat.SetActive(true);
             menuComponent.LabelPoint.SetActive(true);
@@ -79,6 +82,8 @@ namespace States
         void ExitMiss()
         {
             Debug.Log("ExitMiss");
+            menuComponent.AudioSrc.clip = menuComponent.OOps;
+            menuComponent.AudioSrc.Play();
             menuComponent.LabelMiss.SetActive(true);
             menuComponent.StartCoroutine(Exit());
         }
